@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <!-- 函数调用组件模板 -->
+    <ui:VisualElement name="FunctionCall" class="function-call">
+        <!-- 函数调用头部 -->
+        <ui:VisualElement name="FunctionHeader" class="function-header">
+            <ui:VisualElement class="function-info">
+                <ui:Label name="FunctionName" text="createFile" class="function-name" />
+                <ui:Label name="FunctionStatus" text="Executing..." class="function-status" />
+            </ui:VisualElement>
+            
+            <ui:VisualElement class="function-actions">
+                <ui:Button name="ApproveButton" text="Approve" class="approve-button" tooltip="Approve" />
+                <ui:Button name="RejectButton" text="Reject" class="reject-button" tooltip="Reject" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+
+        
+        <!-- 进度指示器 -->
+        <ui:VisualElement name="ProgressArea" class="progress-area" style="display: none;">
+            <ui:ProgressBar name="ProgressBar" class="function-progress" />
+            <ui:Label name="ProgressText" text="Processing..." class="progress-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

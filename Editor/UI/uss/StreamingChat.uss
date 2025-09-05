@@ -1,0 +1,196 @@
+/* ========================================
+   流式对话CSS样式
+   ======================================== */
+
+/* 流式消息容器 */
+.streaming-message {
+    opacity: 1;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Unity UIElements不支持transform，使用opacity动画代替 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 流式输出指示器 */
+.streaming-indicator {
+    margin-top: 8px;
+    margin-left: 12px;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+}
+
+.streaming-dots {
+    font-size: 12px;
+    color: #888;
+    animation: opacity-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes opacity-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* 流式文本 */
+.streaming-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+    animation: typewriter 0.1s ease-out;
+}
+
+@keyframes typewriter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 取消指示器 */
+.cancelled-indicator {
+    font-size: 11px;
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 4px;
+    color: #666;
+}
+
+/* 流式渲染状态样式 */
+
+/* Markdown流式渲染 */
+.markdown-streaming {
+    position: relative;
+}
+
+.markdown-streaming::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: #007ACC;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: text-bottom;
+}
+
+/* 代码块流式渲染 */
+.code-streaming {
+    position: relative;
+}
+
+.code-streaming::after {
+    content: "_";
+    display: inline;
+    color: #00FF00;
+    animation: blink 1s infinite;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* 工具调用流式渲染 */
+.tool-call-streaming {
+    border-left: 3px solid #FFA500;
+    background-color: rgba(255, 165, 0, 0.05);
+    padding-left: 8px;
+}
+
+.tool-call-streaming::before {
+    content: "⚙️ 正在处理...";
+    display: block;
+    font-size: 11px;
+    color: #FFA500;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/* 增强代码分析流式渲染 */
+.enhanced-code-streaming {
+    border-left: 3px solid #8A2BE2;
+    background-color: rgba(138, 43, 226, 0.03);
+    position: relative;
+}
+
+.enhanced-code-streaming::before {
+    content: "🔍 正在分析...";
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 10px;
+    color: #8A2BE2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #8A2BE2;
+}
+
+/* 光标闪烁动画 */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* 流式内容淡入效果 */
+.streaming-content {
+    animation: streamIn 0.2s ease-out;
+}
+
+/* Unity UIElements不支持transform，仅使用opacity动画 */
+@keyframes streamIn {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+/* 流式消息完成效果 */
+.streaming-complete {
+    animation: completeFlash 0.5s ease-out;
+}
+
+@keyframes completeFlash {
+    0% { background-color: rgba(0, 255, 0, 0.1); }
+    100% { background-color: transparent; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .streaming-indicator {
+        margin-left: 8px;
+    }
+    
+    .streaming-dots {
+        font-size: 10px;
+    }
+    
+    .streaming-text {
+        font-size: 14px;
+    }
+}
+
+/* 深色主题支持 */
+.unity-theme-dark .streaming-dots {
+    color: #CCC;
+}
+
+.unity-theme-dark .cancelled-indicator {
+    color: #AAA;
+}
+
+.unity-theme-dark .markdown-streaming::after {
+    background-color: #4FC3F7;
+}
+
+.unity-theme-dark .code-streaming::after {
+    color: #00FF88;
+}
+
+/* Unity UIElements不支持will-change属性 */
+
+/* Unity UIElements不支持transform和backface-visibility属性 */
+.streaming-indicator,
+.streaming-text,
+.streaming-content {
+    /* 性能优化属性在Unity UIElements中不需要 */
+}

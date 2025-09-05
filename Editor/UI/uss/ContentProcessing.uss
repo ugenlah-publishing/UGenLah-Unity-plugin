@@ -1,0 +1,1084 @@
+/* ==========================================================================
+   AI内容后处理系统 USS样式文件
+   Unity Style Sheets for Content Processing System
+   ========================================================================== */
+
+/* ==========================================================================
+   基础容器样式
+   ========================================================================== */
+
+.processed-content-container {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    min-width: 200px;    /* 处理后内容的最小宽度，配合消息框整体设计 */
+    min-height: auto;
+    max-height: 100%;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+/* 气泡容器基础样式 */
+.bubble-container {
+    background-color: rgba(45, 45, 45, 0.9);
+    border-radius: 8px;
+    margin: 8px 0;
+    border-width: 1px;
+    border-color: rgba(100, 100, 100, 0.3);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.bubble-container:hover {
+    border-color: rgba(150, 150, 150, 0.5);
+}
+
+/* 不同类型的气泡容器样式 */
+.code-bubble {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-left-width: 4px;
+    border-left-color: #4FC3F7;
+}
+
+.tool-call-bubble {
+    background-color: rgba(45, 30, 45, 0.95);
+    border-left-width: 4px;
+    border-left-color: #AB47BC;
+}
+
+.error-bubble {
+    background-color: rgba(60, 30, 30, 0.95);
+    border-left-width: 4px;
+    border-left-color: #F44336;
+}
+
+.warning-bubble {
+    background-color: rgba(60, 45, 30, 0.95);
+    border-left-width: 4px;
+    border-left-color: #FF9800;
+}
+
+/* ==========================================================================
+   Markdown内容样式
+   ========================================================================== */
+
+.markdown-container {
+    padding: 12px;
+    flex-direction: column;
+}
+
+/* Markdown标题样式 */
+.markdown-heading {
+    -unity-font-style: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.markdown-h1 {
+    font-size: 24px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.markdown-h2 {
+    font-size: 20px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.markdown-h3 {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.markdown-h4 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.markdown-h5 {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.markdown-h6 {
+    font-size: 12px;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Markdown段落样式 */
+.markdown-paragraph {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+    overflow: visible; /* 🔧 修复markdown换行问题：确保段落内容不被裁剪 */
+}
+
+/* Markdown列表样式 */
+.markdown-unordered-list {
+    flex-direction: column;
+    margin: 8px 0;
+}
+
+.markdown-ordered-list {
+    flex-direction: column;
+    margin: 8px 0;
+}
+
+.markdown-list-item {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 2px 0;
+    padding-left: 0; /* 🔧 去除左内边距，避免文本居中 */
+}
+
+.markdown-list-bullet {
+    min-width: auto; /* 🔧 使用自动宽度，避免强制20px间距 */
+    color: #4FC3F7;
+    -unity-font-style: bold;
+    -unity-text-align: upper-left; /* 🔧 强制左对齐 */
+}
+
+.markdown-list-number {
+    min-width: auto; /* 🔧 使用自动宽度，避免强制间距 */
+    color: #4FC3F7;
+    -unity-font-style: bold;
+    -unity-text-align: upper-left; /* 🔧 强制左对齐 */
+}
+
+.markdown-list-content {
+    flex-grow: 0; /* 🔧 不自动扩展，使用内容宽度 */
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+    -unity-text-align: upper-left; /* 🔧 强制左对齐 */
+    width: auto; /* 🔧 自动宽度 */
+    min-width: auto; /* 🔧 最小宽度自动 */
+}
+
+/* 确保所有列表项内容都左对齐 */
+.markdown-list-item-content {
+    -unity-text-align: upper-left; /* 🔧 强制左对齐 */
+    padding-left: 0;
+    margin-left: 0;
+    align-items: flex-start; /* 🔧 子元素左对齐 */
+    justify-content: flex-start; /* 🔧 子元素左对齐 */
+}
+
+/* 针对可能被message-text影响的列表文本，使用更高优先级 */
+.markdown-list-item .message-text {
+    -unity-text-align: upper-left !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+    min-width: auto !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.markdown-list-content.message-text {
+    -unity-text-align: upper-left !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+    min-width: auto !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Markdown引用样式 */
+.markdown-blockquote {
+    background-color: rgba(100, 100, 100, 0.1);
+    border-left-width: 4px;
+    border-left-color: #4FC3F7;
+    padding: 8px 12px;
+    margin: 8px 0;
+}
+
+.markdown-blockquote-content {
+    color: rgba(255, 255, 255, 0.7);
+    -unity-font-style: italic;
+}
+
+/* Markdown表格样式 */
+.markdown-table {
+    flex-direction: column;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(100, 100, 100, 0.4);
+    margin: 8px 0;
+    background-color: rgba(40, 40, 40, 0.3); /* 🔧 表格背景 */
+}
+
+.markdown-table-header-row {
+    flex-direction: row;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.4);
+    background-color: rgba(80, 80, 80, 0.4); /* 🔧 表头背景色 */
+}
+
+.markdown-table-row {
+    flex-direction: row;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.2);
+}
+
+
+
+.markdown-table-header-cell {
+    padding: 8px;
+    border-right-width: 1px;
+    border-right-color: rgba(100, 100, 100, 0.4);
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
+    flex-grow: 1;
+    align-items: center; /* 🔧 垂直居中 */
+    justify-content: center; /* 🔧 水平居中 */
+    -unity-text-align: middle-center; /* 🔧 文本居中对齐 */
+}
+
+
+
+.markdown-table-cell {
+    padding: 8px;
+    border-right-width: 1px;
+    border-right-color: rgba(100, 100, 100, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    flex-grow: 1;
+    align-items: center; /* 🔧 垂直居中 */
+    justify-content: center; /* 🔧 水平居中 */
+    -unity-text-align: middle-center; /* 🔧 文本居中对齐 */
+}
+
+
+
+/* 表格文本样式 - 确保居中对齐不被其他样式覆盖 */
+.markdown-table-header-cell .table-header-text {
+    -unity-text-align: middle-center !important; /* 🔧 强制居中对齐 */
+    flex-grow: 1;
+    color: rgba(255, 255, 255, 0.9);
+    -unity-font-style: bold;
+    width: 100%; /* 🔧 确保文本填满单元格 */
+    min-width: auto; /* 🔧 覆盖message-text的min-width */
+}
+
+.markdown-table-cell .table-cell-text {
+    -unity-text-align: middle-center !important; /* 🔧 强制居中对齐 */
+    flex-grow: 1;
+    color: rgba(255, 255, 255, 0.8);
+    width: 100%; /* 🔧 确保文本填满单元格 */
+    min-width: auto; /* 🔧 覆盖message-text的min-width */
+}
+
+/* 针对可能被message-text影响的表格标签，使用更高优先级 */
+.markdown-table-header-cell .message-text {
+    -unity-text-align: middle-center !important;
+    flex-grow: 1;
+    width: 100%;
+    min-width: auto;
+}
+
+.markdown-table-cell .message-text {
+    -unity-text-align: middle-center !important;
+    flex-grow: 1;
+    width: 100%;
+    min-width: auto;
+}
+
+/* Markdown水平分割线 */
+.markdown-horizontal-rule {
+    height: 2px;
+    background-color: rgba(100, 100, 100, 0.3);
+    margin: 16px 0;
+}
+
+/* Markdown流式渲染样式 */
+.markdown-streaming {
+    border-color: #4FC3F7;
+}
+
+.markdown-streaming-cursor {
+    width: 0;           /* 🎯 完全隐藏宽度 */
+    height: 0;          /* 🎯 完全隐藏高度，消除占位空间 */
+    background-color: transparent; /* 🎯 透明背景 */
+    margin: 0;          /* 🎯 移除所有边距 */
+    padding: 0;         /* 🎯 移除所有内边距 */
+    display: none;      /* 🎯 完全不显示 */
+
+}
+
+.markdown-fallback {
+    color: rgba(255, 255, 255, 0.6);
+    -unity-font-style: italic;
+}
+
+/* ==========================================================================
+   代码块样式
+   ========================================================================== */
+
+/* Markdown代码块样式 - 独立于其他代码块样式 */
+.markdown-code-block {
+    margin: 8px 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(25, 25, 25, 0.95);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(100, 100, 100, 0.4);
+}
+
+/* Markdown代码块头部 */
+.markdown-code-header {
+    background-color: rgba(60, 60, 60, 0.9);
+    padding: 8px 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.4);
+}
+
+/* Markdown代码块内容容器 */
+.markdown-code-container {
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 12px 16px;
+    overflow: visible;
+}
+
+/* Markdown代码块文本内容 */
+.markdown-code-content {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    white-space: normal;
+    overflow: visible;
+}
+
+/* Markdown语言标签 - 独立于其他语言标签 */
+.markdown-language-label {
+    background-color: rgba(0, 120, 215, 0.8);
+    color: white;
+    font-size: 12px;
+    -unity-font-style: bold;
+    padding: 4px 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-right: 8px;
+    -unity-text-align: middle-center;
+}
+
+/* 针对可能被message-text影响的代码块文本，使用更高优先级 */
+.markdown-code-content.message-text {
+    -unity-text-align: upper-left !important;
+    white-space: normal !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+    min-width: auto !important;
+}
+
+.markdown-language-label.message-text {
+    -unity-text-align: middle-center !important;
+    color: white !important;
+    -unity-font-style-and-weight: bold !important;
+}
+
+.code-header-left {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* 通用语言标签样式 - 用于代码块和增强代码分析 */
+.language-label {
+    background-color: rgba(0, 120, 215, 0.8);
+    color: white;
+    font-size: 12px;
+    -unity-font-style: bold;
+    padding: 4px 8px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-right: 8px;
+    -unity-text-align: middle-center;
+}
+
+.line-count-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 代码操作按钮 */
+.code-actions {
+    flex-direction: row;
+    align-items: center;
+}
+
+.code-action-button {
+    margin-left: 4px;
+    padding: 4px 8px;
+    background-color: rgba(100, 100, 100, 0.3);
+    border-width: 1px;
+    border-color: rgba(150, 150, 150, 0.5);
+    border-radius: 4px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+}
+
+.code-action-button:hover {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-color: rgba(150, 150, 150, 0.8);
+}
+
+.code-action-button:active {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.code-collapse-button {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(100, 100, 100, 0.3);
+    border-width: 1px;
+    border-color: rgba(150, 150, 150, 0.5);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #4FC3F7;
+    -unity-text-align: middle-center;
+}
+
+/* 代码内容区域 */
+.code-content {
+    max-height: 400px;
+    background-color: rgba(20, 20, 20, 0.95);
+    overflow: hidden;
+}
+
+.code-content-area {
+    flex-direction: column;
+}
+
+.code-text {
+
+    font-size: 13px;
+    padding: 12px;
+    white-space: normal;
+    color: rgba(255, 255, 255, 0.9);
+
+}
+
+/* 不同语言的代码高亮 */
+.code-csharp {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.code-python {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.code-javascript {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.code-sql {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.code-json {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 代码流式渲染 */
+.code-streaming {
+    border-color: #4FC3F7;
+
+
+
+}
+
+.code-streaming-cursor {
+    width: 2px;
+    height: 16px;
+    background-color: #4FC3F7;
+    margin-left: 2px;
+
+
+
+}
+
+.code-error {
+    color: #F44336;
+    -unity-font-style: italic;
+    padding: 12px;
+}
+
+/* ==========================================================================
+   工具调用样式
+   ========================================================================== */
+
+/* 工具调用头部 */
+.tool-call-header {
+    background-color: rgba(60, 45, 60, 0.9);
+    padding: 10px 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(171, 71, 188, 0.3);
+}
+
+.tool-info {
+    flex-direction: row;
+    align-items: center;
+}
+
+.tool-icon {
+    font-size: 16px;
+    margin-right: 8px;
+    min-width: 20px;
+    -unity-text-align: middle-center;
+}
+
+.tool-name {
+    -unity-font-style: bold;
+    color: #AB47BC;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+.tool-status {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+    -unity-text-align: middle-center;
+}
+
+.tool-duration {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    -unity-font-style: italic;
+}
+
+/* 工具状态样式 */
+.status-pending {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.status-running {
+    background-color: rgba(0, 150, 255, 0.2);
+    color: #0096FF;
+}
+
+.status-success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.status-completed {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.status-error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+.status-failed {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+.status-cancelled {
+    background-color: rgba(158, 158, 158, 0.2);
+    color: #9E9E9E;
+}
+
+.status-timeout {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+}
+
+/* 工具操作按钮 */
+.tool-actions {
+    flex-direction: row;
+    align-items: center;
+}
+
+.tool-action-button {
+    margin-left: 4px;
+    padding: 4px 8px;
+    background-color: rgba(171, 71, 188, 0.3);
+    border-width: 1px;
+    border-color: rgba(171, 71, 188, 0.5);
+    border-radius: 4px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+}
+
+.tool-action-button:hover {
+    background-color: rgba(171, 71, 188, 0.5);
+    border-color: rgba(171, 71, 188, 0.8);
+}
+
+.tool-collapse-button {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(171, 71, 188, 0.3);
+    border-width: 1px;
+    border-color: rgba(171, 71, 188, 0.5);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #AB47BC;
+    -unity-text-align: middle-center;
+}
+
+/* 工具内容区域 */
+.tool-section {
+    padding: 12px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.1);
+}
+
+.section-label {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.error-label {
+    color: #F44336;
+}
+
+/* 参数区域 */
+.tool-parameters {
+    flex-direction: column;
+}
+
+/* 参数头部容器 */
+.parameters-header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: rgba(60, 60, 60, 0.3);
+    border-radius: 4px;
+
+    transition: background-color 0.2s ease;
+}
+
+.parameters-header-container:hover {
+    background-color: rgba(80, 80, 80, 0.5);
+}
+
+/* 参数切换按钮 */
+.parameters-toggle-button {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    width: 24px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.parameters-toggle-button:hover {
+    background-color: rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.parameters-toggle-button:active {
+    background-color: rgba(120, 120, 120, 0.5);
+}
+
+/* 参数容器 */
+.parameters-container {
+    flex-direction: column;
+}
+
+/* 参数展开动画效果 */
+.parameters-expanded {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.parameters-collapsed {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.parameter-item {
+    flex-direction: row;
+    margin: 4px 0;
+    align-items: flex-start;
+}
+
+.parameter-name {
+    min-width: 80px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 8px;
+}
+
+.parameter-value {
+    flex-grow: 1;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: normal;
+}
+
+/* 结果区域 */
+.tool-result {
+    flex-direction: column;
+}
+
+.result-container {
+    flex-direction: column;
+}
+
+.json-result {
+    background-color: rgba(20, 20, 20, 0.5);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+.json-content {
+
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+}
+
+.table-result {
+    flex-direction: column;
+    background-color: rgba(20, 20, 20, 0.5);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+.table-row {
+
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 2px 0;
+}
+
+.text-result {
+    background-color: rgba(20, 20, 20, 0.5);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px 0;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.text-content {
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+}
+
+.error-content {
+    color: #F44336;
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    margin: 4px 0;
+    border-left-width: 3px;
+    border-left-color: #F44336;
+}
+
+/* 工具流式渲染 */
+.tool-call-streaming {
+    border-color: #AB47BC;
+
+
+
+}
+
+.tool-streaming-indicator {
+    width: 100%;
+    height: 2px;
+    background-color: #AB47BC;
+
+
+
+}
+
+.tool-call-error {
+    color: #F44336;
+    -unity-font-style: italic;
+    padding: 12px;
+    -unity-text-align: middle-center;
+}
+
+/* ==========================================================================
+   回退渲染器样式
+   ========================================================================== */
+
+.fallback-content {
+    padding: 12px;
+    background-color: rgba(100, 100, 100, 0.1);
+    border-left-width: 3px;
+    border-left-color: rgba(255, 255, 255, 0.3);
+    margin: 4px 0;
+}
+
+.fallback-text {
+    color: rgba(255, 255, 255, 0.7);
+    white-space: normal;
+    -unity-font-style: italic;
+}
+
+/* ==========================================================================
+   通用内容头部样式
+   ========================================================================== */
+
+.content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.2);
+}
+
+.content-title {
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+}
+
+.collapse-button {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(100, 100, 100, 0.3);
+    border-width: 1px;
+    border-color: rgba(150, 150, 150, 0.5);
+    border-radius: 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+    margin-left: 8px;
+}
+
+.copy-button {
+    width: 24px;
+    height: 20px;
+    background-color: rgba(100, 100, 100, 0.3);
+    border-width: 1px;
+    border-color: rgba(150, 150, 150, 0.5);
+    border-radius: 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+    margin-left: 4px;
+}
+
+/* ==========================================================================
+   动画定义
+   ========================================================================== */
+
+/* 闪烁动画 */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 边框脉冲动画 */
+@keyframes border-pulse {
+    0% { border-color: rgba(255, 255, 255, 0.3); }
+    50% { border-color: rgba(79, 195, 247, 0.8); }
+    100% { border-color: rgba(255, 255, 255, 0.3); }
+}
+
+/* 进度动画 */
+@keyframes progress {
+    0% { 
+        background: linear-gradient(90deg, transparent 0%, #AB47BC 0%, transparent 0%);
+    }
+    50% { 
+        background: linear-gradient(90deg, transparent 0%, #AB47BC 50%, transparent 50%);
+    }
+    100% { 
+        background: linear-gradient(90deg, transparent 0%, #AB47BC 100%, transparent 100%);
+    }
+}
+
+/* ==========================================================================
+   响应式和状态样式
+   ========================================================================== */
+
+/* 悬停效果 */
+.bubble-container:hover .content-header {
+    background-color: rgba(70, 70, 70, 0.9);
+}
+
+.bubble-container:hover .collapse-button,
+.bubble-container:hover .copy-button {
+    background-color: rgba(120, 120, 120, 0.5);
+}
+
+/* 选中状态 */
+.bubble-container:focus {
+    border-color: #4FC3F7;
+    border-width: 2px;
+}
+
+/* 禁用状态 */
+.bubble-container:disabled {
+    opacity: 0.5;
+}
+
+/* 暗色主题适配 */
+.unity-theme-dark .bubble-container {
+    background-color: rgba(35, 35, 35, 0.9);
+}
+
+.unity-theme-dark .code-bubble {
+    background-color: rgba(25, 25, 25, 0.95);
+}
+
+.unity-theme-dark .tool-call-bubble {
+    background-color: rgba(40, 25, 40, 0.95);
+}
+
+/* 浅色主题适配 */
+.unity-theme-light .bubble-container {
+    background-color: rgba(245, 245, 245, 0.9);
+    border-color: rgba(200, 200, 200, 0.5);
+}
+
+.unity-theme-light .markdown-paragraph,
+.unity-theme-light .markdown-heading {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.unity-theme-light .code-text {
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(250, 250, 250, 0.95);
+}
+
+/* ==========================================================================
+   实用工具类
+   ========================================================================== */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+.text-center {
+    -unity-text-align: middle-center;
+}
+
+.text-left {
+    -unity-text-align: middle-left;
+}
+
+.text-right {
+    -unity-text-align: middle-right;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+/* 小间距 */
+.spacing-small {
+    margin: 4px;
+    padding: 4px;
+}
+
+/* 中等间距 */
+.spacing-medium {
+    margin: 8px;
+    padding: 8px;
+}
+
+/* 大间距 */
+.spacing-large {
+    margin: 16px;
+    padding: 16px;
+}
+
+/* ==========================================================================
+   测试和演示按钮样式
+   ========================================================================== */
+
+/* 测试按钮样式 */
+.test-content-button {
+    background-color: #4CAF50;
+    color: white;
+    border-width: 0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin: 4px 0;
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.test-content-button:hover {
+    background-color: #45a049;
+    /* Unity UIElements不支持transform: scale，使用颜色变化代替 */
+}
+
+.test-content-button:active {
+    background-color: #3e8e41;
+    /* Unity UIElements不支持transform: scale，使用颜色变化代替 */
+}

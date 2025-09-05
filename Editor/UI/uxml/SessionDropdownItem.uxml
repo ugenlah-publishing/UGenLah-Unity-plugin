@@ -1,0 +1,63 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <!-- 会话项容器 -->
+    <ui:VisualElement name="SessionDropdownItem" class="session-dropdown-item">
+        <!-- 会话内容区域 -->
+        <ui:VisualElement name="SessionContent" class="session-content">
+            <!-- 左侧信息 -->
+            <ui:VisualElement class="session-info">
+                <!-- 会话标题和状态 -->
+                <ui:VisualElement class="session-header">
+                    <ui:Label name="SessionTitle" text="Session Title" class="session-title" />
+                    <ui:VisualElement name="SessionStatus" class="session-status">
+                        <ui:VisualElement name="StatusIndicator" class="status-indicator" />
+                        <ui:Label name="StatusText" text="Active" class="status-text" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- 会话描述 -->
+                <ui:Label name="SessionDescription" text="Session description or preview..." class="session-description" />
+                
+                <!-- 会话元信息 -->
+                <ui:VisualElement class="session-meta">
+                    <ui:VisualElement class="meta-item">
+                        <ui:Label name="MessageCount" text="5 messages" class="meta-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="meta-separator" />
+                    <ui:VisualElement class="meta-item">
+                        <ui:Label name="LastActiveTime" text="2 minutes ago" class="meta-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="meta-separator" />
+                    <ui:VisualElement class="meta-item">
+                        <ui:Label name="SessionType" text="Chat" class="meta-text session-type" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- 会话标签 -->
+                <ui:VisualElement name="SessionTags" class="session-tags" style="display: none;">
+                    <!-- 标签将动态添加到这里 -->
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 右侧操作按钮 -->
+            <ui:VisualElement class="session-actions">
+                <ui:Button name="PinButton" text="Pin" class="action-btn pin-btn" tooltip="Pin/Unpin Session" />
+                <ui:Button name="DuplicateButton" text="Copy" class="action-btn duplicate-btn" tooltip="Duplicate Session" />
+                <ui:Button name="ExportButton" text="Export" class="action-btn export-btn" tooltip="Export Session" />
+                <ui:Button name="DeleteButton" text="Delete" class="action-btn delete-btn" tooltip="Delete Session" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- 会话预览区域（可展开） -->
+        <ui:VisualElement name="SessionPreview" class="session-preview" style="display: none;">
+            <ui:VisualElement class="preview-header">
+                <ui:Label text="Recent Messages:" class="preview-title" />
+            </ui:VisualElement>
+            <ui:VisualElement name="PreviewMessages" class="preview-messages">
+                <!-- 消息预览将动态添加到这里 -->
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- 选中状态指示器 -->
+        <ui:VisualElement name="SelectedIndicator" class="selected-indicator" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

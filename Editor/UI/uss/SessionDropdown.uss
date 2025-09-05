@@ -1,0 +1,461 @@
+/* 会话下拉窗口样式 */
+
+/* 主容器 - Unity UIElements不支持z-index */
+.session-dropdown-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index在Unity UIElements中不支持，使用层级顺序代替 */
+    display: none;
+    opacity: 0;
+}
+
+/* 显示状态 */
+.session-dropdown-container.show {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+/* 背景遮罩 */
+.dropdown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 下拉窗口内容 */
+.dropdown-content {
+    width: 380px;
+    max-height: 500px;
+    background-color: #00ff00;
+    border-radius: 8px;
+    border-width: 5px;
+    border-color: #ff0000;
+    overflow: hidden;
+}
+
+/* 头部 */
+.dropdown-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: var(--unity-colors-toolbar-background);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-helpbox-border);
+}
+
+.dropdown-title {
+    font-size: 14px;
+    font-style: bold;
+    color: var(--unity-colors-default-text);
+}
+
+.header-actions {
+    flex-direction: row;
+    align-items: center;
+}
+
+.action-button {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    border-width: 1px;
+    min-width: 0;
+    width: auto;
+}
+
+.new-button {
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+}
+
+.new-button:hover {
+    background-color: var(--unity-colors-button-background-hover);
+}
+
+.close-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--unity-colors-default-text);
+    min-width: 24px;
+    max-width: 24px;
+    height: 24px;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+}
+
+/* 搜索区域 */
+.search-area {
+    flex-direction: row;
+    padding: 12px 16px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-helpbox-border);
+}
+
+.search-input {
+    flex: 1;
+    margin-right: 8px;
+    height: 24px;
+}
+
+.sort-filter {
+    width: 100px;
+    height: 24px;
+}
+
+/* 会话列表 */
+.sessions-list {
+    max-height: 300px;
+    flex: 1;
+}
+
+.sessions-container {
+    padding: 8px 0;
+}
+
+/* 会话项样式 */
+.session-dropdown-item {
+    margin: 0 8px 8px 8px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: var(--unity-colors-helpbox-border);
+    background-color: var(--unity-colors-helpbox-background);
+    overflow: hidden;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+.session-dropdown-item:hover {
+    border-color: var(--unity-colors-highlight-background);
+    background-color: var(--unity-colors-helpbox-background-selected);
+    /* Unity UIElements不支持transform，使用颜色和边框变化代替 */
+    border-width: 2px;
+}
+
+.session-dropdown-item.selected {
+    border-color: var(--unity-colors-highlight-background);
+    background-color: var(--unity-colors-highlight-background);
+}
+
+.session-dropdown-item.pinned {
+    border-left-width: 4px;
+    border-left-color: #ffd700;
+}
+
+/* 会话内容 */
+.session-content {
+    flex-direction: row;
+    padding: 12px;
+    align-items: flex-start;
+}
+
+.session-info {
+    flex: 1;
+    margin-right: 8px;
+}
+
+/* 会话头部 */
+.session-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.session-title {
+    font-size: 13px;
+    font-style: bold;
+    color: var(--unity-colors-default-text);
+    flex: 1;
+    margin-right: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 状态指示器 */
+.session-status {
+    flex-direction: row;
+    align-items: center;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.status-indicator.active {
+    background-color: #4CAF50;
+}
+
+.status-indicator.inactive {
+    background-color: #9E9E9E;
+}
+
+.status-text {
+    font-size: 10px;
+    color: var(--unity-colors-default-text-inactive);
+}
+
+/* 会话描述 */
+.session-description {
+    font-size: 11px;
+    color: var(--unity-colors-default-text-inactive);
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 元信息 */
+.session-meta {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.meta-item {
+    flex-direction: row;
+    align-items: center;
+}
+
+.meta-text {
+    font-size: 10px;
+    color: var(--unity-colors-default-text-inactive);
+}
+
+.meta-separator {
+    width: 1px;
+    height: 10px;
+    background-color: var(--unity-colors-helpbox-border);
+    margin: 0 6px;
+}
+
+.session-type {
+    background-color: var(--unity-colors-highlight-background);
+    padding: 2px 6px;
+    border-radius: 10px;
+    color: var(--unity-colors-highlight-text);
+}
+
+/* 会话标签 */
+.session-tags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.session-tag {
+    background-color: var(--unity-colors-button-background);
+    color: var(--unity-colors-button-text);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 9px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+/* 操作按钮 */
+.session-actions {
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-btn {
+    margin-bottom: 4px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    border-width: 1px;
+    min-width: 50px;
+    opacity: 0.7;
+}
+
+.action-btn:hover {
+    opacity: 1;
+}
+
+.pin-btn {
+    background-color: #FFC107;
+    border-color: #FFC107;
+    color: #000;
+}
+
+.duplicate-btn {
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+}
+
+.export-btn {
+    background-color: #2196F3;
+    border-color: #2196F3;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #F44336;
+    border-color: #F44336;
+    color: white;
+}
+
+/* 会话预览 */
+.session-preview {
+    padding: 0 12px 12px 12px;
+    border-top-width: 1px;
+    border-top-color: var(--unity-colors-helpbox-border);
+    background-color: var(--unity-colors-window-background);
+}
+
+.preview-header {
+    padding: 8px 0;
+}
+
+.preview-title {
+    font-size: 11px;
+    font-style: bold;
+    color: var(--unity-colors-default-text);
+}
+
+.preview-messages {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.preview-message {
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    background-color: var(--unity-colors-helpbox-background);
+    border-radius: 4px;
+    font-size: 10px;
+    color: var(--unity-colors-default-text-inactive);
+}
+
+/* 选中指示器 */
+.selected-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--unity-colors-highlight-background);
+}
+
+/* 空状态 */
+.empty-state {
+    padding: 40px 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-text {
+    font-size: 14px;
+    font-style: bold;
+    color: var(--unity-colors-default-text-inactive);
+    margin-bottom: 8px;
+}
+
+.empty-subtext {
+    font-size: 11px;
+    color: var(--unity-colors-default-text-inactive);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.create-first-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+}
+
+/* 底部 */
+.dropdown-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: var(--unity-colors-toolbar-background);
+    border-top-width: 1px;
+    border-top-color: var(--unity-colors-helpbox-border);
+}
+
+.session-count {
+    font-size: 11px;
+    color: var(--unity-colors-default-text-inactive);
+}
+
+.footer-actions {
+    flex-direction: row;
+}
+
+.footer-button {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    border-width: 1px;
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+}
+
+.footer-button:hover {
+    background-color: var(--unity-colors-button-background-hover);
+}
+
+/* 响应式设计 */
+@media (max-width: 400px) {
+    .dropdown-content {
+        width: 320px;
+        right: 5px;
+    }
+    
+    .session-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        margin-right: 4px;
+        margin-bottom: 2px;
+        min-width: 40px;
+    }
+}
+
+/* 隐藏状态 */
+.session-dropdown-container.hide {
+    display: none !important;
+    opacity: 0;
+}
+
+/* 主题适配 - Unity UIElements不支持box-shadow */
+.unity-theme-dark .dropdown-content {
+    /* box-shadow不支持，使用border代替阴影效果 */
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.unity-theme-light .dropdown-content {
+    /* box-shadow不支持，使用border代替阴影效果 */
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.1);
+}

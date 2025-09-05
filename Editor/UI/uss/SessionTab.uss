@@ -1,0 +1,381 @@
+/* Session标签页样式 - 浏览器风格 */
+
+/* 主标签页容器 */
+.session-tab {
+    position: relative;
+    height: 32px;
+    min-width: 120px;
+    max-width: 240px;
+    margin-right: 2px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+/* 标签页主体 */
+.tab-main {
+    position: relative;
+    height: 100%;
+    flex-direction: row;
+    align-items: stretch;
+    transition-duration: 0.2s;
+    transition-property: all;
+}
+
+/* 左侧圆角 */
+.tab-left-corner {
+    width: 8px;
+    height: 100%;
+    background-color: var(--unity-colors-window-background);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 0;
+}
+
+/* 右侧圆角 */
+.tab-right-corner {
+    width: 8px;
+    height: 100%;
+    background-color: var(--unity-colors-window-background);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0;
+}
+
+/* 标签页内容区域 */
+.tab-content-area {
+    flex: 1;
+    height: 100%;
+    background-color: var(--unity-colors-window-background);
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 8px;
+    border-top-width: 1px;
+    border-top-color: var(--unity-colors-helpbox-border);
+    transition-duration: 0.2s;
+    transition-property: background-color, border-color;
+}
+
+/* 标签页图标 */
+.tab-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--unity-colors-highlight-background);
+}
+
+/* 标签页标题 */
+.tab-title {
+    flex: 1;
+    font-size: 12px;
+    color: var(--unity-colors-default-text);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -unity-text-align: middle-left;
+    margin-right: 4px;
+}
+
+/* 状态指示器容器 */
+.status-indicators {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 4px;
+}
+
+/* 未保存指示器 */
+.unsaved-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    margin-right: 4px;
+}
+
+/* 消息数量徽章 */
+.message-badge {
+    background-color: #ff4757;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    -unity-text-align: middle-center;
+    margin-right: 4px;
+}
+
+/* 活跃指示器 */
+.active-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    margin-right: 4px;
+}
+
+/* 关闭按钮 */
+.tab-close-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0.6;
+    transition-duration: 0.2s;
+    transition-property: opacity, background-color;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--unity-colors-default-text);
+    -unity-text-align: middle-center;
+}
+
+.tab-close-button:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-close-button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 悬浮状态 */
+.session-tab:hover .tab-content-area {
+    background-color: var(--unity-colors-helpbox-background-hover);
+}
+
+.session-tab:hover .tab-left-corner,
+.session-tab:hover .tab-right-corner {
+    background-color: var(--unity-colors-helpbox-background-hover);
+}
+
+.session-tab:hover .tab-title {
+    color: var(--unity-colors-default-text);
+}
+
+/* 选中状态 */
+.session-tab.active .tab-content-area {
+    background-color: var(--unity-colors-window-background);
+    border-top-color: var(--unity-colors-highlight-background);
+    border-top-width: 2px;
+}
+
+.session-tab.active .tab-left-corner,
+.session-tab.active .tab-right-corner {
+    background-color: var(--unity-colors-window-background);
+}
+
+.session-tab.active .tab-title {
+    color: var(--unity-colors-default-text);
+    font-style: bold;
+}
+
+.session-tab.active .icon-indicator {
+    background-color: var(--unity-colors-highlight-background);
+}
+
+/* 活跃状态下划线 */
+.active-underline {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background-color: var(--unity-colors-highlight-background);
+    border-radius: 1px;
+}
+
+.session-tab.active .active-underline {
+    display: flex;
+}
+
+/* 拖拽状态 */
+.session-tab.dragging {
+    opacity: 0.7;
+    /* Unity UIElements不支持transform，只保留opacity变化 */
+}
+
+.drag-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-width: 2px;
+    border-color: var(--unity-colors-highlight-background);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-hint {
+    font-size: 10px;
+    color: var(--unity-colors-highlight-background);
+    font-style: bold;
+}
+
+/* 可拖拽区域 */
+.session-tab.drag-over {
+    border-left: 2px solid var(--unity-colors-highlight-background);
+}
+
+/* 非活跃状态 */
+.session-tab.inactive .tab-content-area {
+    background-color: var(--unity-colors-helpbox-background);
+    opacity: 0.8;
+}
+
+.session-tab.inactive .tab-left-corner,
+.session-tab.inactive .tab-right-corner {
+    background-color: var(--unity-colors-helpbox-background);
+}
+
+.session-tab.inactive .tab-title {
+    color: var(--unity-colors-default-text-inactive);
+}
+
+/* 固定标签页 */
+.session-tab.pinned {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.session-tab.pinned .tab-title {
+    display: none;
+}
+
+.session-tab.pinned .tab-close-button {
+    display: none;
+}
+
+.session-tab.pinned .tab-icon {
+    margin-right: 0;
+}
+
+/* 加载状态 */
+.session-tab.loading .icon-indicator {
+    background-color: var(--unity-colors-highlight-background);
+    /* Unity UIElements不支持CSS动画，可以通过C#代码实现 */
+    opacity: 0.7;
+}
+
+/* 错误状态 */
+.session-tab.error .icon-indicator {
+    background-color: #ff4757;
+}
+
+.session-tab.error .tab-title {
+    color: #ff4757;
+}
+
+/* 新建标签页特殊样式 */
+.session-tab.new-tab .icon-indicator {
+    background-color: #4CAF50;
+}
+
+/* 标签页容器样式 */
+.session-tabs-area {
+    height: 34px;
+    background-color: var(--unity-colors-toolbar-background);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-helpbox-border);
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.session-tabs-scroll {
+    flex: 1;
+    overflow: hidden;
+}
+
+.session-tabs-container {
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    padding: 2px 4px 0 4px;
+}
+
+/* 添加标签页按钮 */
+.add-tab-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: transparent;
+    border-width: 0;
+    margin: 3px 8px 3px 4px;
+    font-size: 16px;
+    font-style: bold;
+    color: var(--unity-colors-default-text-inactive);
+    transition-duration: 0.2s;
+    transition-property: background-color, color;
+}
+
+.add-tab-button:hover {
+    background-color: var(--unity-colors-helpbox-background-hover);
+    color: var(--unity-colors-default-text);
+}
+
+.add-tab-button:active {
+    background-color: var(--unity-colors-helpbox-background-selected);
+}
+
+/* 新建按钮样式增强 */
+.new-session-btn {
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+    font-style: bold;
+}
+
+.new-session-btn:hover {
+    background-color: var(--unity-colors-button-background-hover);
+}
+
+.new-session-btn:active {
+    background-color: var(--unity-colors-button-background-pressed);
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .session-tab {
+        min-width: 80px;
+        max-width: 120px;
+    }
+    
+    .tab-title {
+        font-size: 11px;
+    }
+}
+
+/* 主题适配 */
+.unity-theme-dark .session-tab.active {
+    /* Unity UIElements不支持box-shadow，使用border代替阴影效果 */
+    border-bottom-width: 2px;
+    border-bottom-color: var(--unity-colors-highlight-background);
+}
+
+.unity-theme-light .session-tab.active {
+    border-bottom-width: 2px;
+    border-bottom-color: var(--unity-colors-highlight-background);
+}
+
+/* 动画效果 - Unity UIElements不支持CSS动画，使用简单的过渡效果 */
+.session-tab.tab-opening {
+    opacity: 0.8;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+}
+
+.session-tab.tab-closing {
+    opacity: 0.2;
+    transition-duration: 0.2s;
+    transition-property: opacity;
+}

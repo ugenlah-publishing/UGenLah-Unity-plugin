@@ -1,0 +1,562 @@
+.container {
+    flex-direction: column;
+    padding: 16px;
+}
+
+.row {
+    flex-direction: row;
+    margin-bottom: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0px;
+}
+
+.row > * {
+    margin-right: 10px;
+}
+
+.logo-img {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(238, 238, 238);
+}
+
+.window-title {
+    font-size: 20px;
+    -unity-font-style: bold;
+}
+
+.status-indicator {
+    color: green;
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.status-label {
+    font-size: 14px;
+    color: rgb(136, 136, 136);
+}
+
+.server-label {
+    font-size: 14px;
+    color: rgb(136, 136, 136);
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 16px;
+    -unity-font-style: bold;
+    margin-top: 0px;
+    padding-left: 0px;
+}
+
+.section-desc {
+    color: rgb(85, 85, 85);
+    margin-bottom: 8px;
+    white-space: normal;
+    white-space: normal;
+}
+
+.custom-label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.status-indicator-circle-online {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(111, 226, 101);
+    flex-shrink: 0;
+}
+.status-indicator-circle-connecting {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border-color: rgb(111, 226, 101);
+    border-width: 2px;
+    flex-shrink: 0;
+}
+.status-indicator-circle-disconnected {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(220, 76, 9);
+    flex-shrink: 0;
+}
+
+.disabled-text-field {
+    
+}
+.disabled-text-field .unity-text-field__input {
+    border-width: 0px;
+    margin: 1px;
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+.enabled-text-field .unity-text-field__input {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.AnimatedSelectable {
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out-cubic;
+}
+.AnimatedSelectable:hover {
+    scale: 0.9 0.9;
+    rotate: 0deg;
+}
+
+.Header {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 0px;
+    -unity-font-style: bold;
+}
+
+.ContentItem {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 8px;
+}
+.ContentItem .unity-label {
+    width: 100px;
+    min-width: 85px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0px;
+    padding-right: 8px;
+    white-space: nowrap;
+}
+.ContentItem .unity-enum-field {
+    width: auto;
+    min-width: 120px;
+}
+.ContentItem .unity-integer-field__input {
+    width: auto;
+    min-width: 80px;
+}
+.ContentItem .unity-text-field__input {
+    min-width: 120px;
+}
+
+.Divider {
+    width: auto;
+    height: 1px;
+    max-height: 1px;
+    background-color: rgb(26, 26, 26);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Frame-Group {
+    background-color: rgba(48, 48, 48, 0.4);
+    border-radius: 16px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.Button-Primary {
+    background-color: rgb(175, 232, 230);
+    transition-duration: 200ms;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: black;
+    -unity-text-align: middle-center;
+}
+.Button-Primary:hover {
+    background-color: rgb(118, 231, 227);
+    transition-duration: 200ms;
+}
+.Button-Primary:active {
+    background-color: rgb(250, 255, 234);
+    transition-duration: 50ms;
+}
+
+.configure-button {
+    width: 90px;
+}
+
+.Button-Secondary {
+    background-color: rgb(90, 90, 90);
+    transition-duration: 200ms;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: rgb(220, 220, 220);
+    -unity-text-align: middle-center;
+}
+
+.Button-Secondary:hover {
+    background-color: rgb(120, 120, 120);
+    transition-duration: 200ms;
+    color: white;
+}
+
+.Button-Secondary:active {
+    background-color: rgb(70, 70, 70);
+    transition-duration: 50ms;
+}
+
+.Button-Alert {
+    background-color: rgb(88, 44, 44);
+    transition-duration: 200ms;
+}
+
+.Button-Alert:hover {
+    background-color: rgb(255, 110, 110);
+    transition-duration: 200ms;
+    color: black;
+}
+
+.Button-Alert:active {
+    background-color: rgb(250, 255, 234);
+    transition-duration: 50ms;
+}
+
+/* Undo stack container styles */
+.undo-stack-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.3);
+    padding: 8px;
+    margin-top: 10px;
+    min-height: 150px;
+    max-height: 400px;
+}
+
+/* Improved undo stack item styles */
+.undo-stack-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-left-width: 3px;
+    border-left-color: rgba(120, 180, 255, 0.8);
+    transition-duration: 200ms;
+}
+
+.undo-stack-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition-duration: 200ms;
+}
+
+.undo-stack-item-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.undo-stack-item-icon {
+    font-size: 16px;
+    width: 24px;
+    -unity-text-align: middle-center;
+    margin-right: 8px;
+}
+
+.undo-stack-item-title {
+    flex-grow: 1;
+    font-size: 13px;
+    color: rgba(220, 220, 220, 0.9);
+    -unity-font-style: normal;
+}
+
+.undo-stack-item-time {
+    font-size: 11px;
+    color: rgba(150, 150, 150, 0.7);
+    margin-right: 8px;
+    width: 60px;
+    -unity-text-align: middle-right;
+}
+
+.undo-stack-item-button {
+    background-color: rgba(120, 180, 255, 0.2);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 0.5);
+    color: rgba(120, 180, 255, 1);
+    padding: 4px 8px;
+    font-size: 11px;
+    transition-duration: 150ms;
+}
+
+.undo-stack-item-button:hover {
+    background-color: rgba(120, 180, 255, 0.4);
+    border-color: rgba(120, 180, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 150ms;
+}
+
+.undo-stack-item-button:active {
+    background-color: rgba(120, 180, 255, 0.6);
+    transition-duration: 50ms;
+}
+
+/* Undo stack status styles */
+.undo-stack-status {
+    background-color: rgba(80, 120, 200, 0.15);
+    border-radius: 6px;
+    border-left-width: 4px;
+    border-left-color: rgba(80, 120, 200, 0.8);
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.undo-stack-status-text {
+    font-size: 12px;
+    color: rgba(180, 200, 255, 0.9);
+    -unity-font-style: normal;
+}
+
+/* Enhanced operation button styles */
+.undo-operation-button {
+    background-color: rgba(120, 180, 255, 0.2);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 0.4);
+    color: rgba(220, 220, 220, 0.9);
+    padding: 8px 12px;
+    transition-duration: 200ms;
+}
+
+.undo-operation-button:hover {
+    background-color: rgba(120, 180, 255, 0.35);
+    border-color: rgba(120, 180, 255, 0.7);
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 200ms;
+}
+
+.undo-operation-button:active {
+    transition-duration: 100ms;
+}
+
+.undo-operation-button:disabled {
+    background-color: rgba(80, 80, 80, 0.3);
+    border-color: rgba(100, 100, 100, 0.3);
+    color: rgba(120, 120, 120, 0.6);
+}
+
+/* Danger button styles */
+.danger-button {
+    background-color: rgba(255, 100, 100, 0.2);
+    border-color: rgba(255, 100, 100, 0.4);
+    color: rgba(255, 150, 150, 0.9);
+}
+
+.danger-button:hover {
+    background-color: rgba(255, 100, 100, 0.4);
+    border-color: rgba(255, 100, 100, 0.7);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Help information styles */
+.help-box {
+    background-color: rgba(100, 150, 255, 0.1);
+    border-radius: 6px;
+    border-left-width: 4px;
+    border-left-color: rgba(100, 150, 255, 0.8);
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.help-box-title {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(150, 200, 255, 1);
+    margin-bottom: 6px;
+}
+
+.help-box-content {
+    font-size: 11px;
+    color: rgba(200, 200, 200, 0.9);
+    white-space: normal;
+}
+
+/* Empty state styles */
+.empty-state {
+    -unity-text-align: middle-center;
+    color: rgba(128, 128, 128, 0.7);
+    -unity-font-style: italic;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.2);
+}
+
+/* Enhanced scroll view styles */
+.undo-stack-scroll {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.3);
+    padding: 6px;
+}
+
+.ScaleX2OnHover:hover {
+    transition-duration: 200ms;
+}
+
+/* AI Configuration Styles */
+.ai-config-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.config-group {
+    margin-bottom: 10px;
+}
+
+.config-group-foldout {
+    margin-bottom: 5px;
+}
+
+.config-item {
+    margin-bottom: 5px;
+}
+
+.save-config-btn {
+    margin-top: 10px;
+    height: 35px;
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+/* Tab styles */
+.tab-button {
+    transition-duration: 200ms;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    padding: 5px 10px;
+    -unity-font-style: normal;
+}
+
+.tab-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    transition-duration: 200ms;
+}
+
+.tab-button-active {
+    border-bottom-color: rgb(175, 232, 230);
+    background-color: rgba(175, 232, 230, 0.1);
+    color: rgb(175, 232, 230);
+    -unity-font-style: bold;
+}
+
+.tab-button-active:hover {
+    background-color: rgba(175, 232, 230, 0.2);
+    color: rgb(175, 232, 230);
+}
+
+/* Improved undo stack item styles - Fixed overlapping issues */
+.undo-stack-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-left-width: 3px;
+    border-left-color: rgba(100, 150, 255, 0.8);
+    transition-duration: 200ms;
+    min-height: 50px;
+}
+
+.undo-stack-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition-duration: 200ms;
+}
+
+.undo-stack-item-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.undo-stack-item-icon {
+    width: 65px;
+    min-width: 65px;
+    max-width: 65px;
+    height: 16px;
+    margin-right: 8px;
+    font-size: 11px;
+    color: rgba(120, 180, 255, 0.9);
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.undo-stack-item-title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(220, 220, 220, 0.9);
+    margin-right: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.undo-stack-item-time {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.7);
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    margin-right: 8px;
+    -unity-text-align: middle-right;
+    white-space: nowrap;
+}
+
+.undo-stack-item-index {
+    font-size: 10px;
+    color: rgba(150, 200, 255, 0.8);
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    -unity-text-align: middle-right;
+    white-space: nowrap;
+    -unity-font-style: italic;
+}
+
+.undo-stack-item-details {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.6);
+    margin-left: 73px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.undo-stack-item-button {
+    height: 24px;
+    font-size: 10px;
+    margin-left: 5px;
+    padding: 2px 8px;
+    background-color: rgba(175, 232, 230, 0.8);
+    color: black;
+    border-radius: 4px;
+    transition-duration: 200ms;
+}
+
+.undo-stack-item-button:hover {
+    background-color: rgba(175, 232, 230, 1);
+    transition-duration: 200ms;
+}

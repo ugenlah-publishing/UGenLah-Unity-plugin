@@ -1,0 +1,1469 @@
+/* ChatView 主要样式文件 */
+
+/* 主容器样式 */
+.chat-container {
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 400px;
+    min-width: 350px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+/* 顶部工具栏样式 */
+.chat-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: rgba(45, 45, 45, 0.9);
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(100, 100, 100, 0.3);
+    min-height: 50px;
+    overflow: visible;
+}
+
+/* Session标签页区域样式 */
+.session-tabs-area {
+    height: 34px;
+    background-color: var(--unity-colors-toolbar-background);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--unity-colors-helpbox-border);
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.session-tabs-scroll {
+    flex: 1;
+    overflow: hidden;
+}
+
+.session-tabs-container {
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    padding: 2px 4px 0 4px;
+}
+
+/* 添加标签页按钮 */
+.add-tab-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: transparent;
+    border-width: 0;
+    margin: 3px 8px 3px 4px;
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: var(--unity-colors-default-text-inactive);
+    transition-duration: 0.2s;
+}
+
+.add-tab-button:hover {
+    background-color: rgba(120, 180, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 0.8);
+    transition-duration: 0.15s;
+}
+
+.add-tab-button:active {
+    background-color: var(--unity-colors-helpbox-background-selected);
+}
+
+/* 专门的 Session History 按钮样式 */
+.session-history-icon {
+    background-color: rgba(100, 100, 100, 0.1);
+}
+
+.session-history-icon:hover {
+    background-color: rgba(120, 180, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(120, 180, 255, 0.8);
+    transition-duration: 0.15s;
+}
+
+.session-history-icon:active {
+    background-color: rgba(120, 180, 255, 0.4);
+}
+
+/* 新建按钮样式增强 */
+.new-session-btn {
+    background-color: var(--unity-colors-button-background);
+    border-color: var(--unity-colors-button-border);
+    color: var(--unity-colors-button-text);
+    -unity-font-style: bold;
+}
+
+.new-session-btn:hover {
+    background-color: var(--unity-colors-button-background-hover);
+}
+
+.new-session-btn:active {
+    background-color: var(--unity-colors-button-background-pressed);
+}
+
+.header-left {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.header-right {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* 更多操作按钮和下拉菜单样式 */
+.more-actions-container {
+    position: relative;
+    overflow: visible;
+}
+
+.more-actions-btn {
+    font-size: 18px;
+    -unity-font-style: bold;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    transition-duration: 0.2s;
+}
+
+.more-actions-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.more-actions-btn:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.more-actions-dropdown {
+    position: absolute;
+    min-width: 180px;
+    background-color: rgba(40, 40, 40, 1);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(150, 150, 150, 0.6);
+    display: none;
+    flex-direction: column;
+    padding: 4px 0;
+}
+
+.more-actions-dropdown.show {
+    display: flex;
+}
+
+.dropdown-content {
+    flex-direction: column;
+    padding: 4px 0;
+}
+
+.dropdown-item {
+    background-color: transparent;
+    border-width: 0;
+    padding: 8px 16px;
+    min-height: 32px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    -unity-text-align: middle-left;
+    justify-content: flex-start;
+    transition-duration: 0.15s;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.dropdown-item:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-separator {
+    height: 1px;
+    background-color: rgba(100, 100, 100, 0.3);
+    margin: 4px 8px;
+}
+
+
+
+.settings-action:hover {
+    background-color: rgba(100, 150, 255, 0.15);
+    color: rgba(150, 180, 255, 1);
+}
+
+.chat-title {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgba(220, 220, 220, 0.95);
+    margin-right: 12px;
+}
+
+
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    border-width: 0;
+    background-color: rgba(80, 80, 80, 0.5);
+    color: rgba(200, 200, 200, 0.8);
+    margin-left: 6px;
+    font-size: 14px;
+    transition-duration: 200ms;
+}
+
+.icon-button:hover {
+    background-color: rgba(120, 120, 120, 0.7);
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 200ms;
+}
+
+.icon-button:active {
+    transition-duration: 100ms;
+}
+
+/* 聊天历史区域样式 */
+.chat-history {
+    flex-grow: 1;        /* 外层容器可以填充空间 */
+    flex-shrink: 1;      /* 允许收缩 */
+    padding: 4px 4px 2px 4px;  /* 🎯 减少底部间距，优化与输入区的距离 */
+    background-color: rgba(25, 25, 25, 0.7);
+    max-height: 100%;
+    overflow: hidden;    /* 由滚动视图处理溢出 */
+}
+
+.messages-container {
+    flex-direction: column;
+    flex-grow: 0;        /* 不自动填充，根据内容大小 */
+    flex-shrink: 0;      /* 不自动收缩 */
+    padding: 0; /* 移除固定padding，由系统控制 */
+    width: 100%;
+    min-height: auto;    /* 根据内容自适应高度 */
+    max-height: none;    /* 不限制最大高度，让滚动视图处理 */
+    overflow: visible;
+    align-items: stretch;
+    justify-content: flex-start; /* 从顶部开始排列，不均匀分布 */
+}
+
+.welcome-message {
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgba(220, 220, 220, 0.9);
+    margin-bottom: 8px;
+    -unity-text-align: middle-center;
+}
+
+.welcome-subtext {
+    font-size: 14px;
+    color: rgba(150, 150, 150, 0.8);
+    -unity-text-align: middle-center;
+}
+
+/* 消息行容器 - 简洁对齐 */
+.message-row {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 0;    /* 完全由Sequential Rendering系统控制间距 */
+    align-items: flex-start;
+    padding: 0 16px;  /* 稍微增加左右内边距，保持可读性 */
+}
+
+/* 用户消息右对齐 */
+.message-row.user-message {
+    justify-content: flex-end;
+    padding-left: 25%;   /* 用户消息左侧留出更多空间 */
+    padding-right: 12px;
+}
+
+/* AI消息左对齐 */
+.message-row.ai-message {
+    justify-content: flex-start;
+    padding-left: 12px;
+    padding-right: 25%;  /* AI消息右侧留出更多空间 */
+}
+
+/* 系统消息居中 */
+.message-row.system-message {
+    justify-content: center;
+    padding: 0 8px;
+}
+
+/* 错误消息居中 */
+.message-row.error-message {
+    justify-content: center;
+    padding: 0 8px;
+}
+
+/* 消息容器样式 - 简洁隐形设计 */
+.message-bubble {
+    max-width: 100%;     /* 在行容器内的最大宽度 */
+    min-width: 250px;    /* 增加最小宽度，确保消息框有合适的视觉重量 */
+    padding: 4px 0;      /* 进一步减少上下间距，配合Sequential Rendering */
+    border-radius: 0;    /* 去掉圆角 */
+    background-color: transparent; /* 隐形背景 */
+    transition-duration: 200ms;
+    flex-shrink: 1;      /* 允许适当收缩 */
+    flex-grow: 0;        /* 不要自动扩展 */
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;   /* 允许内容可见 */
+    border-width: 0;     /* 去掉所有边框 */
+}
+
+.message-bubble:hover {
+    background-color: transparent; /* hover时也保持隐形 */
+    transition-duration: 200ms;
+}
+
+/* 用户消息容器 - 简洁样式 */
+.user-message .message-bubble {
+    background-color: transparent; /* 隐形背景 */
+    border-radius: 0;              /* 去掉圆角 */
+    color: rgba(255, 255, 255, 0.95); /* 保持文字可读性 */
+    border-width: 0;               /* 去掉边框 */
+}
+
+.user-message .message-bubble:hover {
+    background-color: transparent; /* hover时保持隐形 */
+}
+
+/* AI消息容器 - 简洁样式 */
+.ai-message .message-bubble {
+    background-color: transparent; /* 隐形背景 */
+    border-radius: 0;              /* 去掉圆角 */
+    color: rgba(255, 255, 255, 0.95); /* 保持文字可读性 */
+    border-width: 0;               /* 去掉所有边框，包括左边框 */
+}
+
+.ai-message .message-bubble:hover {
+    background-color: transparent; /* hover时保持隐形 */
+    border-left-color: transparent; /* 去掉hover时的边框颜色 */
+}
+
+/* 系统消息气泡 - 简洁透明样式 */
+.system-message .message-bubble {
+    background-color: transparent;
+    border-radius: 0;
+    border-width: 0;
+    border-color: transparent;
+    color: rgba(200, 200, 200, 0.95);
+}
+
+/* 错误消息气泡 */
+.error-message .message-bubble {
+    background-color: rgba(255, 59, 48, 0.15);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: rgba(255, 59, 48, 0.6);
+    color: rgba(255, 100, 100, 0.9);
+}
+
+/* AI纯文本消息 - 无气泡背景 */
+.ai-message.text-only .message-bubble {
+    background-color: transparent;
+    padding: 4px 0;      /* 与通用设置保持一致 */
+    border-radius: 0;
+}
+
+.ai-message.text-only .message-bubble:hover {
+    background-color: transparent;
+}
+
+.message-bubble.system-message {
+    border-left-width: 0;
+    border-left-color: transparent;
+    background-color: transparent;
+}
+
+/* 消息头部样式 */
+.message-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* 改为左对齐 */
+    margin-bottom: 6px;
+    display: flex; /* 始终显示，不使用悬浮效果 */
+}
+
+.message-header-left {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 12px; /* 与按钮区域保持适当间距 */
+    flex-grow: 0; /* 不扩展，让按钮紧跟在后面 */
+}
+
+/* 用户消息头部右对齐 */
+.user-message .message-header {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.user-message .message-header-left {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 0;     /* 隐藏头像 */
+    height: 0;    /* 隐藏头像 */
+    border-radius: 0;
+    background-color: transparent;
+    margin: 0;    /* 去掉间距 */
+    flex-shrink: 0;
+    align-items: center;
+    display: none; /* 完全隐藏头像元素 */
+    justify-content: center;
+}
+
+.message-avatar.user-avatar {
+    display: none; /* 隐藏用户头像 */
+}
+
+.message-avatar.ai-avatar {
+    display: none; /* 隐藏AI头像 */
+}
+
+.sender-name {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 4px;
+}
+
+.user-message .sender-name {
+    color: rgba(255, 255, 255, 1);
+    -unity-text-align: middle-right;
+}
+
+.ai-message .sender-name {
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-left;
+}
+
+.message-time {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 消息文本样式调整 */
+.message-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    white-space: normal;
+    min-width: auto;    /* 🔧 改为自动宽度，避免强制拉伸 */
+    margin: 0;
+    padding: 0;
+    -unity-text-align: upper-left; /* 🔧 强制左对齐 */
+    flex-grow: 0;    /* 🔧 不自动扩展，使用内容宽度 */
+    flex-shrink: 1;
+    width: auto;     /* 🔧 使用自动宽度，不强制100% */
+    min-height: auto;
+    overflow: visible;
+    /* 🔧 移除display:flex，Label不应该是flex容器 */
+}
+
+.user-message .message-text {
+    color: rgba(255, 255, 255, 1);
+    -unity-text-align: upper-left;
+}
+
+.ai-message .message-text {
+    color: rgba(255, 255, 255, 0.95);
+    -unity-text-align: upper-left;
+}
+
+.system-message .message-text {
+    color: rgba(200, 200, 200, 0.95);
+    -unity-text-align: upper-left;
+    -unity-font-style: normal;
+}
+
+.error-message .message-text {
+    color: rgba(255, 100, 100, 0.9);
+    -unity-text-align: middle-center;
+    -unity-font-style: italic;
+}
+
+/* AI纯文本消息的文本样式 */
+.ai-message.text-only .message-text {
+    color: rgba(220, 220, 220, 0.95);
+    font-size: 14px;
+}
+
+.message-actions {
+    flex-direction: row;
+    opacity: 1;  /* 始终显示，不使用悬浮效果 */
+    justify-content: flex-start;  /* 靠左对齐 */
+    align-items: center;
+    margin-left: 0;  /* 确保靠最左边 */
+}
+
+/* 聊天复制按钮的专用样式 - 避免与其他action-button冲突 */
+.chat-copy-button {
+    width: auto;
+    height: 22px;
+    min-width: 60px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(120, 120, 120, 0.3);
+    background-color: rgba(70, 70, 70, 0.8);
+    color: rgba(220, 220, 220, 0.9);
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 12px;
+    padding: 4px 10px;
+    transition-duration: 150ms;
+    align-items: center;
+    justify-content: center;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+/* 修复Unity Button内部文本元素的样式问题 */
+.chat-copy-button .unity-button__text {
+    overflow: visible;
+    -unity-text-overflow: clip;
+}
+
+.chat-copy-button:hover {
+    background-color: rgba(120, 120, 120, 0.9);
+    border-color: rgba(150, 150, 150, 0.6);
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 150ms;
+}
+
+/* 消息内容样式 */
+.message-content {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    min-width: 220px;    /* 内容区域的最小宽度，配合message-bubble的250px */
+    min-height: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+/* 增强内容处理容器样式 */
+.processed-content-container {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    min-width: 200px;    /* 处理后内容的最小宽度，确保短内容也有合理显示 */
+    min-height: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+    display: flex;
+}
+
+.code-blocks {
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+/* 附件区域样式 */
+.attachments-area {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: rgba(60, 60, 60, 0.4);
+    border-radius: 6px;
+}
+
+.attachments-scroll {
+    max-height: 100px;
+}
+
+.attachments-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* 函数调用区域样式 */
+.function-calls-area {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: rgba(80, 60, 40, 0.4);
+    border-radius: 6px;
+    border-left-width: 3px;
+    border-left-color: rgba(255, 180, 100, 0.8);
+}
+
+.function-calls-label {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgba(255, 200, 120, 0.9);
+    margin-bottom: 8px;
+}
+
+.function-calls-container {
+    flex-direction: column;
+}
+
+/* 函数调用组件样式 */
+.function-call {
+    background-color: rgba(70, 50, 30, 0.6);
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-left-width: 2px;
+    border-left-color: rgba(255, 180, 100, 0.6);
+}
+
+.function-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.function-info {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.function-name {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgba(255, 200, 120, 0.9);
+    margin-right: 8px;
+}
+
+.function-status {
+    font-size: 11px;
+    color: rgba(200, 200, 200, 0.7);
+    background-color: rgba(255, 180, 100, 0.2);
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.function-actions {
+    flex-direction: row;
+}
+
+.approve-button, .reject-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border-width: 0;
+    margin-left: 4px;
+    font-size: 12px;
+    transition-duration: 150ms;
+}
+
+.approve-button {
+    background-color: rgba(100, 200, 100, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.reject-button {
+    background-color: rgba(200, 100, 100, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+.progress-area {
+    margin-top: 8px;
+    align-items: center;
+}
+
+.function-progress {
+    width: 100%;
+    height: 4px;
+    margin-bottom: 4px;
+}
+
+.progress-text {
+    font-size: 11px;
+    color: rgba(150, 150, 150, 0.7);
+}
+
+/* 消息状态样式 */
+.message-status {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;       /* 🎯 移除上边距，因为状态指示器已隐藏 */
+    padding-top: 0;      /* 🎯 移除上内边距，因为状态指示器已隐藏 */
+    border-top-width: 0; /* 🎯 移除边框，因为状态指示器已隐藏 */
+    border-top-color: transparent;
+    height: 0;           /* 🎯 完全隐藏状态区域 */
+    overflow: hidden;    /* 🎯 确保内容不显示 */
+}
+
+.status-indicator {
+    width: 0;      /* 隐藏状态指示器圆球 */
+    height: 0;     /* 隐藏状态指示器圆球 */
+    border-radius: 0;
+    margin-right: 0;
+    background-color: transparent;
+    display: none; /* 完全隐藏圆球 */
+}
+
+.status-indicator.sending {
+    display: none; /* 隐藏发送状态圆球 */
+}
+
+.status-indicator.sent {
+    display: none; /* 隐藏发送完成状态圆球 */
+}
+
+.status-indicator.error {
+    display: none; /* 隐藏错误状态圆球 */
+}
+
+.status-text {
+    font-size: 10px;
+    color: rgba(150, 150, 150, 0.7);
+}
+
+/* 反馈区域样式 */
+.feedback-area {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* 改为左对齐 */
+    margin-top: 2px;     /* 🎯 进一步减少上边距，优化紧凑度 */
+    padding-top: 2px;    /* 🎯 进一步减少上内边距，优化紧凑度 */
+    border-top-width: 0;        /* 移除上方分界线 */
+    border-top-color: transparent;
+}
+
+/* 上下文区域样式 */
+.context-area {
+    padding: 8px 16px;
+    background-color: rgba(50, 50, 50, 0.7);
+    border-top-width: 1px;
+    border-top-color: rgba(100, 100, 100, 0.3);
+    max-height: 120px;
+}
+
+.context-label {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(200, 200, 200, 0.8);
+    margin-bottom: 6px;
+}
+
+.context-scroll {
+    max-height: 80px;
+}
+
+.context-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* 上下文项目样式 */
+.context-item {
+    margin-right: 8px;
+    margin-bottom: 6px;
+    background-color: rgba(70, 70, 70, 0.8);
+    border-radius: 6px;
+    padding: 6px;
+    border-left-width: 2px;
+    border-left-color: rgba(120, 180, 255, 0.8);
+    min-width: 180px;
+    max-width: 250px;
+    flex-direction: column;
+}
+
+.item-container {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.thumbnail-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.type-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: rgba(120, 180, 255, 0.8);
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+}
+
+.type-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(80, 80, 80, 0.9);
+    border-radius: 2px;
+}
+
+.type-icon-text {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.9);
+    -unity-text-align: middle-center;
+}
+
+.type-label {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background-color: rgba(120, 180, 255, 0.9);
+    color: white;
+    font-size: 8px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    -unity-font-style: bold;
+}
+
+.action-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top-width: 1px;
+    border-top-color: rgba(100, 100, 100, 0.3);
+}
+
+.preview-button {
+    background-color: rgba(80, 140, 200, 0.7);
+    border-color: rgba(80, 140, 200, 0.9);
+    color: white;
+}
+
+.preview-button:hover {
+    background-color: rgba(100, 160, 220, 0.9);
+    transition-duration: 150ms;
+}
+
+.context-item-content {
+    flex-direction: row;
+    align-items: center;
+}
+
+.file-icon {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(120, 180, 255, 0.8);
+    border-radius: 4px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.file-info {
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.file-name {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(220, 220, 220, 0.9);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+.file-details {
+    font-size: 10px;
+    color: rgba(180, 180, 180, 0.8);
+    margin-bottom: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.file-path {
+    font-size: 9px;
+    color: rgba(150, 150, 150, 0.7);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.file-size {
+    font-size: 9px;
+    color: rgba(120, 120, 120, 0.8);
+}
+
+.remove-button {
+    background-color: rgba(200, 100, 100, 0.7);
+    border-color: rgba(200, 100, 100, 0.9);
+    color: white;
+}
+
+.remove-button:hover {
+    background-color: rgba(220, 120, 120, 0.9);
+    transition-duration: 150ms;
+}
+
+.preview-area {
+    margin-top: 6px;
+    padding: 6px;
+    background-color: rgba(40, 40, 40, 0.6);
+    border-radius: 4px;
+}
+
+.preview-text {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.8);
+    white-space: normal;
+    max-height: 60px;
+    overflow: hidden;
+}
+
+/* 输入区域样式 */
+.input-area {
+    flex-direction: column;
+    flex-shrink: 0;      /* 防止输入区域被压缩 */
+    padding: 6px 16px 12px 16px;  /* 🎯 减少顶部间距，优化与聊天区的距离 */
+    background-color: rgba(40, 40, 40, 0.9);
+    border-top-width: 0;    /* 去掉上面的分界线 */
+    border-top-color: transparent;
+    max-height: 200px;   /* 限制输入区域最大高度 */
+    overflow: visible;   /* 允许下拉菜单等元素显示 */
+}
+
+.drag-drop-area {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(120, 180, 255, 0.1);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgba(120, 180, 255, 0.4);
+
+    margin-bottom: 12px;
+}
+
+.drag-drop-text {
+    font-size: 14px;
+    color: rgba(120, 180, 255, 0.8);
+    -unity-font-style: italic;
+}
+
+.input-container {
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: rgba(60, 60, 60, 0.8);
+    border-radius: 20px;
+    padding: 6px;
+    margin-bottom: 6px;
+}
+
+.input-left {
+    margin-right: 8px;
+}
+
+.input-center {
+    flex-grow: 1;
+    margin: 0 8px;
+}
+
+.input-right {
+    margin-left: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.attach-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    border-width: 1px;
+    border-color: rgba(88, 166, 255, 0.4);
+    background-color: rgba(88, 166, 255, 0.15);
+    color: rgba(88, 166, 255, 1);
+    font-size: 20px;
+    -unity-font-style: bold;
+    transition-duration: 200ms;
+    align-items: center;
+    justify-content: center;
+}
+
+.attach-button:hover {
+    background-color: rgba(88, 166, 255, 0.25);
+    border-color: rgba(88, 166, 255, 0.6);
+    color: rgba(88, 166, 255, 1);
+    transition-duration: 200ms;
+}
+
+.attach-button:active {
+    background-color: rgba(88, 166, 255, 0.35);
+}
+
+.message-input {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: rgba(220, 220, 220, 0.9);
+    min-height: 20px;
+    max-height: 120px;
+}
+
+.message-input:focus {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.message-input .unity-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    color: rgba(220, 220, 220, 0.9);
+}
+
+.send-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    border-width: 0;
+    background-color: rgba(0, 122, 255, 0.9);
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    -unity-font-style: bold;
+    transition-duration: 200ms;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-button:hover {
+    background-color: rgba(0, 122, 255, 1);
+    transition-duration: 200ms;
+}
+
+.send-button:active {
+    background-color: rgba(0, 100, 220, 1);
+    transition-duration: 100ms;
+}
+
+.send-button:disabled {
+    background-color: rgba(80, 80, 80, 0.5);
+    color: rgba(150, 150, 150, 0.6);
+}
+
+.input-hints {
+    margin-top: 4px;
+    align-items: center;
+}
+
+.hint-text {
+    font-size: 10px;
+    color: rgba(120, 120, 120, 0.8);
+    -unity-text-align: middle-center;
+    -unity-font-style: italic;
+}
+
+/* 正在输入指示器样式 */
+.typing-indicator {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-top-width: 1px;
+    border-top-color: rgba(100, 100, 100, 0.3);
+}
+
+/* 输入区域内的AI thinking指示器样式 */
+.input-typing-indicator {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background-color: rgba(60, 60, 60, 0.6);
+    border-radius: 12px;
+    border-width: 0;
+    border-top-width: 0;
+    border-top-color: transparent;
+}
+
+.typing-dots {
+    flex-direction: row;
+    margin-right: 8px;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgba(120, 180, 255, 0.8);
+    margin: 0 2px;
+    /* Animation would be added via C# */
+}
+
+.typing-text {
+    font-size: 12px;
+    color: rgba(150, 150, 150, 0.8);
+    -unity-font-style: italic;
+}
+
+/* 主题变化 - 浅色主题 */
+.chat-container.light-theme {
+    background-color: rgba(250, 250, 250, 0.95);
+}
+
+.chat-container.light-theme .chat-header {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.chat-container.light-theme .chat-title {
+    color: rgba(50, 50, 50, 0.95);
+}
+
+.chat-container.light-theme .chat-history {
+    background-color: rgba(245, 245, 245, 0.7);
+}
+
+.chat-container.light-theme .message-bubble {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(50, 50, 50, 0.9);
+}
+
+.chat-container.light-theme .message-text {
+    color: rgba(50, 50, 50, 0.9);
+}
+
+.chat-container.light-theme .input-area {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.chat-container.light-theme .input-container {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* USS 不支持媒体查询，使用统一的响应式样式 */
+
+/* 滚动条样式 */
+.chat-history {
+    -unity-overflow-clip-box: content-box;
+}
+
+.chat-history .unity-scroll-view__vertical-scroller {
+    width: 8px;
+    background-color: rgba(100, 100, 100, 0.2);
+    border-radius: 4px;
+}
+
+.chat-history .unity-scroll-view__vertical-scroller .unity-scroller__slider {
+    background-color: rgba(120, 180, 255, 0.6);
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.chat-history .unity-scroll-view__vertical-scroller .unity-scroller__slider:hover {
+    background-color: rgba(140, 200, 255, 0.8);
+}
+
+/* 确保滚动视图内容从顶部开始排布 */
+.chat-history .unity-scroll-view__content-container {
+    flex-grow: 0;        /* 不自动填充空间，避免均匀分布消息 */
+    flex-shrink: 0;      /* 不自动收缩 */
+    max-width: 100%;
+    min-height: auto;    /* 根据内容自适应高度 */
+    flex-direction: column;    /* 确保垂直排列 */
+    justify-content: flex-start;  /* 强制从顶部开始 */
+    align-items: stretch;      /* 拉伸到容器宽度 */
+}
+
+/* ==============================================
+   附件界面样式 (Attachment Styles)
+   ============================================== */
+
+/* 附件项目容器 */
+.context-item {
+    margin: 4px;
+    border-radius: 8px;
+    background-color: rgba(40, 40, 40, 0.8);
+    border-width: 1px;
+    border-color: rgba(80, 80, 80, 0.5);
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+.context-item:hover {
+    background-color: rgba(50, 50, 50, 0.9);
+    border-color: rgba(100, 100, 100, 0.7);
+    transition-duration: 200ms;
+}
+
+.item-container {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    min-height: 60px;
+}
+
+/* 缩略图容器 */
+.thumbnail-container {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 类型边框 - 基础样式 */
+.type-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgba(100, 100, 100, 0.5);
+}
+
+/* 不同类型的颜色边框 */
+.type-border.type-code {
+    border-color: rgba(0, 122, 255, 0.8); /* 蓝色 - 代码文件 */
+}
+
+.type-border.type-image {
+    border-color: rgba(255, 149, 0, 0.8); /* 橙色 - 图像文件 */
+}
+
+.type-border.type-scene {
+    border-color: rgba(76, 217, 100, 0.8); /* 绿色 - Unity场景 */
+}
+
+.type-border.type-prefab {
+    border-color: rgba(255, 59, 48, 0.8); /* 红色 - Prefab */
+}
+
+.type-border.type-asset {
+    border-color: rgba(175, 82, 222, 0.8); /* 紫色 - Unity资源 */
+}
+
+.type-border.type-directory {
+    border-color: rgba(255, 204, 0, 0.8); /* 黄色 - 文件夹 */
+}
+
+.type-border.type-reference {
+    border-color: rgba(90, 200, 250, 0.8); /* 浅蓝色 - 引用 */
+}
+
+.type-border.type-file {
+    border-color: rgba(142, 142, 147, 0.8); /* 灰色 - 通用文件 */
+}
+
+/* 缩略图图片 */
+.thumbnail-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 类型图标 */
+.type-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: rgba(30, 30, 30, 0.9);
+}
+
+.type-icon-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+/* 类型标签 */
+.type-label {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 8px;
+    padding: 1px 3px;
+    border-radius: 3px;
+    -unity-font-style: bold;
+    border-width: 1px;
+    border-color: rgba(60, 60, 60, 0.8);
+}
+
+/* 文件信息区域 */
+.file-info {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.file-name {
+    font-size: 13px;
+    color: rgba(240, 240, 240, 0.95);
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+    overflow: hidden;
+
+}
+
+.file-details {
+    font-size: 11px;
+    color: rgba(180, 180, 180, 0.8);
+    margin-bottom: 2px;
+}
+
+.file-path {
+    font-size: 9px;
+    color: rgba(140, 140, 140, 0.7);
+    -unity-font-style: italic;
+    overflow: hidden;
+
+}
+
+/* 操作按钮区域 */
+.action-buttons {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.preview-button {
+    background-color: rgba(0, 122, 255, 0.3);
+    border-color: rgba(0, 122, 255, 0.6);
+}
+
+.preview-button:hover {
+    background-color: rgba(0, 122, 255, 0.6);
+    border-color: rgba(0, 122, 255, 0.8);
+}
+
+.remove-button {
+    background-color: rgba(255, 59, 48, 0.3);
+    border-color: rgba(255, 59, 48, 0.6);
+}
+
+.remove-button:hover {
+    background-color: rgba(255, 59, 48, 0.6);
+    border-color: rgba(255, 59, 48, 0.8);
+}
+
+/* 预览区域 */
+.preview-area {
+    border-top-width: 1px;
+    border-top-color: rgba(80, 80, 80, 0.5);
+    padding: 8px;
+    background-color: rgba(20, 20, 20, 0.7);
+}
+
+.preview-scroll {
+    max-height: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.preview-content {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.9);
+
+}
+
+/* 上下文区域整体样式 */
+.context-area {
+    background-color: rgba(25, 25, 25, 0.9);
+    border-top-width: 1px;
+    border-top-color: rgba(80, 80, 80, 0.5);
+    padding: 8px;
+    max-height: 200px;
+}
+
+.context-label {
+    font-size: 12px;
+    color: rgba(180, 180, 180, 0.9);
+    margin-bottom: 8px;
+    -unity-font-style: bold;
+}
+
+.context-scroll {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.context-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* 取消按钮样式 */
+.cancel-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    border-width: 0;
+    background-color: rgba(220, 60, 60, 0.9);
+    color: white;
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-left: 4px;
+    transition-duration: 200ms;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-button:hover {
+    background-color: rgba(240, 70, 70, 1);
+    transition-duration: 200ms;
+}
+
+.cancel-button:active {
+    background-color: rgba(200, 50, 50, 1);
+    transition-duration: 100ms;
+}

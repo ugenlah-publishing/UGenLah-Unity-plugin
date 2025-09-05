@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns:engine="UnityEngine.UIElements" 
+            xmlns:editor="UnityEditor.UIElements" 
+            xsi:schemaLocation="UnityEngine.UIElements ../../../UIElementsSchema/UnityEngine.UIElements.xsd 
+                               UnityEditor.UIElements ../../../UIElementsSchema/UnityEditor.UIElements.xsd"
+            xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+
+    <!-- Code Block Component Template -->
+    <engine:VisualElement name="CodeBlockContainer" class="bubble-container code-bubble">
+        
+        <!-- Code Block Header -->
+        <engine:VisualElement name="CodeBlockHeader" class="code-block-header">
+            
+            <!-- Left Section: Language and Info -->
+            <engine:VisualElement name="CodeHeaderLeft" class="code-header-left">
+                <engine:Label name="LanguageLabel" class="language-label" text="CODE" />
+                <engine:Label name="LineCountLabel" class="line-count-label" text="0 lines" />
+            </engine:VisualElement>
+            
+            <!-- Right Section: Actions -->
+            <engine:VisualElement name="CodeActions" class="code-actions">
+                <engine:Button name="CopyCodeButton" text="Copy" class="code-action-button" tooltip="Copy Code to Clipboard" />
+                <engine:Button name="RunCodeButton" text="Run" class="code-action-button" tooltip="Execute Code" style="display: none;" />
+                <engine:Button name="ExpandCodeButton" text="Expand" class="code-action-button" tooltip="Expand Code View" />
+                <engine:Button name="CollapseCodeButton" text="▼" class="code-collapse-button" tooltip="Collapse/Expand Code" />
+            </engine:VisualElement>
+            
+        </engine:VisualElement>
+        
+        <!-- Code Content Area -->
+        <engine:ScrollView name="CodeContent" class="code-content code-content-area">
+            <engine:Label name="CodeText" class="code-text" text="" />
+            
+            <!-- Streaming Cursor (hidden by default) -->
+            <engine:VisualElement name="StreamingCursor" class="code-streaming-cursor" style="display: none;" />
+        </engine:ScrollView>
+        
+        <!-- Code Footer (optional, for additional info) -->
+        <engine:VisualElement name="CodeFooter" class="code-footer" style="display: none;">
+            <engine:Label name="ExecutionResult" class="execution-result" text="" />
+        </engine:VisualElement>
+        
+    </engine:VisualElement>
+    
+</engine:UXML>

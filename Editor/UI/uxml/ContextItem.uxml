@@ -1,0 +1,44 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/MaterialIcons.uss" />
+    <!-- 附件项目模板 -->
+    <ui:VisualElement name="ContextItem" class="context-item">
+        <ui:VisualElement name="ItemContainer" class="item-container">
+            <!-- 缩略图/图标区域 -->
+            <ui:VisualElement name="ThumbnailContainer" class="thumbnail-container">
+                <!-- 类型指示边框 -->
+                <ui:VisualElement name="TypeBorder" class="type-border" />
+                
+                <!-- 缩略图图片 -->
+                <ui:VisualElement name="ThumbnailImage" class="thumbnail-image" />
+                
+                <!-- 文件类型图标（当没有缩略图时显示） -->
+                <ui:VisualElement name="TypeIcon" class="type-icon">
+                    <ui:Label name="TypeIconText" text="FILE" class="type-icon-text" />
+                </ui:VisualElement>
+                
+                <!-- 类型标签 -->
+                <ui:Label name="TypeLabel" text="CS" class="type-label" />
+            </ui:VisualElement>
+            
+            <!-- 文件信息区域 -->
+            <ui:VisualElement name="FileInfo" class="file-info">
+                <ui:Label name="FileName" text="script.cs" class="file-name" />
+                <ui:Label name="FileDetails" text="C# Script • 2.5 KB" class="file-details" />
+                <ui:Label name="FilePath" text="/Assets/Scripts/" class="file-path" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- 操作按钮区域（移到底部避免遮盖信息） -->
+        <ui:VisualElement name="ActionButtons" class="action-buttons">
+            <ui:Button name="PreviewButton" text="\ue8f4 Preview" parse-escape-sequences="true" class="action-button preview-button" tooltip="Preview Content" />
+            <ui:Button name="RemoveButton" text="\ue5cd Remove" parse-escape-sequences="true" class="action-button remove-button" tooltip="Remove Attachment" />
+        </ui:VisualElement>
+        
+        <!-- 预览区域（展开时显示） -->
+        <ui:VisualElement name="PreviewArea" class="preview-area" style="display: none;">
+            <ui:ScrollView name="PreviewScroll" class="preview-scroll">
+                <ui:Label name="PreviewContent" text="" class="preview-content" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

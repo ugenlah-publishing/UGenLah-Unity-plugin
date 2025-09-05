@@ -1,0 +1,665 @@
+/* =============================================================================
+   Enhanced Code Analysis Renderer Styles
+   提供增强代码分析渲染器的完整UI样式定义
+   ============================================================================= */
+
+/* =============================================================================
+   基础容器样式
+   ============================================================================= */
+
+/* 流式代码块样式 - 继承enhanced-code-block的完整样式 */
+.streaming-codeblock {
+    /* 流式阶段的特殊标记，样式完全继承enhanced-code-block */
+    opacity: 0.95; /* 轻微透明度表示正在流式处理 */
+}
+
+/* 增强型代码块样式 */
+.enhanced-code-block {
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 6px;
+    margin: 8px 0;
+    overflow: hidden;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* 流式代码内容样式 */
+.streaming-code-content {
+    transition: all 0.2s ease-in-out;
+}
+
+/* 最终代码内容样式 */
+.final-code-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 可选择文本样式 - 确保TextField看起来像Label */
+.selectable-text {
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    -unity-text-outline-width: 0;
+}
+
+/* 可选择文本的输入区域样式 */
+.selectable-text > .unity-text-field__input {
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    -unity-text-outline-width: 0;
+    cursor: text;
+}
+
+/* 选择状态的样式 */
+.selectable-text > .unity-text-field__input:focus {
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.enhanced-code-block-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(40, 40, 40, 0.9);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+    min-height: 36px;
+}
+
+.enhanced-code-content {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+    max-height: 600px;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-top: none;
+}
+
+.enhanced-code-content-area {
+    flex-grow: 1;
+}
+
+/* =============================================================================
+   头部信息区域
+   ============================================================================= */
+
+.code-header-left {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* 增强的语言标签样式 - 用于代码分析 */
+.language-label {
+    background-color: rgba(0, 120, 215, 0.8);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 增强版本的特殊样式 */
+.enhanced-language-label {
+    background-color: rgba(138, 43, 226, 0.8);
+    border-width: 2px;
+    border-color: rgba(138, 43, 226, 0.6);
+    /* Unity UIElements不支持box-shadow，使用边框代替 */
+}
+
+.code-stats {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stat-label {
+    font-size: 10px;
+    color: rgba(200, 200, 200, 0.8);
+    margin-right: 12px;
+    padding: 2px 6px;
+    background-color: rgba(60, 60, 60, 0.6);
+    border-radius: 3px;
+    border: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+.stat-label.error-stat {
+    background-color: rgba(220, 50, 50, 0.3);
+    color: rgba(255, 180, 180, 1);
+    border-color: rgba(220, 50, 50, 0.5);
+}
+
+/* =============================================================================
+   操作按钮区域
+   ============================================================================= */
+
+.enhanced-code-actions {
+    flex-direction: row;
+    align-items: center;
+}
+
+.code-action-button {
+    background-color: rgba(70, 70, 70, 0.8);
+    border-color: rgba(100, 100, 100, 0.4);
+    border-width: 1px;
+    border-radius: 4px;
+    color: rgba(220, 220, 220, 1);
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-left: 4px;
+    min-width: 60px;
+    height: 24px;
+    transition-property: background-color, border-color;
+    transition-duration: 0.15s;
+}
+
+.code-action-button:hover {
+    background-color: rgba(90, 90, 90, 0.9);
+    border-color: rgba(120, 120, 120, 0.6);
+    color: rgba(240, 240, 240, 1);
+}
+
+.code-action-button:active {
+    background-color: rgba(50, 50, 50, 0.9);
+    border-color: rgba(80, 80, 80, 0.8);
+}
+
+.code-collapse-button {
+    background-color: transparent;
+    border-color: rgba(100, 100, 100, 0.3);
+    border-width: 1px;
+    border-radius: 3px;
+    color: rgba(180, 180, 180, 1);
+    font-size: 12px;
+    padding: 2px 8px;
+    margin-left: 6px;
+    width: 24px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.code-collapse-button:hover {
+    background-color: rgba(80, 80, 80, 0.5);
+    color: rgba(220, 220, 220, 1);
+}
+
+/* =============================================================================
+   代码内容显示区域
+   ============================================================================= */
+
+.analyzed-code-scroll {
+    flex-grow: 1;
+    max-height: 550px;
+}
+
+.analyzed-code-container {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.line-numbers {
+    background-color: rgba(40, 40, 40, 0.8);
+    border-right: 1px solid rgba(100, 100, 100, 0.3);
+    padding: 12px 8px;
+    min-width: 50px;
+    flex-shrink: 0;
+}
+
+.line-number {
+    color: rgba(150, 150, 150, 0.7);
+    font-size: 12px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    text-align: right;
+    padding: 1px 0;
+    line-height: 18px;
+    min-height: 18px;
+    user-select: none;
+}
+
+.line-number:hover {
+    color: rgba(180, 180, 180, 0.9);
+    background-color: rgba(60, 60, 60, 0.3);
+}
+
+/* =============================================================================
+   代码行和内容
+   ============================================================================= */
+
+.highlighted-code-content {
+    flex-grow: 1;
+    padding: 12px 16px;
+    background-color: rgba(30, 30, 30, 0.95);
+}
+
+.analyzed-line {
+    min-height: 18px;
+    line-height: 18px;
+    padding: 1px 0;
+    margin: 0;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.analyzed-line.line-with-error {
+    background-color: rgba(220, 50, 50, 0.1);
+    border-left: 3px solid rgba(220, 50, 50, 0.6);
+    padding-left: 4px;
+    margin-left: -4px;
+}
+
+.analyzed-line.line-with-error:hover {
+    background-color: rgba(220, 50, 50, 0.15);
+}
+
+.analyzed-line.folding-region {
+    background-color: rgba(100, 100, 100, 0.05);
+}
+
+.analyzed-line:hover {
+    background-color: rgba(60, 60, 60, 0.2);
+}
+
+/* =============================================================================
+   语法高亮样式
+   ============================================================================= */
+
+.code-text {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    white-space: pre;
+    line-height: 14px;  /* 减少行高 */
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+/* 简化的代码容器样式 */
+.simple-code-container {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 6px;
+    padding: 8px 12px;  /* 减少内边距 */
+    margin: 4px 0;      /* 减少外边距 */
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.simple-language-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: rgba(0, 120, 215, 0.8);
+    margin-bottom: 4px;  /* 减少下边距 */
+}
+
+.simple-code-content {
+    flex-direction: column;
+}
+
+.simple-code-line {
+    margin: 0;
+    padding: 0;
+    line-height: 14px;  /* 减少行高 */
+}
+
+.simple-plain-code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(220, 220, 220, 1);
+    white-space: pre-wrap;
+    line-height: 14px;  /* 减少行高 */
+    margin: 0;
+    padding: 0;
+}
+
+/* VSCode风格的C#语法高亮颜色 */
+/* 关键字 - VSCode蓝色 #569cd6 */
+.syntax-keyword {
+    color: rgb(86, 156, 214) !important;
+    font-weight: bold;
+}
+
+/* 字符串 - VSCode橙色 #ce9178 */
+.syntax-string {
+    color: rgb(206, 145, 120) !important;
+}
+
+/* 注释 - VSCode绿色 #6a9955 */
+.syntax-comment {
+    color: rgb(106, 153, 85) !important;
+    font-style: italic;
+}
+
+/* 数字 - VSCode浅绿色 #b5cea8 */
+.syntax-number {
+    color: rgb(181, 206, 168) !important;
+}
+
+/* 操作符 - VSCode白色 #d4d4d4 */
+.syntax-operator {
+    color: rgb(212, 212, 212) !important;
+}
+
+/* 类型 - VSCode青色 #4ec9b0 */
+.syntax-type {
+    color: rgb(78, 201, 176) !important;
+    font-weight: bold;
+}
+
+/* 函数/方法 - VSCode黄色 #dcdcaa */
+.syntax-function {
+    color: rgb(220, 220, 170) !important;
+    font-weight: bold;
+}
+
+/* 变量/标识符 - VSCode淡蓝色 #9cdcfe */
+.syntax-variable,
+.syntax-identifier {
+    color: rgb(156, 220, 254) !important;
+}
+
+/* 常量 - VSCode淡蓝色 #9cdcfe */
+.syntax-constant {
+    color: rgb(156, 220, 254) !important;
+    font-weight: bold;
+}
+
+/* 预处理器 - VSCode紫色 #c586c0 */
+.syntax-preprocessor {
+    color: rgb(197, 134, 192) !important;
+    font-weight: bold;
+}
+
+/* 标点符号 - VSCode白色 #d4d4d4 */
+.syntax-punctuation {
+    color: rgb(212, 212, 212) !important;
+}
+
+/* 普通文本 - VSCode白色 #d4d4d4 */
+.syntax-text {
+    color: rgb(212, 212, 212) !important;
+}
+
+/* 错误 - VSCode红色 #ff1c1c */
+.syntax-error {
+    color: rgb(255, 28, 28) !important;
+    background-color: rgba(255, 28, 28, 0.2);
+    text-decoration: underline;
+}
+
+/* =============================================================================
+   MiniMap样式
+   ============================================================================= */
+
+.code-minimap {
+    background-color: rgba(50, 50, 50, 0.8);
+    border-left: 1px solid rgba(100, 100, 100, 0.3);
+    width: 80px;
+    flex-shrink: 0;
+    padding: 8px;
+}
+
+.minimap-content {
+    color: rgba(150, 150, 150, 0.8);
+    font-size: 10px;
+    text-align: center;
+}
+
+/* =============================================================================
+   流式渲染样式
+   ============================================================================= */
+
+.enhanced-code-streaming {
+    animation: streaming-pulse 1.5s ease-in-out infinite;
+}
+
+.enhanced-streaming-cursor {
+    width: 2px;
+    height: 18px;
+    background-color: rgb(0, 120, 215);
+    animation: cursor-blink 1s ease-in-out infinite;
+    margin-left: 2px;
+}
+
+@keyframes streaming-pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1.0; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes cursor-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* =============================================================================
+   错误和回退显示
+   ============================================================================= */
+
+.code-analysis-error {
+    color: rgb(255, 100, 100);
+    font-size: 12px;
+    padding: 8px 12px;
+    background-color: rgba(255, 50, 50, 0.1);
+    border-left: 3px solid rgb(255, 50, 50);
+    margin: 4px 0;
+}
+
+.fallback-code-display {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.fallback-code-text {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(200, 200, 200, 1);
+    white-space: pre-wrap;
+    line-height: 18px;
+}
+
+/* =============================================================================
+   响应式和主题适配
+   ============================================================================= */
+
+/* 浅色主题适配 */
+.unity-theme-light .streaming-codeblock {
+    opacity: 0.95; /* 浅色主题下也使用透明度标记流式状态 */
+}
+
+.unity-theme-light .enhanced-code-block {
+    background-color: rgba(250, 250, 250, 0.95);
+    border-color: rgba(160, 160, 160, 0.5);
+}
+
+.unity-theme-light .streaming-code-content {
+    color: rgba(40, 40, 40, 0.9);
+}
+
+.unity-theme-light .final-code-content {
+    color: rgba(40, 40, 40, 0.9);
+}
+
+/* 浅色主题下的可选择文本样式 */
+.unity-theme-light .selectable-text {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.unity-theme-light .selectable-text > .unity-text-field__input {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(40, 40, 40, 0.9);
+}
+
+.unity-theme-light .selectable-text > .unity-text-field__input:focus {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.unity-theme-light .enhanced-code-block-header {
+    background-color: rgba(240, 240, 240, 0.9);
+    border-bottom-color: rgba(160, 160, 160, 0.5);
+}
+
+.unity-theme-light .enhanced-code-content {
+    background-color: rgba(250, 250, 250, 0.95);
+    border-color: rgba(160, 160, 160, 0.5);
+}
+
+.unity-theme-light .line-numbers {
+    background-color: rgba(230, 230, 230, 0.8);
+    border-right-color: rgba(160, 160, 160, 0.5);
+}
+
+.unity-theme-light .line-number {
+    color: rgba(100, 100, 100, 0.8);
+}
+
+.unity-theme-light .highlighted-code-content {
+    background-color: rgba(250, 250, 250, 0.95);
+}
+
+.unity-theme-light .code-text {
+    color: rgba(50, 50, 50, 1);
+}
+
+.unity-theme-light .language-label {
+    background-color: rgba(0, 100, 180, 0.8);
+}
+
+.unity-theme-light .stat-label {
+    background-color: rgba(220, 220, 220, 0.8);
+    color: rgba(80, 80, 80, 1);
+    border-color: rgba(180, 180, 180, 0.4);
+}
+
+.unity-theme-light .code-action-button {
+    background-color: rgba(230, 230, 230, 0.8);
+    border-color: rgba(180, 180, 180, 0.6);
+    color: rgba(60, 60, 60, 1);
+}
+
+.unity-theme-light .code-action-button:hover {
+    background-color: rgba(210, 210, 210, 0.9);
+    color: rgba(40, 40, 40, 1);
+}
+
+/* 小屏幕适配 */
+@media (max-width: 800px) {
+    .code-stats {
+        flex-wrap: wrap;
+    }
+    
+    .stat-label {
+        margin-bottom: 2px;
+    }
+    
+    .enhanced-code-actions {
+        flex-wrap: wrap;
+    }
+    
+    .code-action-button {
+        margin-top: 2px;
+        font-size: 10px;
+        min-width: 50px;
+    }
+    
+    .line-numbers {
+        min-width: 35px;
+        padding: 8px 4px;
+    }
+    
+    .highlighted-code-content {
+        padding: 8px 12px;
+    }
+}
+
+/* =============================================================================
+   动画和过渡效果
+   ============================================================================= */
+
+.enhanced-code-content {
+    transition-property: max-height, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.analyzed-line {
+    transition-property: background-color;
+    transition-duration: 0.15s;
+}
+
+.code-action-button {
+    transition-property: all;
+    transition-duration: 0.2s;
+}
+
+.line-number {
+    transition-property: background-color, color;
+    transition-duration: 0.15s;
+}
+
+/* =============================================================================
+   高对比度和可访问性
+   ============================================================================= */
+
+.high-contrast .syntax-keyword {
+    color: rgb(100, 180, 255);
+    text-shadow: 0 0 1px rgba(100, 180, 255, 0.5);
+}
+
+.high-contrast .syntax-string {
+    color: rgb(255, 200, 100);
+    text-shadow: 0 0 1px rgba(255, 200, 100, 0.5);
+}
+
+.high-contrast .syntax-comment {
+    color: rgb(150, 200, 150);
+    text-shadow: 0 0 1px rgba(150, 200, 150, 0.5);
+}
+
+.high-contrast .line-with-error {
+    border-left-width: 4px;
+    background-color: rgba(255, 50, 50, 0.2);
+}
+
+/* =============================================================================
+   打印样式支持
+   ============================================================================= */
+
+@media print {
+    .enhanced-code-block-header,
+    .enhanced-code-content {
+        background-color: white !important;
+        color: black !important;
+        border-color: black !important;
+    }
+    
+    .code-action-button,
+    .code-collapse-button {
+        display: none;
+    }
+    
+    .line-numbers {
+        background-color: #f5f5f5 !important;
+        border-right: 1px solid black;
+    }
+    
+    .line-number {
+        color: #666 !important;
+    }
+    
+    .syntax-keyword { color: #0066cc !important; }
+    .syntax-string { color: #cc6600 !important; }
+    .syntax-comment { color: #669966 !important; }
+    .syntax-number { color: #cc3366 !important; }
+    .syntax-function { color: #cc9900 !important; }
+}

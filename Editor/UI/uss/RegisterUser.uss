@@ -1,0 +1,160 @@
+/* 注册用户界面样式 */
+
+.register-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(56, 56, 56);
+    flex-grow: 1;
+}
+
+/* Logo区域 */
+.logo-container {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 标题样式 */
+.title-label {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    align-self: center;
+    -unity-font-style: bold;
+}
+
+.description-label {
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+    margin-bottom: 20px;
+    align-self: center;
+    white-space: normal;
+    text-align: middle-center;
+}
+
+/* 输入区域 */
+.input-area {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* 输入行 - 横向布局 */
+.input-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.input-field {
+    width: 300px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.username-field {
+    margin-bottom: 0px;
+}
+
+.invitation-field {
+    margin-bottom: 0px;
+}
+
+/* 确认按钮样式 */
+.confirm-button {
+    width: 80px;
+    height: 30px;
+    background-color: rgb(51, 153, 229);
+    border-radius: 4px;
+    border-width: 0;
+    color: white;
+    font-size: 12px;
+}
+
+.confirm-button:hover {
+    background-color: rgb(41, 123, 199);
+}
+
+.confirm-button:disabled {
+    background-color: rgb(128, 128, 128);
+    opacity: 0.6;
+}
+
+/* 淡入淡出动画类 */
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+/* 错误提示 */
+.error-label {
+    color: rgb(255, 80, 80);
+    font-size: 12px;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+/* 描述文本动画 */
+.description-label {
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+/* 响应式调整 */
+@media (max-width: 500px) {
+    .register-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .input-field {
+        width: 250px;
+    }
+}
+
+/* 暗色主题适配 */
+.unity-theme-dark .register-container {
+    background-color: rgb(56, 56, 56);
+}
+
+.unity-theme-dark .title-label {
+    color: rgb(255, 255, 255);
+}
+
+.unity-theme-dark .description-label {
+    color: rgb(204, 204, 204);
+}
+
+/* 亮色主题适配 */
+.unity-theme-light .register-container {
+    background-color: rgb(240, 240, 240);
+}
+
+.unity-theme-light .title-label {
+    color: rgb(40, 40, 40);
+}
+
+.unity-theme-light .description-label {
+    color: rgb(80, 80, 80);
+}

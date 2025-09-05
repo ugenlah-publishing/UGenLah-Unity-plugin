@@ -1,0 +1,51 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/SessionDropdown.uss" />
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/MaterialIcons.uss" />
+    
+    <!-- 会话下拉窗口容器 -->
+    <ui:VisualElement name="SessionDropdownContainer" class="session-dropdown-container">
+        <!-- 下拉窗口背景遮罩 -->
+        <ui:VisualElement name="DropdownOverlay" class="dropdown-overlay">
+            <!-- 下拉窗口内容 -->
+            <ui:VisualElement name="DropdownContent" class="dropdown-content">
+                <!-- 头部 -->
+                <ui:VisualElement name="DropdownHeader" class="dropdown-header">
+                    <ui:Label text="Show Chat History" class="dropdown-title" />
+                    <ui:VisualElement class="header-actions">
+                        <ui:Button name="NewSessionButton" text="\ue145 New" parse-escape-sequences="true" class="action-button new-button" tooltip="Create New Session" />
+                        <ui:Button name="CloseDropdownButton" text="\ue5cd" parse-escape-sequences="true" class="action-button close-button" tooltip="Close" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- 搜索和过滤 -->
+                <ui:VisualElement name="SearchArea" class="search-area">
+                    <ui:TextField name="SearchInput" placeholder-text="Search sessions..." class="search-input" />
+                    <ui:DropdownField name="SortFilter" class="sort-filter" tooltip="Sort by" />
+                </ui:VisualElement>
+                
+                <!-- 会话列表 -->
+                <ui:ScrollView name="SessionsList" class="sessions-list" scroll-deceleration-rate="0.135" elasticity="0.1" touch-scroll-type="Elastic">
+                    <ui:VisualElement name="SessionsContainer" class="sessions-container">
+                        <!-- 会话项将动态添加到这里 -->
+                    </ui:VisualElement>
+                </ui:ScrollView>
+                
+                <!-- 空状态 -->
+                <ui:VisualElement name="EmptyState" class="empty-state" style="display: none;">
+                    <ui:Label text="No sessions found" class="empty-text" />
+                    <ui:Label text="Start a new conversation to create your first session" class="empty-subtext" />
+                    <ui:Button name="CreateFirstSessionButton" text="\ue145 Create Session" parse-escape-sequences="true" class="create-first-button" />
+                </ui:VisualElement>
+                
+                <!-- 底部信息 -->
+                <ui:VisualElement name="DropdownFooter" class="dropdown-footer">
+                    <ui:Label name="SessionCount" text="0 sessions" class="session-count" />
+                    <ui:VisualElement class="footer-actions">
+                        <ui:Button name="ImportSessionButton" text="\ue2c4 Import" parse-escape-sequences="true" class="footer-button" tooltip="Import Sessions" />
+                        <ui:Button name="ExportAllButton" text="\ue2c6 Export All" parse-escape-sequences="true" class="footer-button" tooltip="Export All Sessions" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

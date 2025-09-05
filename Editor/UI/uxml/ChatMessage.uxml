@@ -1,0 +1,56 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <!-- 消息行容器 - 支持左右对齐 -->
+    <ui:VisualElement name="MessageRow" class="message-row">
+        <!-- 消息气泡容器 -->
+        <ui:VisualElement name="MessageBubble" class="message-bubble">
+            <!-- 消息头部 -->
+            <ui:VisualElement name="MessageHeader" class="message-header">
+                <ui:VisualElement class="message-header-left">
+                    <ui:VisualElement name="Avatar" class="message-avatar" />
+                    <ui:Label name="SenderName" text="User" class="sender-name" />
+                    <ui:Label name="MessageTime" text="12:34" class="message-time" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement name="MessageActions" class="message-actions" style="display: none;">
+                    <!-- 所有按钮都移到了FeedbackArea -->
+                </ui:VisualElement>
+            </ui:VisualElement>
+        
+        <!-- 消息内容区域 -->
+        <ui:VisualElement name="MessageContent" class="message-content">
+            <!-- 增强内容处理容器（优先使用） -->
+            <ui:VisualElement name="ProcessedContentContainer" class="processed-content-container" />
+            
+            <!-- 传统文本内容（回退方案） -->
+            <ui:Label name="MessageText" class="message-text" />
+            
+            <!-- 代码块容器 -->
+            <ui:VisualElement name="CodeBlocks" class="code-blocks" />
+            
+            <!-- 附件区域 -->
+            <ui:VisualElement name="AttachmentsArea" class="attachments-area" style="display: none;">
+                <ui:ScrollView name="AttachmentsScroll" class="attachments-scroll" mode="Horizontal">
+                    <ui:VisualElement name="AttachmentsContainer" class="attachments-container" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
+            <!-- 函数调用显示区域 -->
+            <ui:VisualElement name="FunctionCallsArea" class="function-calls-area" style="display: none;">
+                <ui:Label text="Function Calls:" class="function-calls-label" />
+                <ui:VisualElement name="FunctionCallsContainer" class="function-calls-container" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- 消息状态指示器 -->
+        <ui:VisualElement name="MessageStatus" class="message-status">
+            <ui:VisualElement name="StatusIndicator" class="status-indicator" />
+            <ui:Label name="StatusText" text="" class="status-text" />
+        </ui:VisualElement>
+        
+            <!-- 反馈按钮区域 - 现在包含所有操作按钮 -->
+            <ui:VisualElement name="FeedbackArea" class="feedback-area" style="display: flex;">
+                <ui:Button name="CopyButton" text="Copy" class="chat-copy-button" tooltip="Copy Message" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

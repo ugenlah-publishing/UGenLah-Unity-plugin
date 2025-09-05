@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns:engine="UnityEngine.UIElements" 
+            xmlns:editor="UnityEditor.UIElements" 
+            xsi:schemaLocation="UnityEngine.UIElements ../../../UIElementsSchema/UnityEngine.UIElements.xsd 
+                               UnityEditor.UIElements ../../../UIElementsSchema/UnityEditor.UIElements.xsd"
+            xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+
+    <!-- Tool Call Component Template -->
+    <engine:VisualElement name="ToolCallContainer" class="bubble-container tool-call-bubble">
+        
+        <!-- Tool Call Header -->
+        <engine:VisualElement name="ToolCallHeader" class="tool-call-header">
+            
+            <!-- Left Section: Tool Information -->
+            <engine:VisualElement name="ToolInfo" class="tool-info">
+                <engine:Label name="ToolIcon" class="tool-icon" text="[Tool Call]" />
+                <engine:Label name="ToolName" class="tool-name" text="Tool" />
+                <engine:Label name="ToolStatus" class="tool-status status-pending" text="Pending" />
+                <engine:Label name="ToolDuration" class="tool-duration" text="" style="display: none;" />
+            </engine:VisualElement>
+            
+            <!-- Right Section: Actions -->
+            <engine:VisualElement name="ToolActions" class="tool-actions">
+                <engine:Button name="ViewDetailsButton" text="Details" class="tool-action-button" tooltip="View Tool Details" />
+                <engine:Button name="RetryToolButton" text="Retry" class="tool-action-button" tooltip="Retry Tool Call" style="display: none;" />
+                <engine:Button name="CopyToolButton" text="Copy" class="tool-action-button" tooltip="Copy Tool Call" />
+                <engine:Button name="CollapseToolButton" text="▼" class="tool-collapse-button" tooltip="Collapse/Expand Tool Call" />
+            </engine:VisualElement>
+            
+        </engine:VisualElement>
+        
+        <!-- Tool Parameters Section -->
+        <engine:VisualElement name="ToolParameters" class="tool-parameters tool-section">
+            <engine:Label text="Parameters:" class="section-label" />
+            <engine:VisualElement name="ParametersContainer" class="parameters-container">
+                <!-- Parameters will be dynamically added here -->
+            </engine:VisualElement>
+        </engine:VisualElement>
+        
+        <!-- Tool Result Section -->
+        <engine:VisualElement name="ToolResult" class="tool-result tool-section" style="display: none;">
+            <engine:Label text="Result:" class="section-label" />
+            <engine:VisualElement name="ResultContainer" class="result-container">
+                <!-- Result content will be dynamically added here -->
+            </engine:VisualElement>
+        </engine:VisualElement>
+        
+        <!-- Tool Error Section -->
+        <engine:VisualElement name="ToolError" class="tool-error tool-section" style="display: none;">
+            <engine:Label text="Error:" class="section-label error-label" />
+            <engine:VisualElement name="ErrorContainer" class="error-container">
+                <engine:Label name="ErrorContent" class="error-content" text="" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        
+        <!-- Streaming Indicator -->
+        <engine:VisualElement name="StreamingIndicator" class="tool-streaming-indicator" style="display: none;" />
+        
+    </engine:VisualElement>
+    
+</engine:UXML>

@@ -1,0 +1,123 @@
+.toolbar {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    -unity-text-align: middle-center;
+}
+
+.toolbar:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.add-tab-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.add-tab-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.attach-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    -unity-text-align: middle-center;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.attach-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.action-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.action-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-close-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.tab-close-button:hover {
+    color: rgba(255, 100, 100, 1);
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.send-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: #1976d2;
+    border-width: 0;
+    color: white;
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.send-button:hover {
+    background-color: #1565c0;
+}
+
+.cancel-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: #d32f2f;
+    border-width: 0;
+    color: white;
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.cancel-button:hover {
+    background-color: #c62828;
+}
+
+.tool-icon {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    -unity-text-align: middle-center;
+    min-width: 20px;
+}

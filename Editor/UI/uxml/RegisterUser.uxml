@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/RegisterUser.uss" />
+    
+    <!-- 注册用户界面容器 -->
+    <ui:VisualElement name="RegisterContainer" class="register-container">
+        <!-- Logo容器 -->
+        <ui:VisualElement name="LogoContainer" class="logo-container">
+            <ui:Image name="LogoImage" class="logo-image" />
+        </ui:VisualElement>
+        
+        <!-- 标题区域 -->
+        <ui:Label name="TitleLabel" text="Welcome to UGenLah" class="title-label" />
+        <ui:Label name="DescriptionLabel" text="Please enter your invitation code to get started :P" class="description-label" />
+        
+        <!-- 输入区域 -->
+        <ui:VisualElement name="InputArea" class="input-area">
+            <!-- 邀请码输入行 -->
+            <ui:VisualElement name="InvitationInputRow" class="input-row">
+                <ui:TextField name="InvitationCodeField" label="" class="input-field invitation-field" />
+                <ui:Button name="InvitationConfirmButton" text="Confirm" class="confirm-button" />
+            </ui:VisualElement>
+            
+            <!-- 用户名输入行 -->
+            <ui:VisualElement name="UsernameInputRow" class="input-row" style="display: none;">
+                <ui:TextField name="UsernameField" label="Username" class="input-field username-field" />
+                <ui:Button name="UsernameConfirmButton" text="Confirm" class="confirm-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- 错误提示 -->
+        <ui:Label name="ErrorLabel" class="error-label" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

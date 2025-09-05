@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/MaterialIcons.uss" />
+    <!-- 会话项目模板 -->
+    <ui:VisualElement name="SessionItem" class="session-item">
+        <!-- 会话主要内容 -->
+        <ui:VisualElement name="SessionContent" class="session-content">
+            <!-- 左侧颜色指示器 -->
+            <ui:VisualElement name="ColorIndicator" class="color-indicator" />
+            
+            <!-- 会话信息区域 -->
+            <ui:VisualElement name="SessionInfo" class="session-info">
+                <!-- 标题行 -->
+                <ui:VisualElement name="TitleRow" class="title-row">
+                    <ui:Label name="SessionTitle" text="Chat Session" class="session-title" />
+                    <ui:VisualElement name="SessionBadges" class="session-badges">
+                        <ui:Label name="PinBadge" text="PIN" class="pin-badge" style="display: none;" />
+                        <ui:Label name="TypeBadge" text="General" class="type-badge" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- 摘要行 -->
+                <ui:Label name="SessionSummary" text="Last message preview..." class="session-summary" />
+                
+                <!-- 信息行 -->
+                <ui:VisualElement name="InfoRow" class="info-row">
+                    <ui:Label name="MessageCount" text="5 messages" class="message-count" />
+                    <ui:Label name="LastActive" text="2h ago" class="last-active" />
+                    <ui:Label name="AIModel" text="Claude" class="ai-model" />
+                </ui:VisualElement>
+                
+                <!-- 标签区域 -->
+                <ui:VisualElement name="TagsArea" class="tags-area" style="display: none;">
+                    <ui:VisualElement name="TagsContainer" class="tags-container" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 右侧操作按钮 -->
+            <ui:VisualElement name="SessionActions" class="session-actions">
+                <ui:Button name="PinButton" text="\ue866" parse-escape-sequences="true" class="action-button pin-action" tooltip="Pin Session" />
+                <ui:Button name="MoreButton" text="\ue5d4" parse-escape-sequences="true" class="action-button more-action" tooltip="More Options" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

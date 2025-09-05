@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns:engine="UnityEngine.UIElements" 
+            xmlns:editor="UnityEditor.UIElements" 
+            xsi:schemaLocation="UnityEngine.UIElements ../../../UIElementsSchema/UnityEngine.UIElements.xsd 
+                               UnityEditor.UIElements ../../../UIElementsSchema/UnityEditor.UIElements.xsd"
+            xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+
+    <!-- Text Content Component Template -->
+    <engine:VisualElement name="TextContentBlock" class="text-content-block">
+        
+        <!-- Markdown/Text Container -->
+        <engine:VisualElement name="MarkdownContainer" class="markdown-container">
+            <!-- 动态生成的Markdown内容将被添加到这里 -->
+            <!-- Dynamic markdown content will be added here -->
+        </engine:VisualElement>
+        
+        <!-- Streaming Indicator (hidden by default) -->
+        <engine:VisualElement name="StreamingIndicator" class="markdown-streaming-cursor" style="display: none;" />
+        
+    </engine:VisualElement>
+    
+</engine:UXML>

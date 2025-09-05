@@ -1,0 +1,21 @@
+﻿{
+  "name": "com.ugenlah.ugenlah",
+  "version": "1.0.0",
+  "displayName": "UGenLah",
+  "description": "AI Assistant for Unity - Single DLL All-in-One Edition",
+  "unity": "2021.3",
+  "author": {
+    "name": "UGenLah Team",
+    "email": "support@ugenlah.com"
+  },
+  "category": "Editor Extensions",
+  "keywords": [
+    "ai",
+    "assistant",
+    "unity",
+    "mcp",
+    "editor",
+    "automation"
+  ],
+  "dependencies": {}
+}

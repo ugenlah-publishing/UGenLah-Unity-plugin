@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns:engine="UnityEngine.UIElements" 
+            xmlns:editor="UnityEditor.UIElements" 
+            xsi:schemaLocation="UnityEngine.UIElements ../../../UIElementsSchema/UnityEngine.UIElements.xsd 
+                               UnityEditor.UIElements ../../../UIElementsSchema/UnityEditor.UIElements.xsd"
+            xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+
+    <!-- Generic Bubble Container Template -->
+    <engine:VisualElement name="BubbleContainer" class="bubble-container">
+        
+        <!-- Bubble Header -->
+        <engine:VisualElement name="BubbleHeader" class="content-header">
+            <engine:Label name="BubbleTitle" class="content-title" text="Content" />
+            
+            <!-- Header Actions -->
+            <engine:VisualElement name="HeaderActions" class="header-actions">
+                <engine:Button name="CollapseButton" class="collapse-button" text="▼" tooltip="Collapse/Expand" />
+                <engine:Button name="CopyButton" class="copy-button" text="📋" tooltip="Copy to Clipboard" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        
+        <!-- Bubble Content Area -->
+        <engine:VisualElement name="BubbleContent" class="bubble-content">
+            <!-- 动态内容区域 - Dynamic content area -->
+        </engine:VisualElement>
+        
+    </engine:VisualElement>
+    
+</engine:UXML>

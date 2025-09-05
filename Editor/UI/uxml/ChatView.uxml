@@ -1,0 +1,76 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/ChatView.uss" />
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/MaterialIcons.uss" />
+    
+    <!-- 主聊天窗口容器 -->
+    <ui:VisualElement name="ChatContainer" class="chat-container">
+        <!-- Session标签页区域 -->
+        <ui:VisualElement name="SessionTabsArea" class="session-tabs-area">
+            <ui:ScrollView name="SessionTabsScroll" class="session-tabs-scroll" mode="Horizontal" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden">
+                <ui:VisualElement name="SessionTabsContainer" class="session-tabs-container">
+                    <!-- Session标签页将动态添加到这里 -->
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:Button name="AddTabButton" text="\ue145" parse-escape-sequences="true" class="add-tab-button" tooltip="New Chat" />
+            <ui:Button name="SessionHistoryButton" text="\ue889" parse-escape-sequences="true" class="add-tab-button session-history-icon" tooltip="Show Chat History" />
+        </ui:VisualElement>
+        
+        <!-- 聊天消息区域 -->
+        <ui:ScrollView name="ChatHistory" class="chat-history" scroll-deceleration-rate="0.135" elasticity="0.1" touch-scroll-type="Elastic" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden">
+            <ui:VisualElement name="MessagesContainer" class="messages-container">
+                <!-- 欢迎消息 -->
+                <ui:VisualElement name="WelcomeMessage" class="welcome-message">
+                    <ui:Label text="Hello! I'm your AI assistant." class="welcome-text" />
+                    <ui:Label text="Ask me anything about your Unity project!" class="welcome-subtext" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:ScrollView>
+        
+        <!-- 上下文文件显示区域 -->
+        <ui:VisualElement name="ContextArea" class="context-area" style="display: none;">
+            <ui:Label text="Attached Files:" class="context-label" />
+            <ui:ScrollView name="ContextScroll" class="context-scroll" mode="Horizontal">
+                <ui:VisualElement name="ContextContainer" class="context-container" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        
+        <!-- 输入区域 -->
+        <ui:VisualElement name="InputArea" class="input-area">
+            <!-- 文件拖放提示 -->
+            <ui:VisualElement name="DragDropArea" class="drag-drop-area" style="display: none;">
+                <ui:Label text="Drop files here to attach" class="drag-drop-text" />
+            </ui:VisualElement>
+            
+            <!-- AI输入指示器 - 移到输入框上方 -->
+            <ui:VisualElement name="TypingIndicator" class="typing-indicator input-typing-indicator" style="display: none;">
+                <ui:VisualElement class="typing-dots">
+                    <ui:VisualElement class="typing-dot" />
+                    <ui:VisualElement class="typing-dot" />
+                    <ui:VisualElement class="typing-dot" />
+                </ui:VisualElement>
+                <ui:Label text="AI is thinking..." class="typing-text" />
+            </ui:VisualElement>
+            
+            <!-- 输入框容器 -->
+            <ui:VisualElement name="InputContainer" class="input-container">
+                <ui:VisualElement class="input-left">
+                    <ui:Button name="AttachFileButton" text="\ue226" parse-escape-sequences="true" class="attach-button" tooltip="Attach Files" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement class="input-center">
+                    <ui:TextField name="MessageInput" multiline="true" placeholder-text="Type your message here..." class="message-input" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement class="input-right">
+                    <ui:Button name="SendButton" text="\ue163" parse-escape-sequences="true" class="send-button" tooltip="Send Message (Enter)" />
+                    <ui:Button name="CancelButton" text="\ue5c9" parse-escape-sequences="true" class="cancel-button" tooltip="Cancel Current Request" style="display: none;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 输入提示 -->
+            <ui:VisualElement name="InputHints" class="input-hints">
+                <ui:Label text="Ctrl+Enter to send • Shift+Enter for new line • @ for context" class="hint-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

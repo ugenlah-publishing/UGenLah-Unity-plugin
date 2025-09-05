@@ -1,0 +1,48 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/SessionTab.uss" />
+    <Style src="project://database/Packages/com.ugenlah.ugenlah/Editor/UI/uss/MaterialIcons.uss" />
+    
+    <!-- 浏览器风格的Session标签页 -->
+    <ui:VisualElement name="SessionTab" class="session-tab">
+        <!-- 标签页主体 -->
+        <ui:VisualElement name="TabMain" class="tab-main">
+            <!-- 左侧圆角 -->
+            <ui:VisualElement name="TabLeftCorner" class="tab-left-corner" />
+            
+            <!-- 标签页内容区域 -->
+            <ui:VisualElement name="TabContentArea" class="tab-content-area">
+                <!-- 标签页图标 -->
+                <ui:VisualElement name="TabIcon" class="tab-icon">
+                    <ui:VisualElement name="IconIndicator" class="icon-indicator" />
+                </ui:VisualElement>
+                
+                <!-- 标签页标题 -->
+                <ui:Label name="TabTitle" text="New Session" class="tab-title" />
+                
+                <!-- 状态指示器 -->
+                <ui:VisualElement name="StatusIndicators" class="status-indicators">
+                    <!-- 未保存指示器 -->
+                    <ui:VisualElement name="UnsavedDot" class="unsaved-dot" style="display: none;" />
+                    <!-- 消息数量徽章 -->
+                    <ui:Label name="MessageBadge" text="99+" class="message-badge" style="display: none;" />
+                    <!-- 活跃指示器 -->
+                    <ui:VisualElement name="ActivePulse" class="active-pulse" style="display: none;" />
+                </ui:VisualElement>
+                
+                <!-- 关闭按钮 -->
+                <ui:Button name="CloseButton" text="\ue5cd" parse-escape-sequences="true" class="tab-close-button" tooltip="Close Session" />
+            </ui:VisualElement>
+            
+            <!-- 右侧圆角 -->
+            <ui:VisualElement name="TabRightCorner" class="tab-right-corner" />
+        </ui:VisualElement>
+        
+        <!-- 拖拽反馈 -->
+        <ui:VisualElement name="DragOverlay" class="drag-overlay" style="display: none;">
+            <ui:Label text="Move here" class="drag-hint" />
+        </ui:VisualElement>
+        
+        <!-- 选中状态下划线 -->
+        <ui:VisualElement name="ActiveUnderline" class="active-underline" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>
