@@ -67,7 +67,7 @@
     content: "";
     display: inline-block;
     width: 2px;
-    height: 1.2em;
+    height: 18px;
     background-color: #007ACC;
     margin-left: 2px;
     animation: blink 1s infinite;

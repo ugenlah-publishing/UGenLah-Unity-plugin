@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="ModalOverlay" class="modal-overlay">
+        <ui:VisualElement name="FeedbackDialog" class="feedback-dialog">
+            <!-- 标题栏 -->
+            <ui:VisualElement name="HeaderArea" class="header-area">
+                <ui:Label name="DialogTitle" text="Submit Feedback" class="dialog-title" />
+                <ui:Button name="CloseButton" text="✕" parse-escape-sequences="true" class="close-button" />
+            </ui:VisualElement>
+            
+            <!-- 内容区域 -->
+            <ui:VisualElement name="ContentArea" class="content-area">
+                <!-- 反馈类型选择 -->
+                <ui:VisualElement name="TypeSection" class="form-section">
+                    <ui:Label text="Feedback Type" class="section-label" />
+                    <ui:DropdownField name="FeedbackTypeDropdown" class="feedback-type-dropdown" />
+                </ui:VisualElement>
+                
+                <!-- 反馈内容输入 -->
+                <ui:VisualElement name="ContentSection" class="form-section">
+                    <ui:Label text="Description" class="section-label" />
+                    <ui:TextField name="FeedbackContentField" multiline="true" class="feedback-content-field" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- 按钮区域 -->
+            <ui:VisualElement name="ButtonArea" class="button-area">
+                <ui:Button name="CancelButton" text="Cancel" class="dialog-button cancel-button" />
+                <ui:Button name="SubmitButton" text="Submit" class="dialog-button submit-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

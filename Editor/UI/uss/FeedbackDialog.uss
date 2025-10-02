@@ -1,0 +1,213 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Main Dialog Container */
+.feedback-dialog {
+    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 8px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(80, 80, 80, 0.8);
+    width: 450px;
+    min-height: 320px;
+    max-height: 600px;
+    padding: 0;
+    flex-shrink: 0;
+    position: relative;
+    align-self: center;
+}
+
+/* Header Area */
+.header-area {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(80, 80, 80, 0.6);
+    background-color: rgba(50, 50, 50, 0.8);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dialog-title {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.9);
+    -unity-text-align: middle-left;
+    -unity-font-definition: none;
+    margin: 0;
+}
+
+.close-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: transparent;
+    border-width: 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    -unity-text-align: middle-center;
+    -unity-font-definition: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Content Area */
+.content-area {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.form-section {
+    margin-bottom: 16px;
+}
+
+.section-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 6px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-left;
+    -unity-font-definition: none;
+}
+
+/* Feedback Type Dropdown */
+.feedback-type-dropdown {
+    height: 28px;
+    background-color: rgba(60, 60, 60, 0.8);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(100, 100, 100, 0.6);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    -unity-text-align: middle-left;
+    -unity-font-definition: none;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.feedback-type-dropdown:hover {
+    border-color: rgba(120, 180, 255, 0.6);
+}
+
+.feedback-type-dropdown:focus {
+    border-color: rgba(120, 180, 255, 0.8);
+}
+
+/* Feedback Content Field */
+.feedback-content-field {
+    min-height: 120px;
+    background-color: rgba(60, 60, 60, 0.8);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(100, 100, 100, 0.6);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    -unity-text-align: upper-left;
+    -unity-font-definition: none;
+}
+
+.feedback-content-field:hover {
+    border-color: rgba(120, 180, 255, 0.6);
+}
+
+.feedback-content-field:focus {
+    border-color: rgba(120, 180, 255, 0.8);
+}
+
+/* Button Area */
+.button-area {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 16px 20px;
+    border-top-width: 1px;
+    border-top-color: rgba(80, 80, 80, 0.6);
+    background-color: rgba(45, 45, 45, 0.8);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.dialog-button {
+    height: 32px;
+    min-width: 80px;
+    margin-left: 8px;
+    border-radius: 4px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    -unity-font-definition: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: transparent;
+    border-color: rgba(160, 160, 160, 0.6);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cancel-button:hover {
+    background-color: rgba(160, 160, 160, 0.2);
+    border-color: rgba(160, 160, 160, 0.8);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: rgba(0, 120, 255, 0.8);
+    border-color: rgba(0, 120, 255, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.submit-button:hover {
+    background-color: rgba(0, 120, 255, 1);
+    border-color: rgba(40, 140, 255, 1);
+}
+
+.submit-button:active {
+    background-color: rgba(0, 100, 200, 1);
+}
+
+/* Disabled State */
+.submit-button:disabled {
+    background-color: rgba(80, 80, 80, 0.5);
+    border-color: rgba(100, 100, 100, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+}

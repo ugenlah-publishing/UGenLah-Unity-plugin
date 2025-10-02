@@ -47,6 +47,66 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.report-bug-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    -unity-text-align: middle-center;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.report-bug-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.summarize-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    font-size: 18px;
+}
+
+.summarize-button:hover {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    font-size: 18px;
+}
+
+.sidebar-toggle-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+.sidebar-toggle-button:hover {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+.sidebar-toggle-button-vertical {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+.sidebar-toggle-button-vertical:hover {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+.sidebar-toggle-button-topbar {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+.sidebar-toggle-button-topbar:hover {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+}
+
+
 .action-button {
     -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
     -unity-font-definition: initial;
@@ -120,4 +180,17 @@
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
     min-width: 20px;
+}
+
+.tools-dropdown-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    font-size: 18px;
+    -unity-text-align: middle-center;
+}
+
+.tools-toggle-button {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    -unity-text-align: middle-center;
 }

@@ -544,7 +544,7 @@
 /* 修复Unity Button内部文本元素的样式问题 */
 .chat-copy-button .unity-button__text {
     overflow: visible;
-    -unity-text-overflow: clip;
+    text-overflow: clip;
 }
 
 .chat-copy-button:hover {
@@ -611,6 +611,9 @@
     border-radius: 6px;
     border-left-width: 3px;
     border-left-color: rgba(255, 180, 100, 0.8);
+    max-width: 50%;
+    min-width: 500px;
+    width: 100%;
 }
 
 .function-calls-label {
@@ -758,7 +761,7 @@
     background-color: rgba(50, 50, 50, 0.7);
     border-top-width: 1px;
     border-top-color: rgba(100, 100, 100, 0.3);
-    max-height: 120px;
+    max-height: 130px; 
 }
 
 .context-label {
@@ -769,7 +772,7 @@
 }
 
 .context-scroll {
-    max-height: 80px;
+    max-height: 98px;
 }
 
 .context-container {
@@ -987,7 +990,7 @@
 
 .input-container {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     background-color: rgba(60, 60, 60, 0.8);
     border-radius: 20px;
     padding: 6px;
@@ -1011,14 +1014,13 @@
 }
 
 .attach-button {
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    border-width: 1px;
-    border-color: rgba(88, 166, 255, 0.4);
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border-width: 0;
     background-color: rgba(88, 166, 255, 0.15);
     color: rgba(88, 166, 255, 1);
-    font-size: 20px;
+    font-size: 18px;
     -unity-font-style: bold;
     transition-duration: 200ms;
     align-items: center;
@@ -1027,7 +1029,6 @@
 
 .attach-button:hover {
     background-color: rgba(88, 166, 255, 0.25);
-    border-color: rgba(88, 166, 255, 0.6);
     color: rgba(88, 166, 255, 1);
     transition-duration: 200ms;
 }
@@ -1090,14 +1091,116 @@
 
 .input-hints {
     margin-top: 4px;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
-.hint-text {
-    font-size: 10px;
-    color: rgba(120, 120, 120, 0.8);
+.hints-left {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hints-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.token-usage-text {
+    font-size: 12px;
+    color: rgba(199, 199, 199, 0.56);
+    -unity-text-align: middle-right;
+    -unity-font-style: normal;
+    margin-right: 8px;
+}
+
+.summarize-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border-width: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    -unity-font-style: bold;
+    transition-duration: 200ms;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
     -unity-text-align: middle-center;
-    -unity-font-style: italic;
+}
+
+.summarize-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 200ms;
+}
+
+.summarize-button:active {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.report-bug-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border-width: 0;
+    background-color: rgba(255, 152, 0, 0.15);
+    color: rgba(255, 152, 0, 1);
+    font-size: 18px;
+    -unity-font-style: bold;
+    transition-duration: 200ms;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.report-bug-button:hover {
+    background-color: rgba(255, 152, 0, 0.25);
+    color: rgba(255, 152, 0, 1);
+    transition-duration: 200ms;
+}
+
+.report-bug-button:active {
+    background-color: rgba(255, 152, 0, 0.35);
+}
+
+/* 工具下拉弹窗样式 */
+.tools-dropdown {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 8px;
+}
+
+
+.tools-panel {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 20, 20, 0.95);
+    border-radius: 8px;
+    padding: 8px;
+    border-width: 1px;
+    border-color: rgba(80, 80, 80, 0.6);
+    min-width: 60px;
+    min-height: 60px;
+}
+
+/* CSS classes removed - display state now controlled by C# code */
+
+.tools-panel-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding: 8px;
+    text-align: center;
 }
 
 /* 正在输入指示器样式 */
@@ -1143,6 +1246,65 @@
     font-size: 12px;
     color: rgba(150, 150, 150, 0.8);
     -unity-font-style: italic;
+}
+
+/* 消息队列区域样式 */
+.message-queue-area {
+    flex-direction: column;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background-color: rgba(70, 70, 70, 0.6);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 0.3);
+}
+
+.queue-label {
+    font-size: 11px;
+    color: rgba(120, 180, 255, 0.8);
+    margin-bottom: 6px;
+    -unity-font-style: bold;
+}
+
+.message-queue-scroll {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.message-queue-container {
+    flex-direction: column;
+}
+
+.queue-message-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 8px;
+    margin-bottom: 2px;
+    background-color: rgba(80, 80, 80, 0.5);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(100, 100, 100, 0.2);
+}
+
+.queue-message-content {
+    font-size: 12px;
+    color: rgba(200, 200, 200, 0.9);
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.queue-message-index {
+    font-size: 10px;
+    color: rgba(120, 180, 255, 0.7);
+    margin-right: 8px;
+    min-width: 16px;
+    -unity-text-align: middle-center;
+    background-color: rgba(120, 180, 255, 0.2);
+    border-radius: 8px;
+    padding: 2px 4px;
 }
 
 /* 主题变化 - 浅色主题 */
@@ -1219,13 +1381,14 @@
 
 /* 附件项目容器 */
 .context-item {
-    margin: 4px;
+    margin: 8px 4px 4px 4px;
     border-radius: 8px;
     background-color: rgba(40, 40, 40, 0.8);
     border-width: 1px;
     border-color: rgba(80, 80, 80, 0.5);
-    overflow: hidden;
+    overflow: visible; /* 改为可见，确保删除按钮显示正常 */
     transition-duration: 200ms;
+    position: relative; /* 为绝对定位的删除按钮提供参考点 */
 }
 
 .context-item:hover {
@@ -1234,11 +1397,51 @@
     transition-duration: 200ms;
 }
 
+/* 附件删除按钮样式 */
+.attachment-remove-button {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 59, 48, 0.9);
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+    margin: 0;
+    transition-duration: 150ms;
+    opacity: 0;
+    /* 默认隐藏，只在hover时显示 */
+}
+
+.context-item:hover .attachment-remove-button {
+    opacity: 1;
+    transition-duration: 150ms;
+}
+
+.attachment-remove-button:hover {
+    background-color: rgba(255, 89, 78, 1);
+    border-color: rgba(255, 255, 255, 1);
+    border-width: 3px; /* 增加边框宽度提供hover反馈 */
+    transition-duration: 150ms;
+}
+
+.attachment-remove-button:active {
+    background-color: rgba(255, 29, 18, 1);
+    border-width: 1px; /* 减少边框宽度提供active反馈 */
+    transition-duration: 100ms;
+}
+
 .item-container {
     flex-direction: row;
     align-items: center;
-    padding: 8px;
-    min-height: 60px;
+    padding: 6px 8px; /* 减少上下padding，优化空间利用 */
+    min-height: 56px; /* 略微减少最小高度 */
 }
 
 /* 缩略图容器 */
@@ -1416,14 +1619,7 @@
 
 }
 
-/* 上下文区域整体样式 */
-.context-area {
-    background-color: rgba(25, 25, 25, 0.9);
-    border-top-width: 1px;
-    border-top-color: rgba(80, 80, 80, 0.5);
-    padding: 8px;
-    max-height: 200px;
-}
+/* 移除重复的context-area样式定义，已在上方统一定义 */
 
 .context-label {
     font-size: 12px;
@@ -1467,3 +1663,75 @@
     background-color: rgba(200, 50, 50, 1);
     transition-duration: 100ms;
 }
+
+/* 工具下拉框样式 */
+.tools-toggle-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%; /* 圆形，与New Chat按钮一致 */
+    background-color: transparent;
+    border-width: 0;
+    margin: 3px 8px 3px 4px;
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: var(--unity-colors-default-text-inactive);
+    transition-duration: 0.2s;
+}
+
+.tools-toggle-button:hover {
+    background-color: rgba(120, 180, 255, 0.25);
+    color: rgba(255, 255, 255, 1);
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 0.8);
+    transition-duration: 0.15s;
+}
+
+.tools-toggle-button:active {
+    background-color: var(--unity-colors-helpbox-background-selected);
+}
+
+/* 下拉框展开时的按钮状态 */
+.tools-toggle-button.expanded {
+    background-color: rgba(120, 180, 255, 0.35);
+    border-width: 1px;
+    border-color: rgba(120, 180, 255, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.tools-dropdown-content {
+    border-radius: 16px; /* 真正的胶囊形状：宽度的一半，两端半圆中间直边 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+    margin-top: 2px; /* 与按钮保持小间距 */
+    transition: height 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.tools-dropdown-content.collapsed {
+    height: 0px;
+    opacity: 0;
+}
+
+.tools-dropdown-content.expanded {
+    height: 66px; /* 调整高度以适应圆形按钮和内边距 */
+    opacity: 1;
+}
+
+.tools-dropdown-button {
+    border-radius: 50%; /* 圆形按钮 */
+    transition-duration: 0.15s;
+    border-width: 0;
+}
+
+.tools-dropdown-button:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    transform: scale(1.05);
+    transition-duration: 0.15s;
+}
+
+.tools-dropdown-button:active {
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+}
+
+

@@ -13,6 +13,9 @@
             </ui:ScrollView>
             <ui:Button name="AddTabButton" text="\ue145" parse-escape-sequences="true" class="add-tab-button" tooltip="New Chat" />
             <ui:Button name="SessionHistoryButton" text="\ue889" parse-escape-sequences="true" class="add-tab-button session-history-icon" tooltip="Show Chat History" />
+            
+            <!-- 工具下拉弹窗触发按钮 -->
+            <ui:Button name="ToolsToggleButton" text="\ue5db" parse-escape-sequences="true" class="tools-toggle-button" tooltip="Show Tools" />
         </ui:VisualElement>
         
         <!-- 聊天消息区域 -->
@@ -51,6 +54,16 @@
                 <ui:Label text="AI is thinking..." class="typing-text" />
             </ui:VisualElement>
             
+            <!-- 消息队列显示区域 -->
+            <ui:VisualElement name="MessageQueueArea" class="message-queue-area" style="display: none;">
+                <ui:Label text="Queued Messages:" class="queue-label" />
+                <ui:ScrollView name="MessageQueueScroll" class="message-queue-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+                    <ui:VisualElement name="MessageQueueContainer" class="message-queue-container">
+                        <!-- 排队的消息将动态添加到这里 -->
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
             <!-- 输入框容器 -->
             <ui:VisualElement name="InputContainer" class="input-container">
                 <ui:VisualElement class="input-left">
@@ -67,9 +80,13 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             
-            <!-- 输入提示 -->
+            <!-- 输入提示和token使用信息 -->
             <ui:VisualElement name="InputHints" class="input-hints">
-                <ui:Label text="Ctrl+Enter to send • Shift+Enter for new line • @ for context" class="hint-text" />
+                <ui:VisualElement class="hints-left" style="flex-grow: 1;">
+                </ui:VisualElement>
+                <ui:VisualElement class="hints-right">
+                    <ui:Label name="TokenUsageLabel" text="" class="token-usage-text" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

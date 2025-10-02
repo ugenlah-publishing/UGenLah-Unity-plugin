@@ -7,7 +7,6 @@
     min-width: 120px;
     max-width: 240px;
     margin-right: 2px;
-    cursor: pointer;
     overflow: visible;
 }
 
@@ -79,6 +78,23 @@
     white-space: nowrap;
     -unity-text-align: middle-left;
     margin-right: 4px;
+}
+
+/* 标签页重命名输入框 */
+.tab-title-editor {
+    flex: 1;
+    font-size: 12px;
+    max-width: 180px;
+    min-width: 60px;
+    height: 18px;
+    margin: 0;
+    padding: 2px 4px;
+    border-width: 1px;
+    border-color: var(--unity-colors-highlight-background);
+    border-radius: 2px;
+    background-color: var(--unity-colors-input-background);
+    color: var(--unity-colors-default-text);
+    -unity-text-align: middle-left;
 }
 
 /* 状态指示器容器 */
@@ -174,7 +190,7 @@
 
 .session-tab.active .tab-title {
     color: var(--unity-colors-default-text);
-    font-style: bold;
+    -unity-font-style: bold;
 }
 
 .session-tab.active .icon-indicator {
@@ -196,11 +212,6 @@
     display: flex;
 }
 
-/* 拖拽状态 */
-.session-tab.dragging {
-    opacity: 0.7;
-    /* Unity UIElements不支持transform，只保留opacity变化 */
-}
 
 .drag-overlay {
     position: absolute;
@@ -219,12 +230,11 @@
 .drag-hint {
     font-size: 10px;
     color: var(--unity-colors-highlight-background);
-    font-style: bold;
+    -unity-font-style: bold;
 }
 
 /* 可拖拽区域 */
 .session-tab.drag-over {
-    border-left: 2px solid var(--unity-colors-highlight-background);
 }
 
 /* 非活跃状态 */
@@ -312,7 +322,7 @@
     border-width: 0;
     margin: 3px 8px 3px 4px;
     font-size: 16px;
-    font-style: bold;
+    -unity-font-style: bold;
     color: var(--unity-colors-default-text-inactive);
     transition-duration: 0.2s;
     transition-property: background-color, color;
@@ -332,7 +342,7 @@
     background-color: var(--unity-colors-button-background);
     border-color: var(--unity-colors-button-border);
     color: var(--unity-colors-button-text);
-    font-style: bold;
+    -unity-font-style: bold;
 }
 
 .new-session-btn:hover {
@@ -371,11 +381,28 @@
 .session-tab.tab-opening {
     opacity: 0.8;
     transition-duration: 0.3s;
-    transition-property: opacity;
+    transition-property: opacity; 
 }
 
 .session-tab.tab-closing {
     opacity: 0.2;
     transition-duration: 0.2s;
     transition-property: opacity;
+}
+
+/* 拖拽预览样式 */
+.drag-preview {
+    position: absolute;
+}
+
+.drag-preview-tab {
+    opacity: 0.64;
+}
+
+.drag-preview-tab .tab-content-area {
+    border-top-width: 1px;
+}
+
+.drag-preview-tab .tab-title {
+    -unity-font-style: bold;
 }
