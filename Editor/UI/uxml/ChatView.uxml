@@ -11,8 +11,8 @@
                     <!-- Session标签页将动态添加到这里 -->
                 </ui:VisualElement>
             </ui:ScrollView>
-            <ui:Button name="AddTabButton" text="\ue145" parse-escape-sequences="true" class="add-tab-button" tooltip="New Chat" />
-            <ui:Button name="SessionHistoryButton" text="\ue889" parse-escape-sequences="true" class="add-tab-button session-history-icon" tooltip="Show Chat History" />
+            <ui:Button name="AddTabButton" text="\ue145" parse-escape-sequences="true" class="tab-function-button" tooltip="New Chat" />
+            <ui:Button name="SessionHistoryButton" text="\ue889" parse-escape-sequences="true" class="tab-function-button" tooltip="Show Chat History" />
             
             <!-- 工具下拉弹窗触发按钮 -->
             <ui:Button name="ToolsToggleButton" text="\ue5db" parse-escape-sequences="true" class="tools-toggle-button" tooltip="Show Tools" />
@@ -71,7 +71,9 @@
                 </ui:VisualElement>
                 
                 <ui:VisualElement class="input-center">
-                    <ui:TextField name="MessageInput" multiline="true" placeholder-text="Type your message here..." class="message-input" />
+                    <ui:ScrollView name="MessageInputScroll" class="message-input-scroll" vertical-scroller-visibility="Auto" horizontal-scroller-visibility="Hidden">
+                        <ui:TextField name="MessageInput" multiline="true" placeholder-text="Type your message here..." class="message-input" />
+                    </ui:ScrollView>
                 </ui:VisualElement>
                 
                 <ui:VisualElement class="input-right">
@@ -82,7 +84,9 @@
             
             <!-- 输入提示和token使用信息 -->
             <ui:VisualElement name="InputHints" class="input-hints">
-                <ui:VisualElement class="hints-left" style="flex-grow: 1;">
+                <ui:VisualElement class="hints-left" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                    <ui:Toggle name="OrchestratorModeToggle" class="orchestrator-mode-toggle" />
+                    <ui:Label text="Orchestrator Mode" class="orchestrator-mode-label" />
                 </ui:VisualElement>
                 <ui:VisualElement class="hints-right">
                     <ui:Label name="TokenUsageLabel" text="" class="token-usage-text" />

@@ -1,0 +1,374 @@
+/* ========== 主题样式 ========== */
+/* 注意：主题样式只修改颜色相关属性，不影响布局、字体大小等其他显示逻辑 */
+
+/* 默认主题 */
+.theme-default {
+    --theme-background: rgba(30, 30, 30, 0.95);
+    --theme-surface: rgba(45, 45, 45, 0.9);
+    --theme-text: rgba(255, 255, 255, 0.9);
+    --theme-text-secondary: rgba(255, 255, 255, 0.7);
+    --theme-border: rgba(100, 100, 100, 0.3);
+    --theme-accent: rgba(100, 150, 255, 1);
+    --theme-button-bg: rgba(60, 60, 60, 0.8);
+    --theme-button-hover: rgba(80, 80, 80, 0.9);
+    --theme-input-bg: rgba(50, 50, 50, 0.9);
+    --theme-tab-bg: rgba(55, 55, 55, 0.9);
+    --theme-tab-active-bg: rgba(45, 45, 45, 0.95);
+    --theme-tab-hover-bg: rgba(65, 65, 65, 0.9);
+    
+    /* Mention Menu Item 相关颜色 */
+    --theme-mention-item-bg: rgba(83, 83, 83, 0.94);
+    --theme-mention-item-hover: rgba(51, 102, 204, 0.3);
+    --theme-mention-item-text: rgba(255, 255, 255, 0.9);
+}
+
+.theme-default .chat-container {
+    background-color: var(--theme-background) !important;
+}
+
+.theme-default .chat-header {
+    background-color: var(--theme-surface) !important;
+    border-bottom-color: var(--theme-border) !important;
+}
+
+.theme-default .message-text,
+.theme-default .sender-name,
+.theme-default .message-content,
+.theme-default Label {
+    color: var(--theme-text) !important;
+}
+
+.theme-default .input-area {
+    background-color: var(--theme-input-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-default Button {
+    background-color: var(--theme-button-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-default Button:hover {
+    background-color: var(--theme-button-hover) !important;
+}
+
+.theme-default .tab-main {
+    background-color: var(--theme-tab-bg) !important;
+}
+
+.theme-default .session-tab.active .tab-main {
+    background-color: var(--theme-tab-active-bg) !important;
+}
+
+.theme-default .session-tab:hover .tab-main {
+    background-color: var(--theme-tab-hover-bg) !important;
+}
+
+/* Mention Menu Item 样式 */
+.theme-default .mention-menu-item {
+    background-color: var(--theme-mention-item-bg) !important;
+}
+
+.theme-default .mention-menu-item:hover {
+    background-color: var(--theme-mention-item-hover) !important;
+}
+
+.theme-default .mention-menu-item__main-text {
+    color: var(--theme-mention-item-text) !important;
+}
+
+/* 深色主题 */
+.theme-dark {
+    --theme-background: rgba(20, 20, 20, 0.98);
+    --theme-surface: rgba(35, 35, 35, 0.95);
+    --theme-text: rgba(240, 240, 240, 0.95);
+    --theme-text-secondary: rgba(200, 200, 200, 0.8);
+    --theme-border: rgba(80, 80, 80, 0.4);
+    --theme-accent: rgba(120, 170, 255, 1);
+    --theme-button-bg: rgba(60, 60, 60, 0.8);
+    --theme-button-hover: rgba(70, 70, 70, 0.9);
+    --theme-input-bg: rgba(40, 40, 40, 0.9);
+    --theme-tab-bg: rgba(45, 45, 45, 0.9);
+    --theme-tab-active-bg: rgba(35, 35, 35, 0.95);
+    --theme-tab-hover-bg: rgba(55, 55, 55, 0.9);
+    
+    /* Mention Menu Item 相关颜色 */
+    --theme-mention-item-bg: rgba(70, 70, 70, 0.95);
+    --theme-mention-item-hover: rgba(120, 170, 255, 0.3);
+    --theme-mention-item-text: rgba(240, 240, 240, 0.95);
+}
+
+.theme-dark .chat-container {
+    background-color: var(--theme-background) !important;
+}
+
+.theme-dark .chat-header {
+    background-color: var(--theme-surface) !important;
+    border-bottom-color: var(--theme-border) !important;
+}
+
+.theme-dark .message-text,
+.theme-dark .sender-name,
+.theme-dark .message-content,
+.theme-dark Label {
+    color: var(--theme-text) !important;
+}
+
+.theme-dark .input-area {
+    background-color: var(--theme-input-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-dark Button {
+    background-color: var(--theme-button-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-dark Button:hover {
+    background-color: var(--theme-button-hover) !important;
+}
+
+.theme-dark .tab-main {
+    background-color: var(--theme-tab-bg) !important;
+}
+
+.theme-dark .session-tab.active .tab-main {
+    background-color: var(--theme-tab-active-bg) !important;
+}
+
+.theme-dark .session-tab:hover .tab-main {
+    background-color: var(--theme-tab-hover-bg) !important;
+}
+
+/* Mention Menu Item 样式 */
+.theme-dark .mention-menu-item {
+    background-color: var(--theme-mention-item-bg) !important;
+}
+
+.theme-dark .mention-menu-item:hover {
+    background-color: var(--theme-mention-item-hover) !important;
+}
+
+.theme-dark .mention-menu-item__main-text {
+    color: var(--theme-mention-item-text) !important;
+}
+
+/* 浅色主题 */
+.theme-light {
+    --theme-background: rgba(250, 250, 250, 0.98);
+    --theme-surface: rgba(240, 240, 240, 0.95);
+    --theme-text: rgba(30, 30, 30, 0.9);
+    --theme-text-secondary: rgba(200, 60, 60, 0.1);
+    --theme-border: rgba(200, 200, 200, 0.5);
+    --theme-accent: rgba(50, 100, 200, 1);
+    --theme-button-bg: rgba(220, 220, 220, 0.8);
+    --theme-button-hover: rgba(200, 200, 200, 0.9);
+    --theme-input-bg: rgba(255, 255, 255, 0.9);
+    --theme-tab-bg: rgba(235, 235, 235, 0.9);
+    --theme-tab-active-bg: rgba(255, 255, 255, 0.95);
+    --theme-tab-hover-bg: var(--unity-colors-toolbar-background);
+    --theme-input-container: rgba(220, 220, 220, 0.9);
+    
+    /* Mention Menu Item 相关颜色 */
+    --theme-mention-item-bg: rgba(245, 245, 245, 0.95);
+    --theme-mention-item-hover: rgba(50, 100, 200, 0.2);
+    --theme-mention-item-text: rgba(30, 30, 30, 0.9);
+}
+     
+.theme-light .chat-container {
+    background-color: var(--theme-background) !important;
+}
+
+.theme-light .chat-header {
+    background-color: var(--theme-surface) !important;
+    border-bottom-color: var(--theme-border) !important;
+}
+
+.theme-light .message-text,
+.theme-light .sender-name,
+.theme-light .message-content,
+.theme-light Label {
+    color: var(--theme-text) !important;
+}
+
+.theme-light .input-area {
+    background-color: var(--theme-input-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-light Button {
+    background-color: var(--theme-button-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-light .tab-function-button,
+.theme-light .tools-toggle-button {
+    background-color: transparent;
+    color: var(--theme-surface);
+}
+
+.theme-light .tab-function-button:hover,
+.theme-light .tools-toggle-button:hover {
+    background-color: rgba(80, 80, 80, 1);
+}
+
+.theme-light .attach-button {
+    background-color: transparent;
+}
+
+.theme-light .attach-button:hover {
+    color: rgba(0, 75, 145, 0.8) !important;
+}
+
+.theme-light .input-container {
+    background-color: var(--theme-input-container);
+    color: var(--theme-text) !important;
+}
+
+.theme-light .message-input .unity-text-field__input {
+    color: var(--theme-text) !important;
+}
+
+/* .theme-light Button:hover {
+    background-color: var(--theme-button-hover) !important;
+} */
+
+.theme-light .tab-main {
+    background-color: var(--theme-tab-bg) !important;
+}
+
+.theme-light .session-tab.active .tab-main {
+    background-color: var(--theme-tab-active-bg) !important;
+}
+
+.theme-light .session-tab:hover .tab-main {
+    background-color: var(--theme-tab-hover-bg) !important;
+}
+
+/* Mention Menu Item 样式 */
+.theme-light .mention-menu-item {
+    background-color: var(--theme-mention-item-bg) !important;
+}
+
+.theme-light .mention-menu-item:hover {
+    background-color: var(--theme-mention-item-hover) !important;
+}
+
+.theme-light .mention-menu-item__main-text {
+    color: var(--theme-mention-item-text) !important;
+}
+
+/* 浅色主题下的气泡样式 */
+.theme-light .code-bubble {
+    background-color: rgba(240, 248, 255, 0.95) !important;
+    border-left-color: #2196F3 !important;
+}
+
+.theme-light .tool-call-bubble {
+    background-color: rgba(248, 240, 255, 0.95) !important;
+    border-left-color: #9C27B0 !important;
+}
+
+.theme-light .error-bubble {
+    background-color: rgba(255, 240, 240, 0.95) !important;
+    border-left-color: #F44336 !important;
+}
+
+.theme-light .warning-bubble {
+    background-color: rgba(255, 248, 240, 0.95) !important;
+    border-left-color: #FF9800 !important;
+}
+
+.theme-light .tool-call-header {
+    background-color: rgba(248, 240, 255, 0.9) !important;
+    border-bottom-color: rgba(156, 39, 176, 0.3) !important;
+}
+
+/* 高对比度主题 */
+.theme-high-contrast {
+    --theme-background: rgba(0, 0, 0, 1);
+    --theme-surface: rgba(40, 40, 40, 1);
+    --theme-text: rgba(255, 255, 255, 1);
+    --theme-text-secondary: rgba(220, 220, 220, 1);
+    --theme-border: rgba(255, 255, 255, 0.8);
+    --theme-accent: rgba(255, 255, 0, 1);
+    --theme-button-bg: rgba(60, 60, 60, 1);
+    --theme-button-hover: rgba(80, 80, 80, 1);
+    --theme-input-bg: rgba(20, 20, 20, 1);
+    --theme-tab-bg: rgba(50, 50, 50, 1);
+    --theme-tab-active-bg: rgba(40, 40, 40, 1);
+    --theme-tab-hover-bg: rgba(70, 70, 70, 1);
+    
+    /* Mention Menu Item 相关颜色 */
+    --theme-mention-item-bg: rgba(40, 40, 40, 1);
+    --theme-mention-item-hover: rgba(255, 255, 0, 0.3);
+    --theme-mention-item-text: rgba(255, 255, 255, 1);
+}
+
+.theme-high-contrast .chat-container {
+    background-color: var(--theme-background) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-high-contrast .chat-header {
+    background-color: var(--theme-surface) !important;
+    border-bottom-color: var(--theme-border) !important;
+}
+
+.theme-high-contrast .message-text,
+.theme-high-contrast .sender-name,
+.theme-high-contrast .message-content,
+.theme-high-contrast Label {
+    color: var(--theme-text) !important;
+}
+
+.theme-high-contrast .attach-button {
+    background-color: transparent;
+}
+
+.theme-high-contrast .input-area {
+    background-color: var(--theme-input-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-high-contrast Button {
+    background-color: var(--theme-button-bg) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.theme-high-contrast Button:hover {
+    background-color: var(--theme-button-hover) !important;
+}
+
+.theme-high-contrast .tab-main {
+    background-color: var(--theme-tab-bg) !important;
+}
+
+.theme-high-contrast .session-tab.active .tab-main {
+    background-color: var(--theme-tab-active-bg) !important;
+}
+
+.theme-high-contrast .session-tab:hover .tab-main {
+    background-color: var(--theme-tab-hover-bg) !important;
+}
+
+/* Mention Menu Item 样式 */
+.theme-high-contrast .mention-menu-item {
+    background-color: var(--theme-mention-item-bg) !important;
+}
+
+.theme-high-contrast .mention-menu-item:hover {
+    background-color: var(--theme-mention-item-hover) !important;
+}
+
+.theme-high-contrast .mention-menu-item__main-text {
+    color: var(--theme-mention-item-text) !important;
+}

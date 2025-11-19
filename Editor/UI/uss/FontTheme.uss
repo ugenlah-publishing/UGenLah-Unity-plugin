@@ -1,0 +1,136 @@
+/* Font Theme 8px */
+.font-theme-8px {
+    --font-size-base: 8px;
+    --font-size-small: 6px;
+    --font-size-larger: 10px;
+    --font-size-largest: 12px;
+}
+
+/* Font Theme 9px */
+.font-theme-9px {
+    --font-size-base: 9px;
+    --font-size-small: 7px;
+    --font-size-larger: 11px;
+    --font-size-largest: 13px;
+}
+
+/* Font Theme 10px */
+.font-theme-10px {
+    --font-size-base: 10px;
+    --font-size-small: 8px;
+    --font-size-larger: 12px;
+    --font-size-largest: 14px;
+}
+
+/* Font Theme 11px */
+.font-theme-11px {
+    --font-size-base: 11px;
+    --font-size-small: 9px;
+    --font-size-larger: 13px;
+    --font-size-largest: 15px;
+}
+
+/* Font Theme 12px */
+.font-theme-12px {
+    --font-size-base: 12px;
+    --font-size-small: 10px;
+    --font-size-larger: 14px;
+    --font-size-largest: 16px;
+}
+
+/* Font Theme 13px */
+.font-theme-13px {
+    --font-size-base: 13px;
+    --font-size-small: 11px;
+    --font-size-larger: 15px;
+    --font-size-largest: 17px;
+}
+
+/* Font Theme 14px */
+.font-theme-14px {
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-larger: 16px;
+    --font-size-largest: 18px;
+}
+
+/* Font Theme 15px */
+.font-theme-15px {
+    --font-size-base: 15px;
+    --font-size-small: 13px;
+    --font-size-larger: 17px;
+    --font-size-largest: 19px;
+}
+
+/* Font Theme 16px */
+.font-theme-16px {
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-larger: 18px;
+    --font-size-largest: 20px;
+}
+
+/* Font Theme 17px */
+.font-theme-17px {
+    --font-size-base: 17px;
+    --font-size-small: 15px;
+    --font-size-larger: 19px;
+    --font-size-largest: 21px;
+}
+
+/* Font Theme 18px */
+.font-theme-18px {
+    --font-size-base: 18px;
+    --font-size-small: 16px;
+    --font-size-larger: 20px;
+    --font-size-largest: 22px;
+}
+
+/* Font Theme 19px */
+.font-theme-19px {
+    --font-size-base: 19px;
+    --font-size-small: 17px;
+    --font-size-larger: 21px;
+    --font-size-largest: 23px;
+}
+
+/* Font Theme 20px */
+.font-theme-20px {
+    --font-size-base: 20px;
+    --font-size-small: 18px;
+    --font-size-larger: 22px;
+    --font-size-largest: 24px;
+}
+
+/* Font Theme 21px */
+.font-theme-21px {
+    --font-size-base: 21px;
+    --font-size-small: 19px;
+    --font-size-larger: 23px;
+    --font-size-largest: 25px;
+}
+
+/* Font Theme 22px */
+.font-theme-22px {
+    --font-size-base: 22px;
+    --font-size-small: 20px;
+    --font-size-larger: 24px;
+    --font-size-largest: 26px;
+}
+
+/* Font Theme 23px */
+.font-theme-23px {
+    --font-size-base: 23px;
+    --font-size-small: 21px;
+    --font-size-larger: 25px;
+    --font-size-largest: 27px;
+}
+
+/* Font Theme 24px */
+.font-theme-24px {
+    --font-size-base: 24px;
+    --font-size-small: 22px;
+    --font-size-larger: 26px;
+    --font-size-largest: 28px;
+}
+

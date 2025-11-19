@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="MentionMenuItem" class="mention-menu-item">
+        <ui:Label name="ItemIcon" class="mention-menu-item__icon" text="·" />
+        <ui:Label name="MainText" class="mention-menu-item__main-text" text="@user" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,6 +1,6 @@
-/* ChatView 主要样式文件 */
+/* ChatView main stylesheet */
 
-/* 主容器样式 */
+/* Main container styles */
 .chat-container {
     flex-direction: column;
     flex-grow: 1;
@@ -17,7 +17,7 @@
     justify-content: flex-start;
 }
 
-/* 顶部工具栏样式 */
+/* Top toolbar styles */
 .chat-header {
     flex-direction: row;
     align-items: center;
@@ -30,7 +30,7 @@
     overflow: visible;
 }
 
-/* Session标签页区域样式 */
+/* Session tabs area styles */
 .session-tabs-area {
     height: 34px;
     background-color: var(--unity-colors-toolbar-background);
@@ -52,21 +52,21 @@
     padding: 2px 4px 0 4px;
 }
 
-/* 添加标签页按钮 */
-.add-tab-button {
+/* Add tab button */
+.tab-function-button {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background-color: transparent;
     border-width: 0;
     margin: 3px 8px 3px 4px;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: var(--unity-colors-default-text-inactive);
     transition-duration: 0.2s;
 }
 
-.add-tab-button:hover {
+.tab-function-button:hover {
     background-color: rgba(120, 180, 255, 0.25);
     color: rgba(255, 255, 255, 1);
     border-width: 1px;
@@ -74,40 +74,8 @@
     transition-duration: 0.15s;
 }
 
-.add-tab-button:active {
+.tab-function-button:active {
     background-color: var(--unity-colors-helpbox-background-selected);
-}
-
-/* 专门的 Session History 按钮样式 */
-.session-history-icon {
-    background-color: rgba(100, 100, 100, 0.1);
-}
-
-.session-history-icon:hover {
-    background-color: rgba(120, 180, 255, 0.25);
-    color: rgba(255, 255, 255, 1);
-    border-color: rgba(120, 180, 255, 0.8);
-    transition-duration: 0.15s;
-}
-
-.session-history-icon:active {
-    background-color: rgba(120, 180, 255, 0.4);
-}
-
-/* 新建按钮样式增强 */
-.new-session-btn {
-    background-color: var(--unity-colors-button-background);
-    border-color: var(--unity-colors-button-border);
-    color: var(--unity-colors-button-text);
-    -unity-font-style: bold;
-}
-
-.new-session-btn:hover {
-    background-color: var(--unity-colors-button-background-hover);
-}
-
-.new-session-btn:active {
-    background-color: var(--unity-colors-button-background-pressed);
 }
 
 .header-left {
@@ -121,51 +89,6 @@
     align-items: center;
 }
 
-/* 更多操作按钮和下拉菜单样式 */
-.more-actions-container {
-    position: relative;
-    overflow: visible;
-}
-
-.more-actions-btn {
-    font-size: 18px;
-    -unity-font-style: bold;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: transparent;
-    border-width: 1px;
-    border-color: transparent;
-    color: rgba(255, 255, 255, 0.8);
-    transition-duration: 0.2s;
-}
-
-.more-actions-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.more-actions-btn:active {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-.more-actions-dropdown {
-    position: absolute;
-    min-width: 180px;
-    background-color: rgba(40, 40, 40, 1);
-    border-radius: 6px;
-    border-width: 1px;
-    border-color: rgba(150, 150, 150, 0.6);
-    display: none;
-    flex-direction: column;
-    padding: 4px 0;
-}
-
-.more-actions-dropdown.show {
-    display: flex;
-}
-
 .dropdown-content {
     flex-direction: column;
     padding: 4px 0;
@@ -177,7 +100,7 @@
     padding: 8px 16px;
     min-height: 32px;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 13px;
+    font-size: var(--font-size-base);
     -unity-text-align: middle-left;
     justify-content: flex-start;
     transition-duration: 0.15s;
@@ -198,65 +121,19 @@
     margin: 4px 8px;
 }
 
-
-
-.settings-action:hover {
-    background-color: rgba(100, 150, 255, 0.15);
-    color: rgba(150, 180, 255, 1);
-}
-
-.chat-title {
-    font-size: 16px;
-    -unity-font-style: bold;
-    color: rgba(220, 220, 220, 0.95);
-    margin-right: 12px;
-}
-
-
-
-.icon-button {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    border-width: 0;
-    background-color: rgba(80, 80, 80, 0.5);
-    color: rgba(200, 200, 200, 0.8);
-    margin-left: 6px;
-    font-size: 14px;
-    transition-duration: 200ms;
-}
-
-.icon-button:hover {
-    background-color: rgba(120, 120, 120, 0.7);
-    color: rgba(255, 255, 255, 1);
-    transition-duration: 200ms;
-}
-
-.icon-button:active {
-    transition-duration: 100ms;
-}
-
-/* 聊天历史区域样式 */
-.chat-history {
-    flex-grow: 1;        /* 外层容器可以填充空间 */
-    flex-shrink: 1;      /* 允许收缩 */
-    padding: 4px 4px 2px 4px;  /* 🎯 减少底部间距，优化与输入区的距离 */
-    background-color: rgba(25, 25, 25, 0.7);
-    max-height: 100%;
-    overflow: hidden;    /* 由滚动视图处理溢出 */
-}
+/* Chat history area styles */
 
 .messages-container {
     flex-direction: column;
-    flex-grow: 0;        /* 不自动填充，根据内容大小 */
-    flex-shrink: 0;      /* 不自动收缩 */
-    padding: 0; /* 移除固定padding，由系统控制 */
+    flex-grow: 0;        /* No auto-fill, based on content size */
+    flex-shrink: 0;      /* No auto-shrink */
+    padding: 0; /* Remove fixed padding, controlled by system */
     width: 100%;
-    min-height: auto;    /* 根据内容自适应高度 */
-    max-height: none;    /* 不限制最大高度，让滚动视图处理 */
+    min-height: auto;    /* Auto-adjust height based on content */
+    max-height: none;    /* No max height limit, let scroll view handle */
     overflow: visible;
     align-items: stretch;
-    justify-content: flex-start; /* 从顶部开始排列，不均匀分布 */
+    justify-content: flex-start; /* Arrange from top, no even distribution */
 }
 
 .welcome-message {
@@ -267,7 +144,7 @@
 }
 
 .welcome-text {
-    font-size: 18px;
+    font-size: var(--font-size-larger);
     -unity-font-style: bold;
     color: rgba(220, 220, 220, 0.9);
     margin-bottom: 8px;
@@ -275,146 +152,81 @@
 }
 
 .welcome-subtext {
-    font-size: 14px;
+    font-size: var(--font-size-base);
     color: rgba(150, 150, 150, 0.8);
     -unity-text-align: middle-center;
 }
 
-/* 消息行容器 - 简洁对齐 */
+/* Message row container - clean alignment */
 .message-row {
     width: 100%;
     flex-direction: row;
-    margin-bottom: 0;    /* 完全由Sequential Rendering系统控制间距 */
+    margin-bottom: 0;    /* Spacing completely controlled by Sequential Rendering system */
     align-items: flex-start;
-    padding: 0 16px;  /* 稍微增加左右内边距，保持可读性 */
+    padding: 0 16px;  /* Slightly increase left/right padding for readability */
 }
 
-/* 用户消息右对齐 */
+/* User message right alignment */
 .message-row.user-message {
     justify-content: flex-end;
-    padding-left: 25%;   /* 用户消息左侧留出更多空间 */
+    padding-left: 25%;   /* Leave more space on left side of user messages */
     padding-right: 12px;
 }
 
-/* AI消息左对齐 */
+/* AI message left alignment */
 .message-row.ai-message {
     justify-content: flex-start;
     padding-left: 12px;
-    padding-right: 25%;  /* AI消息右侧留出更多空间 */
+    padding-right: 25%;  /* Leave more space on right side of AI messages */
 }
 
-/* 系统消息居中 */
+/* System message center alignment */
 .message-row.system-message {
     justify-content: center;
     padding: 0 8px;
 }
 
-/* 错误消息居中 */
+/* Error message center alignment */
 .message-row.error-message {
     justify-content: center;
     padding: 0 8px;
 }
 
-/* 消息容器样式 - 简洁隐形设计 */
+/* Message container styles - clean invisible design */
 .message-bubble {
-    max-width: 100%;     /* 在行容器内的最大宽度 */
-    min-width: 250px;    /* 增加最小宽度，确保消息框有合适的视觉重量 */
-    padding: 4px 0;      /* 进一步减少上下间距，配合Sequential Rendering */
-    border-radius: 0;    /* 去掉圆角 */
-    background-color: transparent; /* 隐形背景 */
+    max-width: 100%;     /* Maximum width within row container */
+    min-width: 250px;    /* Increase minimum width to ensure message box has proper visual weight */
+    padding: 4px 0;      /* Further reduce vertical spacing, works with Sequential Rendering */
+    border-radius: 0;    /* Remove rounded corners */
+    background-color: transparent; /* Invisible background */
     transition-duration: 200ms;
-    flex-shrink: 1;      /* 允许适当收缩 */
-    flex-grow: 0;        /* 不要自动扩展 */
+    flex-shrink: 1;      /* Allow appropriate shrinking */
+    flex-grow: 0;        /* Don't auto-expand */
     flex-direction: column;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
-    overflow: visible;   /* 允许内容可见 */
-    border-width: 0;     /* 去掉所有边框 */
+    overflow: visible;   /* Allow content to be visible */
+    border-width: 0;     /* Remove all borders */
 }
 
-.message-bubble:hover {
-    background-color: transparent; /* hover时也保持隐形 */
-    transition-duration: 200ms;
-}
-
-/* 用户消息容器 - 简洁样式 */
-.user-message .message-bubble {
-    background-color: transparent; /* 隐形背景 */
-    border-radius: 0;              /* 去掉圆角 */
-    color: rgba(255, 255, 255, 0.95); /* 保持文字可读性 */
-    border-width: 0;               /* 去掉边框 */
-}
-
-.user-message .message-bubble:hover {
-    background-color: transparent; /* hover时保持隐形 */
-}
-
-/* AI消息容器 - 简洁样式 */
-.ai-message .message-bubble {
-    background-color: transparent; /* 隐形背景 */
-    border-radius: 0;              /* 去掉圆角 */
-    color: rgba(255, 255, 255, 0.95); /* 保持文字可读性 */
-    border-width: 0;               /* 去掉所有边框，包括左边框 */
-}
-
-.ai-message .message-bubble:hover {
-    background-color: transparent; /* hover时保持隐形 */
-    border-left-color: transparent; /* 去掉hover时的边框颜色 */
-}
-
-/* 系统消息气泡 - 简洁透明样式 */
-.system-message .message-bubble {
-    background-color: transparent;
-    border-radius: 0;
-    border-width: 0;
-    border-color: transparent;
-    color: rgba(200, 200, 200, 0.95);
-}
-
-/* 错误消息气泡 */
-.error-message .message-bubble {
-    background-color: rgba(255, 59, 48, 0.15);
-    border-radius: 12px;
-    border-width: 1px;
-    border-color: rgba(255, 59, 48, 0.6);
-    color: rgba(255, 100, 100, 0.9);
-}
-
-/* AI纯文本消息 - 无气泡背景 */
-.ai-message.text-only .message-bubble {
-    background-color: transparent;
-    padding: 4px 0;      /* 与通用设置保持一致 */
-    border-radius: 0;
-}
-
-.ai-message.text-only .message-bubble:hover {
-    background-color: transparent;
-}
-
-.message-bubble.system-message {
-    border-left-width: 0;
-    border-left-color: transparent;
-    background-color: transparent;
-}
-
-/* 消息头部样式 */
+/* Message header styles */
 .message-header {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start; /* 改为左对齐 */
     margin-bottom: 6px;
-    display: flex; /* 始终显示，不使用悬浮效果 */
+    display: flex; /* Always show, no hover effect */
 }
 
 .message-header-left {
     flex-direction: row;
     align-items: center;
-    margin-right: 12px; /* 与按钮区域保持适当间距 */
-    flex-grow: 0; /* 不扩展，让按钮紧跟在后面 */
+    margin-right: 12px; /* Maintain proper spacing with button area */
+    flex-grow: 0; /* Don't expand, let buttons follow closely */
 }
 
-/* 用户消息头部右对齐 */
+/* User message header right alignment */
 .user-message .message-header {
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -445,30 +257,27 @@
 }
 
 .sender-name {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
     margin: 0 4px;
 }
 
 .user-message .sender-name {
-    color: rgba(255, 255, 255, 1);
     -unity-text-align: middle-right;
 }
 
 .ai-message .sender-name {
-    color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-left;
 }
 
 .message-time {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--font-size-small);
 }
 
 /* 消息文本样式调整 */
 .message-text {
-    font-size: 14px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.95);
     white-space: normal;
     min-width: auto;    /* 🔧 改为自动宽度，避免强制拉伸 */
@@ -480,23 +289,6 @@
     width: auto;     /* 🔧 使用自动宽度，不强制100% */
     min-height: auto;
     overflow: visible;
-    /* 🔧 移除display:flex，Label不应该是flex容器 */
-}
-
-.user-message .message-text {
-    color: rgba(255, 255, 255, 1);
-    -unity-text-align: upper-left;
-}
-
-.ai-message .message-text {
-    color: rgba(255, 255, 255, 0.95);
-    -unity-text-align: upper-left;
-}
-
-.system-message .message-text {
-    color: rgba(200, 200, 200, 0.95);
-    -unity-text-align: upper-left;
-    -unity-font-style: normal;
 }
 
 .error-message .message-text {
@@ -508,7 +300,7 @@
 /* AI纯文本消息的文本样式 */
 .ai-message.text-only .message-text {
     color: rgba(220, 220, 220, 0.95);
-    font-size: 14px;
+    font-size: var(--font-size-base);
 }
 
 .message-actions {
@@ -519,8 +311,9 @@
     margin-left: 0;  /* 确保靠最左边 */
 }
 
-/* 聊天复制按钮的专用样式 - 避免与其他action-button冲突 */
-.chat-copy-button {
+/* 聊天操作按钮的基础样式 - Copy 和 Revert 按钮共享 */
+.chat-copy-button,
+.chat-undo-button {
     width: auto;
     height: 22px;
     min-width: 60px;
@@ -531,7 +324,7 @@
     color: rgba(220, 220, 220, 0.9);
     margin-left: 2px;
     margin-right: 2px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     padding: 4px 10px;
     transition-duration: 150ms;
     align-items: center;
@@ -542,12 +335,15 @@
 }
 
 /* 修复Unity Button内部文本元素的样式问题 */
-.chat-copy-button .unity-button__text {
+.chat-copy-button .unity-button__text,
+.chat-undo-button .unity-button__text {
     overflow: visible;
     text-overflow: clip;
 }
 
-.chat-copy-button:hover {
+/* 悬停效果 */
+.chat-copy-button:hover,
+.chat-undo-button:hover {
     background-color: rgba(120, 120, 120, 0.9);
     border-color: rgba(150, 150, 150, 0.6);
     color: rgba(255, 255, 255, 1);
@@ -579,6 +375,7 @@
     justify-content: flex-start;
     overflow: visible;
     display: flex;
+    font-size: var(--font-size-base);
 }
 
 .code-blocks {
@@ -617,7 +414,7 @@
 }
 
 .function-calls-label {
-    font-size: 13px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: rgba(255, 200, 120, 0.9);
     margin-bottom: 8px;
@@ -650,14 +447,14 @@
 }
 
 .function-name {
-    font-size: 13px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: rgba(255, 200, 120, 0.9);
     margin-right: 8px;
 }
 
 .function-status {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(200, 200, 200, 0.7);
     background-color: rgba(255, 180, 100, 0.2);
     padding: 2px 6px;
@@ -674,7 +471,7 @@
     border-radius: 4px;
     border-width: 0;
     margin-left: 4px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     transition-duration: 150ms;
 }
 
@@ -702,7 +499,7 @@
 }
 
 .progress-text {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(150, 150, 150, 0.7);
 }
 
@@ -740,7 +537,7 @@
 }
 
 .status-text {
-    font-size: 10px;
+    font-size: var(--font-size-small);
     color: rgba(150, 150, 150, 0.7);
 }
 
@@ -764,120 +561,8 @@
     max-height: 130px; 
 }
 
-.context-label {
-    font-size: 12px;
-    -unity-font-style: bold;
-    color: rgba(200, 200, 200, 0.8);
-    margin-bottom: 6px;
-}
-
-.context-scroll {
-    max-height: 98px;
-}
-
-.context-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 
 /* 上下文项目样式 */
-.context-item {
-    margin-right: 8px;
-    margin-bottom: 6px;
-    background-color: rgba(70, 70, 70, 0.8);
-    border-radius: 6px;
-    padding: 6px;
-    border-left-width: 2px;
-    border-left-color: rgba(120, 180, 255, 0.8);
-    min-width: 180px;
-    max-width: 250px;
-    flex-direction: column;
-}
-
-.item-container {
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 4px;
-}
-
-.thumbnail-container {
-    width: 40px;
-    height: 40px;
-    margin-right: 8px;
-    position: relative;
-    flex-shrink: 0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.type-border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-width: 2px;
-    border-radius: 4px;
-    border-color: rgba(120, 180, 255, 0.8);
-}
-
-.thumbnail-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 2px;
-}
-
-.type-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(80, 80, 80, 0.9);
-    border-radius: 2px;
-}
-
-.type-icon-text {
-    font-size: 10px;
-    color: rgba(200, 200, 200, 0.9);
-    -unity-text-align: middle-center;
-}
-
-.type-label {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    background-color: rgba(120, 180, 255, 0.9);
-    color: white;
-    font-size: 8px;
-    padding: 1px 3px;
-    border-radius: 2px;
-    -unity-font-style: bold;
-}
-
-.action-buttons {
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-top: 4px;
-    padding-top: 4px;
-    border-top-width: 1px;
-    border-top-color: rgba(100, 100, 100, 0.3);
-}
-
-.preview-button {
-    background-color: rgba(80, 140, 200, 0.7);
-    border-color: rgba(80, 140, 200, 0.9);
-    color: white;
-}
-
-.preview-button:hover {
-    background-color: rgba(100, 160, 220, 0.9);
-    transition-duration: 150ms;
-}
 
 .context-item-content {
     flex-direction: row;
@@ -893,69 +578,13 @@
     flex-shrink: 0;
 }
 
-.file-info {
-    flex-direction: column;
-    flex-grow: 1;
-    min-width: 0;
-    overflow: hidden;
-}
 
-.file-name {
-    font-size: 12px;
-    -unity-font-style: bold;
-    color: rgba(220, 220, 220, 0.9);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-bottom: 2px;
-}
 
-.file-details {
-    font-size: 10px;
-    color: rgba(180, 180, 180, 0.8);
-    margin-bottom: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
 
-.file-path {
-    font-size: 9px;
-    color: rgba(150, 150, 150, 0.7);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
 
 .file-size {
-    font-size: 9px;
+    font-size: var(--font-size-small);
     color: rgba(120, 120, 120, 0.8);
-}
-
-.remove-button {
-    background-color: rgba(200, 100, 100, 0.7);
-    border-color: rgba(200, 100, 100, 0.9);
-    color: white;
-}
-
-.remove-button:hover {
-    background-color: rgba(220, 120, 120, 0.9);
-    transition-duration: 150ms;
-}
-
-.preview-area {
-    margin-top: 6px;
-    padding: 6px;
-    background-color: rgba(40, 40, 40, 0.6);
-    border-radius: 4px;
-}
-
-.preview-text {
-    font-size: 10px;
-    color: rgba(200, 200, 200, 0.8);
-    white-space: normal;
-    max-height: 60px;
-    overflow: hidden;
 }
 
 /* 输入区域样式 */
@@ -983,7 +612,7 @@
 }
 
 .drag-drop-text {
-    font-size: 14px;
+    font-size: var(--font-size-base);
     color: rgba(120, 180, 255, 0.8);
     -unity-font-style: italic;
 }
@@ -1004,6 +633,39 @@
 .input-center {
     flex-grow: 1;
     margin: 0 8px;
+    min-height: 20px;
+    max-height: 120px;
+}
+
+.message-input-scroll {
+    flex-grow: 1;
+    max-height: 120px;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.message-input-scroll .unity-scroller--vertical {
+    width: 8px;
+}
+
+.message-input-scroll .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.message-input-scroll .unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin: 0;
+}
+
+.message-input-scroll .unity-scroller--vertical .unity-base-slider__dragger:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.message-input-scroll > .unity-scroll-view__content-container {
+    flex-grow: 1;
 }
 
 .input-right {
@@ -1018,9 +680,8 @@
     height: 24px;
     border-radius: 4px;
     border-width: 0;
-    background-color: rgba(88, 166, 255, 0.15);
-    color: rgba(88, 166, 255, 1);
-    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-larger);
     -unity-font-style: bold;
     transition-duration: 200ms;
     align-items: center;
@@ -1028,8 +689,8 @@
 }
 
 .attach-button:hover {
-    background-color: rgba(88, 166, 255, 0.25);
-    color: rgba(88, 166, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 1);
     transition-duration: 200ms;
 }
 
@@ -1041,15 +702,9 @@
     background-color: rgba(0, 0, 0, 0);
     border-width: 0;
     padding: 8px 12px;
-    font-size: 14px;
-    color: rgba(220, 220, 220, 0.9);
+    font-size: var(--font-size-base);
     min-height: 20px;
-    max-height: 120px;
-}
-
-.message-input:focus {
-    background-color: rgba(0, 0, 0, 0);
-    border-width: 0;
+    flex-shrink: 0;
 }
 
 .message-input .unity-text-field__input {
@@ -1058,6 +713,8 @@
     padding: 0;
     margin: 0;
     color: rgba(220, 220, 220, 0.9);
+    white-space: normal;
+    overflow: visible;
 }
 
 .send-button {
@@ -1067,7 +724,7 @@
     border-width: 0;
     background-color: rgba(0, 122, 255, 0.9);
     color: rgba(255, 255, 255, 1);
-    font-size: 14px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     transition-duration: 200ms;
     align-items: center;
@@ -1110,62 +767,72 @@
 }
 
 .token-usage-text {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(199, 199, 199, 0.56);
     -unity-text-align: middle-right;
     -unity-font-style: normal;
     margin-right: 8px;
 }
 
-.summarize-button {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    border-width: 0;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
-    -unity-font-style: bold;
-    transition-duration: 200ms;
-    align-items: center;
-    justify-content: center;
+/* Orchestrator mode toggle styles - capsule style */
+.orchestrator-mode-toggle {
+    width: 36px;
+    height: 18px;
     margin-left: 8px;
-    -unity-text-align: middle-center;
+    margin-right: 0;
+    flex-shrink: 0;
 }
 
-.summarize-button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 1);
-    transition-duration: 200ms;
+.orchestrator-mode-toggle > Label {
+    display: none;
 }
 
-.summarize-button:active {
-    background-color: rgba(255, 255, 255, 0.35);
+.orchestrator-mode-toggle > .unity-toggle__input {
+    width: 36px;
+    height: 18px;
+    min-width: 36px;
+    min-height: 18px;
+    border-radius: 9px;
+    background-color: rgba(60, 60, 60, 0.8);
+    border-width: 1px;
+    border-color: rgba(100, 100, 100, 0.5);
+    transition-duration: 0.2s;
+    margin: 0;
+    padding: 0;
 }
 
-.report-bug-button {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    border-width: 0;
-    background-color: rgba(255, 152, 0, 0.15);
-    color: rgba(255, 152, 0, 1);
-    font-size: 18px;
-    -unity-font-style: bold;
-    transition-duration: 200ms;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
+.orchestrator-mode-toggle:checked > .unity-toggle__input {
+    background-color: rgba(80, 150, 255, 0.8);
+    border-color: rgba(120, 180, 255, 0.9);
 }
 
-.report-bug-button:hover {
-    background-color: rgba(255, 152, 0, 0.25);
-    color: rgba(255, 152, 0, 1);
-    transition-duration: 200ms;
+.orchestrator-mode-toggle > .unity-toggle__input > .unity-toggle__checkmark {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(220, 220, 220, 1);
+    margin: 1px;
+    transition-duration: 0.2s;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0);
+    background-image: none;
 }
 
-.report-bug-button:active {
-    background-color: rgba(255, 152, 0, 0.35);
+.orchestrator-mode-toggle:checked > .unity-toggle__input > .unity-toggle__checkmark {
+    translate: 18px 0;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.orchestrator-mode-toggle:hover > .unity-toggle__input {
+    border-color: rgba(120, 180, 255, 0.7);
+}
+
+/* Orchestrator mode label - independent label next to toggle */
+.orchestrator-mode-label {
+    font-size: 11px;
+    color: rgba(199, 199, 199, 0.7);
+    margin-left: 6px;
+    -unity-font-style: normal;
+    flex-shrink: 0;
 }
 
 /* 工具下拉弹窗样式 */
@@ -1198,9 +865,9 @@
 
 .tools-panel-label {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
+    font-size: var(--font-size-base);
     padding: 8px;
-    text-align: center;
+    -unity-text-align: middle-center;
 }
 
 /* 正在输入指示器样式 */
@@ -1243,7 +910,7 @@
 }
 
 .typing-text {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(150, 150, 150, 0.8);
     -unity-font-style: italic;
 }
@@ -1260,7 +927,7 @@
 }
 
 .queue-label {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(120, 180, 255, 0.8);
     margin-bottom: 6px;
     -unity-font-style: bold;
@@ -1287,7 +954,7 @@
 }
 
 .queue-message-content {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(200, 200, 200, 0.9);
     flex-grow: 1;
     white-space: nowrap;
@@ -1297,7 +964,7 @@
 }
 
 .queue-message-index {
-    font-size: 10px;
+    font-size: var(--font-size-small);
     color: rgba(120, 180, 255, 0.7);
     margin-right: 8px;
     min-width: 16px;
@@ -1307,44 +974,17 @@
     padding: 2px 4px;
 }
 
-/* 主题变化 - 浅色主题 */
-.chat-container.light-theme {
-    background-color: rgba(250, 250, 250, 0.95);
-}
-
-.chat-container.light-theme .chat-header {
-    background-color: rgba(240, 240, 240, 0.9);
-}
-
-.chat-container.light-theme .chat-title {
-    color: rgba(50, 50, 50, 0.95);
-}
-
-.chat-container.light-theme .chat-history {
-    background-color: rgba(245, 245, 245, 0.7);
-}
-
-.chat-container.light-theme .message-bubble {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgba(50, 50, 50, 0.9);
-}
-
-.chat-container.light-theme .message-text {
-    color: rgba(50, 50, 50, 0.9);
-}
-
-.chat-container.light-theme .input-area {
-    background-color: rgba(240, 240, 240, 0.9);
-}
-
-.chat-container.light-theme .input-container {
-    background-color: rgba(255, 255, 255, 0.8);
-}
 
 /* USS 不支持媒体查询，使用统一的响应式样式 */
 
 /* 滚动条样式 */
 .chat-history {
+    flex-grow: 1;        /* Outer container can fill space */
+    flex-shrink: 1;      /* Allow shrinking */
+    padding: 4px 4px 2px 4px;  /* 🎯 Reduce bottom spacing, optimize distance to input area */
+
+    max-height: 100%;
+    overflow: hidden;    /* Overflow handled by scroll view */
     -unity-overflow-clip-box: content-box;
 }
 
@@ -1367,9 +1007,9 @@
 /* 确保滚动视图内容从顶部开始排布 */
 .chat-history .unity-scroll-view__content-container {
     flex-grow: 0;        /* 不自动填充空间，避免均匀分布消息 */
-    flex-shrink: 0;      /* 不自动收缩 */
+    flex-shrink: 0;      /* No auto-shrink */
     max-width: 100%;
-    min-height: auto;    /* 根据内容自适应高度 */
+    min-height: auto;    /* Auto-adjust height based on content */
     flex-direction: column;    /* 确保垂直排列 */
     justify-content: flex-start;  /* 强制从顶部开始 */
     align-items: stretch;      /* 拉伸到容器宽度 */
@@ -1389,6 +1029,9 @@
     overflow: visible; /* 改为可见，确保删除按钮显示正常 */
     transition-duration: 200ms;
     position: relative; /* 为绝对定位的删除按钮提供参考点 */
+    min-width: 180px;
+    max-width: 250px;
+    flex-direction: column;
 }
 
 .context-item:hover {
@@ -1409,7 +1052,7 @@
     border-width: 2px;
     border-color: rgba(255, 255, 255, 0.9);
     color: rgba(255, 255, 255, 1);
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
     padding: 0;
@@ -1442,6 +1085,7 @@
     align-items: center;
     padding: 6px 8px; /* 减少上下padding，优化空间利用 */
     min-height: 56px; /* 略微减少最小高度 */
+    margin-bottom: 4px;
 }
 
 /* 缩略图容器 */
@@ -1451,6 +1095,8 @@
     margin-right: 12px;
     position: relative;
     flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 /* 类型边框 - 基础样式 */
@@ -1519,7 +1165,7 @@
 }
 
 .type-icon-text {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
     -unity-font-style: bold;
@@ -1532,7 +1178,7 @@
     right: -2px;
     background-color: rgba(0, 0, 0, 0.8);
     color: rgba(255, 255, 255, 0.9);
-    font-size: 8px;
+    font-size: var(--font-size-small);
     padding: 1px 3px;
     border-radius: 3px;
     -unity-font-style: bold;
@@ -1546,10 +1192,12 @@
     flex-direction: column;
     justify-content: center;
     margin-right: 8px;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .file-name {
-    font-size: 13px;
+    font-size: var(--font-size-base);
     color: rgba(240, 240, 240, 0.95);
     -unity-font-style: bold;
     margin-bottom: 2px;
@@ -1558,77 +1206,30 @@
 }
 
 .file-details {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(180, 180, 180, 0.8);
     margin-bottom: 2px;
 }
 
 .file-path {
-    font-size: 9px;
+    font-size: var(--font-size-small);
     color: rgba(140, 140, 140, 0.7);
     -unity-font-style: italic;
     overflow: hidden;
 
 }
 
-/* 操作按钮区域 */
-.action-buttons {
-    flex-direction: row;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.preview-button {
-    background-color: rgba(0, 122, 255, 0.3);
-    border-color: rgba(0, 122, 255, 0.6);
-}
-
-.preview-button:hover {
-    background-color: rgba(0, 122, 255, 0.6);
-    border-color: rgba(0, 122, 255, 0.8);
-}
-
-.remove-button {
-    background-color: rgba(255, 59, 48, 0.3);
-    border-color: rgba(255, 59, 48, 0.6);
-}
-
-.remove-button:hover {
-    background-color: rgba(255, 59, 48, 0.6);
-    border-color: rgba(255, 59, 48, 0.8);
-}
-
-/* 预览区域 */
-.preview-area {
-    border-top-width: 1px;
-    border-top-color: rgba(80, 80, 80, 0.5);
-    padding: 8px;
-    background-color: rgba(20, 20, 20, 0.7);
-}
-
-.preview-scroll {
-    max-height: 150px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    padding: 6px;
-}
-
-.preview-content {
-    font-size: 10px;
-    color: rgba(200, 200, 200, 0.9);
-
-}
-
 /* 移除重复的context-area样式定义，已在上方统一定义 */
 
 .context-label {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(180, 180, 180, 0.9);
     margin-bottom: 8px;
     -unity-font-style: bold;
 }
 
 .context-scroll {
+    max-height: 98px;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -1646,7 +1247,7 @@
     border-width: 0;
     background-color: rgba(220, 60, 60, 0.9);
     color: white;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     margin-left: 4px;
     transition-duration: 200ms;
@@ -1672,7 +1273,7 @@
     background-color: transparent;
     border-width: 0;
     margin: 3px 8px 3px 4px;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: var(--unity-colors-default-text-inactive);
     transition-duration: 0.2s;
@@ -1700,10 +1301,8 @@
 
 .tools-dropdown-content {
     border-radius: 16px; /* 真正的胶囊形状：宽度的一半，两端半圆中间直边 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
     overflow: hidden;
-    margin-top: 2px; /* 与按钮保持小间距 */
+    margin-top: 2px; /* 与按钮保持小间距 */ 
     transition: height 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
 
@@ -1725,13 +1324,10 @@
 
 .tools-dropdown-button:hover {
     background-color: rgba(255, 255, 255, 0.3) !important;
-    transform: scale(1.05);
     transition-duration: 0.15s;
 }
 
 .tools-dropdown-button:active {
-    transform: scale(0.95);
     transition-duration: 0.1s;
 }
-
 

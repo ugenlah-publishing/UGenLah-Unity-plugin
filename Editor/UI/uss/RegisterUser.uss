@@ -42,7 +42,7 @@
     margin-bottom: 20px;
     align-self: center;
     white-space: normal;
-    text-align: middle-center;
+    -unity-text-align: middle-center;
 }
 
 /* 输入区域 */
@@ -131,30 +131,4 @@
     .input-field {
         width: 250px;
     }
-}
-
-/* 暗色主题适配 */
-.unity-theme-dark .register-container {
-    background-color: rgb(56, 56, 56);
-}
-
-.unity-theme-dark .title-label {
-    color: rgb(255, 255, 255);
-}
-
-.unity-theme-dark .description-label {
-    color: rgb(204, 204, 204);
-}
-
-/* 亮色主题适配 */
-.unity-theme-light .register-container {
-    background-color: rgb(240, 240, 240);
-}
-
-.unity-theme-light .title-label {
-    color: rgb(40, 40, 40);
-}
-
-.unity-theme-light .description-label {
-    color: rgb(80, 80, 80);
 }

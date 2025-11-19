@@ -81,41 +81,41 @@
 }
 
 .markdown-h1 {
-    font-size: 24px;
+    font-size: var(--font-size-largest);
     margin-top: 16px;
     margin-bottom: 8px;
 }
 
 .markdown-h2 {
-    font-size: 20px;
+    font-size: var(--font-size-larger);
     margin-top: 14px;
     margin-bottom: 6px;
     color: rgba(255, 255, 255, 0.85);
 }
 
 .markdown-h3 {
-    font-size: 18px;
+    font-size: var(--font-size-larger);
     margin-top: 12px;
     margin-bottom: 4px;
     color: rgba(255, 255, 255, 0.8);
 }
 
 .markdown-h4 {
-    font-size: 16px;
+    font-size: var(--font-size-base);
     margin-top: 10px;
     margin-bottom: 4px;
     color: rgba(255, 255, 255, 0.8);
 }
 
 .markdown-h5 {
-    font-size: 14px;
+    font-size: var(--font-size-base);
     margin-top: 8px;
     margin-bottom: 2px;
     color: rgba(255, 255, 255, 0.75);
 }
 
 .markdown-h6 {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     margin-top: 6px;
     margin-bottom: 2px;
     color: rgba(255, 255, 255, 0.75);
@@ -368,7 +368,7 @@
 /* Markdown代码块文本内容 */
 .markdown-code-content {
     color: rgba(255, 255, 255, 0.95);
-    font-size: 13px;
+    font-size: var(--font-size-base);
     white-space: normal;
     overflow: visible;
 }
@@ -377,7 +377,7 @@
 .markdown-language-label {
     background-color: rgba(0, 120, 215, 0.8);
     color: white;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     padding: 4px 8px;
     border-top-left-radius: 4px;
@@ -400,7 +400,7 @@
 .markdown-language-label.message-text {
     -unity-text-align: middle-center !important;
     color: white !important;
-    -unity-font-style-and-weight: bold !important;
+    -unity-font-style: bold !important;
 }
 
 .code-header-left {
@@ -412,7 +412,7 @@
 .language-label {
     background-color: rgba(0, 120, 215, 0.8);
     color: white;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     padding: 4px 8px;
     border-top-left-radius: 4px;
@@ -424,7 +424,7 @@
 }
 
 .line-count-label {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -441,7 +441,7 @@
     border-width: 1px;
     border-color: rgba(150, 150, 150, 0.5);
     border-radius: 4px;
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
 }
@@ -463,7 +463,7 @@
     border-width: 1px;
     border-color: rgba(150, 150, 150, 0.5);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: #4FC3F7;
     -unity-text-align: middle-center;
 }
@@ -481,7 +481,7 @@
 
 .code-text {
 
-    font-size: 13px;
+    font-size: var(--font-size-base);
     padding: 12px;
     white-space: normal;
     color: rgba(255, 255, 255, 0.9);
@@ -554,7 +554,7 @@
 }
 
 .tool-icon {
-    font-size: 16px;
+    font-size: var(--font-size-base);
     margin-right: 8px;
     min-width: 20px;
     -unity-text-align: middle-center;
@@ -564,11 +564,11 @@
     -unity-font-style: bold;
     color: #AB47BC;
     margin-right: 12px;
-    font-size: 14px;
+    font-size: var(--font-size-base);
 }
 
 .tool-status {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     padding: 2px 6px;
     border-radius: 4px;
     margin-right: 8px;
@@ -576,7 +576,7 @@
 }
 
 .tool-duration {
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(255, 255, 255, 0.6);
     -unity-font-style: italic;
 }
@@ -635,7 +635,7 @@
     border-width: 1px;
     border-color: rgba(171, 71, 188, 0.5);
     border-radius: 4px;
-    font-size: 11px;
+    font-size: var(--font-size-small);
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
 }
@@ -653,7 +653,7 @@
     border-width: 1px;
     border-color: rgba(171, 71, 188, 0.5);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: #AB47BC;
     -unity-text-align: middle-center;
 }
@@ -666,7 +666,7 @@
 }
 
 .section-label {
-    font-size: 13px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 8px;
@@ -703,7 +703,7 @@
     border-width: 0;
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 12px;
+    font-size: var(--font-size-base);
     width: 24px;
     height: 20px;
     margin: 0;
@@ -773,7 +773,7 @@
 
 .json-content {
 
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.8);
     white-space: normal;
 }
@@ -788,7 +788,7 @@
 
 .table-row {
 
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.8);
     margin: 2px 0;
 }
@@ -820,18 +820,12 @@
 /* 工具流式渲染 */
 .tool-call-streaming {
     border-color: #AB47BC;
-
-
-
 }
 
 .tool-streaming-indicator {
     width: 100%;
     height: 2px;
     background-color: #AB47BC;
-
-
-
 }
 
 .tool-call-error {
@@ -876,7 +870,7 @@
 .content-title {
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 13px;
+    font-size: var(--font-size-base);
 }
 
 .collapse-button {
@@ -886,7 +880,7 @@
     border-width: 1px;
     border-color: rgba(150, 150, 150, 0.5);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
     margin-left: 8px;
@@ -899,7 +893,7 @@
     border-width: 1px;
     border-color: rgba(150, 150, 150, 0.5);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.8);
     -unity-text-align: middle-center;
     margin-left: 4px;
@@ -961,19 +955,6 @@
     opacity: 0.5;
 }
 
-/* 暗色主题适配 */
-.unity-theme-dark .bubble-container {
-    background-color: rgba(35, 35, 35, 0.9);
-}
-
-.unity-theme-dark .code-bubble {
-    background-color: rgba(25, 25, 25, 0.95);
-}
-
-.unity-theme-dark .tool-call-bubble {
-    background-color: rgba(40, 25, 40, 0.95);
-}
-
 /* ==========================================================================
    Markdown表格样式
    ========================================================================== */
@@ -1006,7 +987,7 @@
 
 /* 表格单元格 */
 .table-header-cell {
-    font-size: 13px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     color: rgba(255, 255, 255, 0.9);
     padding: 8px 12px;
@@ -1016,7 +997,7 @@
 }
 
 .table-data-cell {
-    font-size: 12px;
+    font-size: var(--font-size-base);
     color: rgba(255, 255, 255, 0.85);
     padding: 6px 12px;
     border-right-width: 1px;
@@ -1037,44 +1018,6 @@
 .markdown-content {
     flex-direction: column;
     align-items: stretch;
-}
-
-/* 浅色主题适配 */
-.unity-theme-light .bubble-container {
-    background-color: rgba(245, 245, 245, 0.9);
-    border-color: rgba(200, 200, 200, 0.5);
-}
-
-.unity-theme-light .markdown-table {
-    background-color: rgba(250, 250, 250, 0.9);
-    border-color: rgba(180, 180, 180, 0.8);
-}
-
-.unity-theme-light .table-header-row {
-    background-color: rgba(220, 220, 220, 0.8);
-}
-
-.unity-theme-light .table-header-cell {
-    color: rgba(50, 50, 50, 0.9);
-    background-color: rgba(200, 200, 200, 0.6);
-}
-
-.unity-theme-light .table-data-cell {
-    color: rgba(70, 70, 70, 0.9);
-}
-
-.unity-theme-light .table-data-row:hover {
-    background-color: rgba(240, 240, 240, 0.7);
-}
-
-.unity-theme-light .markdown-paragraph,
-.unity-theme-light .markdown-heading {
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.unity-theme-light .code-text {
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(250, 250, 250, 0.95);
 }
 
 /* ==========================================================================
@@ -1155,7 +1098,7 @@
     border-radius: 6px;
     padding: 8px 16px;
     margin: 4px 0;
-    font-size: 12px;
+    font-size: var(--font-size-base);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
 }

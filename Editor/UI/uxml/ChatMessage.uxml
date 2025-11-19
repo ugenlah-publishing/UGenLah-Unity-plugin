@@ -50,6 +50,7 @@
             <!-- 反馈按钮区域 - 现在包含所有操作按钮 -->
             <ui:VisualElement name="FeedbackArea" class="feedback-area" style="display: flex;">
                 <ui:Button name="CopyButton" text="Copy" class="chat-copy-button" tooltip="Copy Message" />
+                <ui:Button name="UndoButton" text="Revert" class="chat-undo-button" tooltip="Revert to this checkpoint" style="display: none;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

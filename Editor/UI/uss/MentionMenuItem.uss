@@ -1,0 +1,48 @@
+/* 菜单项容器 */
+.mention-menu-item {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+}
+
+
+/* 图标样式 */
+.mention-menu-item__icon {
+    -unity-font: resource('Packages/com.ugenlah.ugenlah/Editor/UI/uss/fonts/MaterialIcons-Regular.ttf');
+    -unity-font-definition: initial;
+    font-size: 14px;
+    margin-right: 2px;
+    width: 16px;
+    -unity-text-align: middle-center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 用户类型图标颜色 */
+.mention-menu-item--user .mention-menu-item__icon {
+    color: rgba(76, 204, 76, 1);
+}
+
+/* 命令类型图标颜色 */
+.mention-menu-item--command .mention-menu-item__icon {
+    color: rgba(204, 153, 51, 1);
+}
+
+/* 其他类型图标颜色 */
+.mention-menu-item--other .mention-menu-item__icon {
+    color: rgba(179, 179, 179, 1);
+}
+
+/* 主文本 */
+.mention-menu-item__main-text {
+    font-size: 12px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
